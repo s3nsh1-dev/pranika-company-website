@@ -57,15 +57,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-export default function GG() {
-  // const [anchorEl, setAnchorEl] = useState(null);
-  // const open = Boolean(anchorEl);
-  // const handleClick = (event) => {
-  //   setAnchorEl(event.currentTarget);
-  // };
-  // const handleClose = () => {
-  //   setAnchorEl(null);
-  // };
+export default function AffixBar() {
   const [anchorElWho, setAnchorElWho] = useState(null);
   const [anchorElWhy, setAnchorElWhy] = useState(null);
   const [anchorItServices, setAnchorItServices] = useState(null);
@@ -111,16 +103,18 @@ export default function GG() {
             <MenuItem onClick={handleClose}>
               <Box>
                 <Button
-                  aria-controls={Boolean(anchorElWhy) ? "why-us" : undefined}
+                  aria-controls={
+                    Boolean(anchorItServices) ? "why-us" : undefined
+                  }
                   aria-haspopup='true'
-                  aria-expanded={Boolean(anchorElWhy) ? "true" : undefined}
+                  aria-expanded={Boolean(anchorItServices) ? "true" : undefined}
                   disableElevation
                   variant='text'
                   edge='start'
                   aria-label='menu'
                   size='large'
                   color='inherit'
-                  onClick={handleClick(setAnchorElWhy)}
+                  onClick={handleClick(setAnchorItServices)}
                   endIcon={<KeyboardArrowDownIcon />}
                 >
                   IT SERVICES
@@ -129,7 +123,7 @@ export default function GG() {
                   id='it-services'
                   anchorEl={anchorItServices}
                   open={Boolean(anchorItServices)}
-                  onClose={handleClose(setAnchorItServices)}
+                  onClose={handleClose(anchorItServices)}
                 >
                   <MenuItem onClick={handleClose}>
                     TRAINING AND PLACEMENTS
