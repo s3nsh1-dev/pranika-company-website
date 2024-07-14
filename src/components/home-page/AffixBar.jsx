@@ -1,19 +1,30 @@
 import React, { useState } from "react";
-import {
-  AppBar,
-  Toolbar,
-  Typography,
-  Button,
-  Box,
-  Menu,
-  MenuItem,
-} from "@mui/material";
-import { IconButton } from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu";
+import { Toolbar, Button, Box, Menu, MenuItem, InputBase } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import { styled, alpha } from "@mui/material/styles";
-import InputBase from "@mui/material/InputBase";
+// import InputBase from "@mui/material/InputBase";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
+
+const StyledMenu = styled(Menu)(({ theme }) => ({
+  "& .MuiPaper-root": {
+    marginTop: "10px",
+    boxShadow: "none",
+    borderRadius: "0px 0px 10px 10px",
+    // width: "200px", // Adjust the width here
+    // height: "auto", // Adjust the height here if needed
+  },
+}));
+
+const StyledSubMenu = styled(Menu)(({ theme }) => ({
+  "& .MuiPaper-root": {
+    marginTop: "-10px",
+    boxShadow: "none",
+    borderRadius: "0px 0px 10px 0px",
+    // width: "200px", // Adjust the width here
+    // height: "auto", // Adjust the height here if needed
+  },
+}));
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -45,7 +56,6 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   width: "100%",
   "& .MuiInputBase-input": {
     padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
     transition: theme.transitions.create("width"),
     [theme.breakpoints.up("sm")]: {
@@ -57,167 +67,129 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-export default function GG() {
-  // const [anchorEl, setAnchorEl] = useState(null);
-  // const open = Boolean(anchorEl);
-  // const handleClick = (event) => {
-  //   setAnchorEl(event.currentTarget);
-  // };
-  // const handleClose = () => {
-  //   setAnchorEl(null);
-  // };
-  const [anchorElWho, setAnchorElWho] = useState(null);
+export default function AffixBar() {
+  const [anchorEl, setAnchorEl] = useState(null);
   const [anchorElWhy, setAnchorElWhy] = useState(null);
-  const [anchorItServices, setAnchorItServices] = useState(null);
-  const [anchorElMobile, setAnchorElMobile] = useState(null);
+  const [profileMenuAnchorEl, setProfileMenuAnchorEl] = useState(null);
 
-  const handleClick = (setAnchorEl) => (event) => {
+  const open = Boolean(anchorEl);
+  const profileMenuOpen = Boolean(profileMenuAnchorEl);
+
+  const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
 
-  const handleClose = (setAnchorEl) => () => {
+  const handleClose = () => {
     setAnchorEl(null);
+    setProfileMenuAnchorEl(null);
   };
+
+  const handleProfileMenuClick = (event) => {
+    event.stopPropagation(); // Prevent the main menu from closing
+    setProfileMenuAnchorEl(event.currentTarget);
+  };
+
+  const handleProfileMenuClose = () => {
+    setProfileMenuAnchorEl(null);
+  };
+
   return (
     <Toolbar>
       <Box sx={{ display: { xs: "none", md: "flex", flexGrow: 1 } }}>
-        <Box>
-          <Button variant='text' edge='start' size='large' color='inherit'>
-            HOME
-          </Button>
-        </Box>
-        <Box>
-          <Button
-            aria-controls={Boolean(anchorElWho) ? "who-menu" : undefined}
-            aria-haspopup='true'
-            aria-expanded={Boolean(anchorElWho) ? "true" : undefined}
-            disableElevation
-            variant='text'
-            edge='start'
-            aria-label='menu'
-            size='large'
-            color='inherit'
-            onClick={handleClick(setAnchorElWho)}
-            endIcon={<KeyboardArrowDownIcon />}
-          >
-            Services
-          </Button>
-          <Menu
-            id='who-menu'
-            anchorEl={anchorElWho}
-            open={Boolean(anchorElWho)}
-            onClose={handleClose(setAnchorElWho)}
-          >
-            <MenuItem onClick={handleClose}>
-              <Box>
-                <Button
-                  aria-controls={Boolean(anchorElWhy) ? "why-us" : undefined}
-                  aria-haspopup='true'
-                  aria-expanded={Boolean(anchorElWhy) ? "true" : undefined}
-                  disableElevation
-                  variant='text'
-                  edge='start'
-                  aria-label='menu'
-                  size='large'
-                  color='inherit'
-                  onClick={handleClick(setAnchorElWhy)}
-                  endIcon={<KeyboardArrowDownIcon />}
-                >
-                  IT SERVICES
-                </Button>
-                <Menu
-                  id='it-services'
-                  anchorEl={anchorItServices}
-                  open={Boolean(anchorItServices)}
-                  onClose={handleClose(setAnchorItServices)}
-                >
-                  <MenuItem onClick={handleClose}>
-                    TRAINING AND PLACEMENTS
-                  </MenuItem>
-                  <MenuItem onClick={handleClose}>
-                    CONSULTANCY & RECRUITMENT
-                  </MenuItem>
-                </Menu>
-              </Box>
-            </MenuItem>
-            <MenuItem onClick={handleClose}>DATA ANALYTICS</MenuItem>
-            <MenuItem onClick={handleClose}>DATA TRANSFORMATION</MenuItem>
-            <MenuItem onClick={handleClose}>DATA OPERATIONS</MenuItem>
-            <MenuItem onClick={handleClose}>--EXTRA--</MenuItem>
-          </Menu>
-        </Box>
-        <Box>
-          <Button variant='text' edge='start' size='large' color='inherit'>
-            MISSION & VISION
-          </Button>
-        </Box>
-        <Box>
-          <Button
-            aria-controls={Boolean(anchorElWhy) ? "who-menu" : undefined}
-            aria-haspopup='true'
-            aria-expanded={Boolean(anchorElWhy) ? "true" : undefined}
-            disableElevation
-            variant='text'
-            edge='start'
-            aria-label='menu'
-            size='large'
-            color='inherit'
-            onClick={handleClick(setAnchorElWhy)}
-            endIcon={<KeyboardArrowDownIcon />}
-          >
-            KNOW US
-          </Button>
-          <Menu
-            id='who-menu'
-            anchorEl={anchorElWhy}
-            open={Boolean(anchorElWhy)}
-            onClose={handleClose(setAnchorElWhy)}
-          >
-            <MenuItem onClick={handleClose}>OUR DREAM TEAM</MenuItem>
-            <MenuItem onClick={handleClose}>COMPANY INSIGHTS</MenuItem>
-          </Menu>
-        </Box>
-        <Box>
-          <Button variant='text' edge='start' size='large' color='inherit'>
-            CAREERS
-          </Button>
-        </Box>
-        <Box>
-          <Button variant='text' edge='start' size='large' color='inherit'>
-            CONTACT US
-          </Button>
-        </Box>
-      </Box>
-      <Box sx={{ display: { xs: "flex", md: "none" } }}>
-        <IconButton
-          aria-controls={Boolean(anchorElMobile) ? "who-menu" : undefined}
-          aria-haspopup='true'
-          aria-expanded={Boolean(anchorElMobile) ? "true" : undefined}
-          disableElevation
+        <Button variant='text' size='large' color='inherit'>
+          HOME
+        </Button>
+        <Button
           variant='text'
-          edge='start'
-          aria-label='menu'
           size='large'
           color='inherit'
-          onClick={handleClick(setAnchorElMobile)}
+          id='basic-button'
+          aria-controls={open ? "basic-menu" : undefined}
+          aria-haspopup='true'
+          aria-expanded={open ? "true" : undefined}
+          onClick={handleClick}
+        >
+          Services <KeyboardArrowDownIcon />
+        </Button>
+        <StyledMenu
+          id='basic-menu'
+          anchorEl={anchorEl}
+          open={open}
+          onClose={handleClose}
+          MenuListProps={{
+            "aria-labelledby": "basic-button",
+          }}
+        >
+          <MenuItem
+            aria-controls={profileMenuOpen ? "profile-menu" : undefined}
+            aria-haspopup='true'
+            aria-expanded={profileMenuOpen ? "true" : undefined}
+            onClick={handleProfileMenuClick}
+          >
+            IT SERVICES <KeyboardArrowRightIcon />
+          </MenuItem>
+          <StyledSubMenu
+            id='profile-menu'
+            anchorEl={profileMenuAnchorEl}
+            open={profileMenuOpen}
+            onClose={handleProfileMenuClose}
+            anchorOrigin={{
+              vertical: "top",
+              horizontal: "right",
+            }}
+            transformOrigin={{
+              vertical: "top",
+              horizontal: "left",
+            }}
+            getContentAnchorEl={null} // Prevents the menu from shifting vertically
+          >
+            <MenuItem onClick={handleProfileMenuClose}>
+              TRAINING & PLACEMENT PROGRAM
+            </MenuItem>
+            <MenuItem onClick={handleProfileMenuClose}>
+              CONSULTANCY & RECRUITMENT
+            </MenuItem>
+          </StyledSubMenu>
+          <MenuItem onClick={handleClose}>DATA ANALYTICS</MenuItem>
+          <MenuItem onClick={handleClose}>DATA TRANSFORMATION</MenuItem>
+          <MenuItem onClick={handleClose}>DATA OPERATIONS</MenuItem>
+        </StyledMenu>
+        <Button variant='text' size='large' color='inherit'>
+          MISSION & VISION
+        </Button>
+        <Button variant='text' size='large' color='inherit'>
+          CAREERS
+        </Button>
+        <Button
+          aria-controls={Boolean(anchorElWhy) ? "why-us" : undefined}
+          aria-haspopup='true'
+          aria-expanded={Boolean(anchorElWhy) ? "true" : undefined}
+          disableElevation
+          variant='text'
+          size='large'
+          color='inherit'
+          onClick={(event) => setAnchorElWhy(event.currentTarget)}
           endIcon={<KeyboardArrowDownIcon />}
         >
-          <MenuIcon />
-        </IconButton>
-        <Menu
+          KNOW US
+        </Button>
+        <StyledMenu
           id='who-menu'
-          anchorEl={anchorElMobile}
-          open={Boolean(anchorElMobile)}
-          onClose={handleClose(setAnchorElMobile)}
-          sx={{ display: { xs: "flex", md: "none" } }}
+          anchorEl={anchorElWhy}
+          open={Boolean(anchorElWhy)}
+          onClose={() => setAnchorElWhy(null)}
         >
-          <MenuItem onClick={handleClose}>HOME</MenuItem>
-          <MenuItem onClick={handleClose}>WHO WE ARE</MenuItem>
-          <MenuItem onClick={handleClose}>WHY CHOOSE US</MenuItem>
-          <MenuItem onClick={handleClose}>CASE STUDIES</MenuItem>
-          <MenuItem onClick={handleClose}>HR INITIATIVES</MenuItem>
-          <MenuItem onClick={handleClose}>CONTACT US</MenuItem>
-        </Menu>
+          <MenuItem onClick={() => setAnchorElWhy(null)}>
+            OUR DREAM TEAM
+          </MenuItem>
+          <MenuItem onClick={() => setAnchorElWhy(null)}>
+            COMPANY INSIGHTS
+          </MenuItem>
+        </StyledMenu>
+
+        <Button variant='text' size='large' color='inherit'>
+          CONTACT US
+        </Button>
       </Box>
       <Search>
         <SearchIconWrapper>

@@ -10,7 +10,12 @@ export default function SecondryNavbar() {
     <div>
       <AppBar
         position='sticky'
-        sx={{ backgroundColor: "white", color: "black" }}
+        sx={{
+          backgroundColor: "white",
+          color: "black",
+          // border: "1px solid grey",
+          // boxShadow: "none",
+        }}
       >
         <AffixBar />
       </AppBar>
