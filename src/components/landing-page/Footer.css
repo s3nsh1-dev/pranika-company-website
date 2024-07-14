@@ -1,0 +1,13 @@
+.yt-div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #01014d;
+    margin: 10px;
+}
+.yt-div:hover{
+    background-color: white;
+}
+.no-change-link:visited {
+    color: white;
+}
