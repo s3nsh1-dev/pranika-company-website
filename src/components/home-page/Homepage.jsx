@@ -8,10 +8,10 @@ import PrimaryFooter from "./PrimaryFooter";
 export default function Homepage() {
   return (
     <>
-      {/* <Navbar /> */}
+      <Navbar />
       <SecondryNavbar />
-      {/* <PrimaryFooter /> */}
-      {/* <Footer /> */}
+      <PrimaryFooter />
+      <Footer />
     </>
   );
 }

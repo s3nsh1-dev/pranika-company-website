@@ -1,8 +1,8 @@
 import React from "react";
 import { Box } from "@mui/material";
-import image from "../../images/error-page-image.png";
+import image from "../../images/coming-soon.jpg";
 
-const ErrorPage = () => {
+const ComingSoon = () => {
   return (
     <Box
       sx={{
@@ -20,4 +20,4 @@ const ErrorPage = () => {
   );
 };
 
-export default ErrorPage;
+export default ComingSoon;
