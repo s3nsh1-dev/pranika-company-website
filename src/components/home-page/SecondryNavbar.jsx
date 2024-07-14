@@ -1,7 +1,7 @@
 import React from "react";
-import { AppBar, Toolbar, Typography, Button } from "@mui/material";
+import { AppBar } from "@mui/material";
 import AboutPranikaAccordian from "./AboutPranikaAccordian";
-import GG from "./GG";
+import AffixBar from "./AffixBar";
 import Body from "../landing-page/Body";
 import MeetOurTeam from "./MeetOurTeam";
 
@@ -12,11 +12,11 @@ export default function SecondryNavbar() {
         position='sticky'
         sx={{ backgroundColor: "white", color: "black" }}
       >
-        <GG />
+        <AffixBar />
       </AppBar>
-      <Body />
-      <AboutPranikaAccordian />
-      <MeetOurTeam />
+      {/* <Body /> */}
+      {/* <AboutPranikaAccordian /> */}
+      {/* <MeetOurTeam /> */}
     </div>
   );
 }

@@ -8,7 +8,6 @@ import {
   CardContent,
   CardActions,
   Card,
-  Box,
 } from "@mui/material";
 
 export default function IdCards({ name, about }) {

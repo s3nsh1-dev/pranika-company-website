@@ -68,7 +68,7 @@ export default function GG() {
   // };
   const [anchorElWho, setAnchorElWho] = useState(null);
   const [anchorElWhy, setAnchorElWhy] = useState(null);
-  const [anchorElHR, setAnchorElHR] = useState(null);
+  const [anchorItServices, setAnchorItServices] = useState(null);
   const [anchorElMobile, setAnchorElMobile] = useState(null);
 
   const handleClick = (setAnchorEl) => (event) => {
@@ -81,6 +81,11 @@ export default function GG() {
   return (
     <Toolbar>
       <Box sx={{ display: { xs: "none", md: "flex", flexGrow: 1 } }}>
+        <Box>
+          <Button variant='text' edge='start' size='large' color='inherit'>
+            HOME
+          </Button>
+        </Box>
         <Box>
           <Button
             aria-controls={Boolean(anchorElWho) ? "who-menu" : undefined}
@@ -95,7 +100,7 @@ export default function GG() {
             onClick={handleClick(setAnchorElWho)}
             endIcon={<KeyboardArrowDownIcon />}
           >
-            WHO WE ARE
+            Services
           </Button>
           <Menu
             id='who-menu'
@@ -103,12 +108,48 @@ export default function GG() {
             open={Boolean(anchorElWho)}
             onClose={handleClose(setAnchorElWho)}
           >
-            <MenuItem onClick={handleClose}>WHO WE ARE</MenuItem>
-            <MenuItem onClick={handleClose}>WHAT WE DO</MenuItem>
-            <MenuItem onClick={handleClose}>OUR EXPERTISE</MenuItem>
-            <MenuItem onClick={handleClose}>MEET OUT TEAM</MenuItem>
-            <MenuItem onClick={handleClose}>OUR GLOBAL FOOTPRINT</MenuItem>
+            <MenuItem onClick={handleClose}>
+              <Box>
+                <Button
+                  aria-controls={Boolean(anchorElWhy) ? "why-us" : undefined}
+                  aria-haspopup='true'
+                  aria-expanded={Boolean(anchorElWhy) ? "true" : undefined}
+                  disableElevation
+                  variant='text'
+                  edge='start'
+                  aria-label='menu'
+                  size='large'
+                  color='inherit'
+                  onClick={handleClick(setAnchorElWhy)}
+                  endIcon={<KeyboardArrowDownIcon />}
+                >
+                  IT SERVICES
+                </Button>
+                <Menu
+                  id='it-services'
+                  anchorEl={anchorItServices}
+                  open={Boolean(anchorItServices)}
+                  onClose={handleClose(setAnchorItServices)}
+                >
+                  <MenuItem onClick={handleClose}>
+                    TRAINING AND PLACEMENTS
+                  </MenuItem>
+                  <MenuItem onClick={handleClose}>
+                    CONSULTANCY & RECRUITMENT
+                  </MenuItem>
+                </Menu>
+              </Box>
+            </MenuItem>
+            <MenuItem onClick={handleClose}>DATA ANALYTICS</MenuItem>
+            <MenuItem onClick={handleClose}>DATA TRANSFORMATION</MenuItem>
+            <MenuItem onClick={handleClose}>DATA OPERATIONS</MenuItem>
+            <MenuItem onClick={handleClose}>--EXTRA--</MenuItem>
           </Menu>
+        </Box>
+        <Box>
+          <Button variant='text' edge='start' size='large' color='inherit'>
+            MISSION & VISION
+          </Button>
         </Box>
         <Box>
           <Button
@@ -124,7 +165,7 @@ export default function GG() {
             onClick={handleClick(setAnchorElWhy)}
             endIcon={<KeyboardArrowDownIcon />}
           >
-            WHY CHOOSE US
+            KNOW US
           </Button>
           <Menu
             id='who-menu'
@@ -132,45 +173,14 @@ export default function GG() {
             open={Boolean(anchorElWhy)}
             onClose={handleClose(setAnchorElWhy)}
           >
-            <MenuItem onClick={handleClose}>WHY CHOOSE US</MenuItem>
-            <MenuItem onClick={handleClose}>OUR HIRING METHODOLOGY</MenuItem>
-            <MenuItem onClick={handleClose}>MANDATE ASSESSMENT TOOL</MenuItem>
-            <MenuItem onClick={handleClose}>DIVERSITY PRACTICE</MenuItem>
-            <MenuItem onClick={handleClose}>COST ADVANTAGE</MenuItem>
+            <MenuItem onClick={handleClose}>OUR DREAM TEAM</MenuItem>
+            <MenuItem onClick={handleClose}>COMPANY INSIGHTS</MenuItem>
           </Menu>
         </Box>
         <Box>
           <Button variant='text' edge='start' size='large' color='inherit'>
-            CASE STUDIES
+            CAREERS
           </Button>
-        </Box>
-        <Box>
-          <Button
-            aria-controls={Boolean(anchorElHR) ? "who-menu" : undefined}
-            aria-haspopup='true'
-            aria-expanded={Boolean(anchorElHR) ? "true" : undefined}
-            disableElevation
-            variant='text'
-            edge='start'
-            aria-label='menu'
-            size='large'
-            color='inherit'
-            onClick={handleClick(setAnchorElHR)}
-            endIcon={<KeyboardArrowDownIcon />}
-          >
-            HR INITIATIVES
-          </Button>
-          <Menu
-            id='who-menu'
-            anchorEl={anchorElHR}
-            open={Boolean(anchorElHR)}
-            onClose={handleClose(setAnchorElHR)}
-          >
-            <MenuItem onClick={handleClose}>TALENT DEVELOPMENT</MenuItem>
-            <MenuItem onClick={handleClose}>JOIN OUR TEAM</MenuItem>
-            <MenuItem onClick={handleClose}>BLOG</MenuItem>
-            <MenuItem onClick={handleClose}>EVENTS</MenuItem>
-          </Menu>
         </Box>
         <Box>
           <Button variant='text' edge='start' size='large' color='inherit'>

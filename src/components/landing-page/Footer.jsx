@@ -1,23 +1,7 @@
 import React from "react";
-import { Box, Typography, Button, colors } from "@mui/material";
-import YouTubeIcon from "@mui/icons-material/YouTube";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import { Box, Typography } from "@mui/material";
 import "./Footer.css";
 
-const useStyle = {
-  Button: {
-    "&:hover": {
-      color: "red !important",
-    },
-  },
-};
-const useFBStyle = {
-  Button: {
-    "&:hover": {
-      color: "blue !important",
-    },
-  },
-};
 export default function Footer() {
   return (
     <Box
@@ -31,7 +15,11 @@ export default function Footer() {
         color: "white",
       }}
     >
-      <Typography variant='subtitle2'>
+      <Typography
+        variant='subtitle2'
+        sx={{ padding: " 10px 20px" }}
+        color='grey'
+      >
         Pranika Technologies and Consulting Pvt. Ltd. © All Rights Reserved.
         Designed & Developed by &nbsp;
         <a
@@ -39,36 +27,12 @@ export default function Footer() {
           className='no-change-link'
           target='_blank'
           style={{ color: "aqua" }}
+          without
+          rel='noreferrer'
         >
           PranikaTechTeam
         </a>
       </Typography>
-      <Box display='flex' flexDirection='row' alignItems='center'>
-        <div className='yt-div' style={{ height: "10px", width: "15px" }}>
-          <a
-            href='https://www.youtube.com/@PranikaTech'
-            className='no-change-link'
-            target='_blank'
-          >
-            <YouTubeIcon sx={useStyle.Button} />
-          </a>
-        </div>
-        <div
-          className='yt-div'
-          style={{
-            height: "17px",
-            width: "15px",
-          }}
-        >
-          <a
-            href='https://www.linkedin.com/company/pranika-technologies-and-consulting-pvt-ltd/'
-            className='no-change-link'
-            target='_blank'
-          >
-            <LinkedInIcon sx={useFBStyle.Button} />
-          </a>
-        </div>
-      </Box>
     </Box>
   );
 }

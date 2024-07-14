@@ -65,7 +65,11 @@ export default function Navbar() {
             }}
           >
             <Typography variant='subtitle2'>Follow Us:</Typography>
-            <a href='https://www.youtube.com/@PranikaTech' target='_blank'>
+            <a
+              href='https://www.youtube.com/@PranikaTech'
+              target='_blank'
+              rel='noreferrer'
+            >
               <img
                 src={YTlogo}
                 alt='ytlogo'
@@ -75,6 +79,7 @@ export default function Navbar() {
             <a
               href='https://www.linkedin.com/company/pranika-technologies-and-consulting-pvt-ltd/'
               target='_blank'
+              rel='noreferrer'
             >
               <img
                 src={LinkedInlogo}
