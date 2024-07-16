@@ -4,6 +4,7 @@ import SecondryNavbar from "./SecondryNavbar";
 // import AboutPranikaAccordian from "./AboutPranikaAccordian";
 import Footer from "../landing-page/Footer";
 import PrimaryFooter from "./PrimaryFooter";
+import TeamSummary from "../derived-pages/TeamSummary";
 
 export default function Homepage() {
   return (
@@ -12,6 +13,7 @@ export default function Homepage() {
       <SecondryNavbar />
       <PrimaryFooter />
       <Footer /> */}
+      <TeamSummary />
     </>
   );
 }

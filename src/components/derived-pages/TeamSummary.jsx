@@ -1,9 +1,11 @@
 import React from "react";
+import MemberDivison from "./MemberDivison";
 
 const aboutTeam = [
   {
     id: 0,
     name: "Kamal Shukla",
+    position: "",
     shortSummary:
       "12 years as MSBI professional, specializing in Power BI, SQL, and Azure. Helping others to indroduce with professional Data Analytics.",
     longSummary:
@@ -14,6 +16,7 @@ const aboutTeam = [
   {
     id: 1,
     name: "Abhishek Pandey",
+    position: "",
     shortSummary:
       "HR analyst with 10+ years of experience, adept in recruitment, data analysis, and handling US clients. Proficient in Excel, Power BI, and SQL.",
     longSummary:
@@ -24,6 +27,7 @@ const aboutTeam = [
   {
     id: 2,
     name: "Raj Goswami",
+    position: "",
     shortSummary:
       "Full Stack ReactJS Developer and freelancer. With expertise in web applications, delivering high-quality, data-driven solutions.",
     longSummary:
@@ -32,7 +36,20 @@ const aboutTeam = [
     mail: "ram.goswami@pranikatech.com",
   },
 ];
-
-export default function DerivedPages() {
-  return <div></div>;
+export default function TeamSummary() {
+  const renderMemberDivision = aboutTeam.map((member) => {
+    return (
+      <MemberDivison
+        key={member.id}
+        id={member.id}
+        name={member.name}
+        position={member.position}
+        shortSummary={member.shortSummary}
+        longSummary={member.longSummary}
+        profileLink={member.profileLink}
+        mail={member.mail}
+      />
+    );
+  });
+  return <div>{renderMemberDivision}</div>;
 }
