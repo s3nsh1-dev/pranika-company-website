@@ -13,16 +13,16 @@ import ContactUs from "./components/branch-pages/ContactUs";
 export default function App() {
   return (
     <div>
-      <Navbar />
-      <SecondryNavbar />
+      {/* <Navbar /> */}
+      {/* <SecondryNavbar /> */}
       {/* <Body /> */}
       {/* <ComingSoon /> */}
       {/* <ErrorPage /> */}
       {/* <AboutUs /> */}
-      <ContactUs />
-      <PrimaryFooter />
-      <Footer />
-      {/* <Homepage /> */}
+      {/* <ContactUs /> */}
+      {/* <PrimaryFooter /> */}
+      {/* <Footer /> */}
+      <Homepage />
     </div>
   );
 }

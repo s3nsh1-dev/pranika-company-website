@@ -1,6 +1,8 @@
 import React from "react";
 import YTlogo from "../../images/yt-icon.png";
 import LinkedInlogo from "../../images/linkedin-icon.png";
+import Facebooklogo from "../../images/facebook-icon.png";
+import Instagramlogo from "../../images/instagram-icon.png";
 import plogo from "../../images/p-bg-less-copy.png";
 
 import { AppBar, Box, Toolbar, Typography, Divider } from "@mui/material";
@@ -45,7 +47,7 @@ export default function Navbar() {
             <Typography variant='subtitle2'>
               WANT TO COLLABORATE ? CALL US
             </Typography>
-            <Typography variant='subtitle2'>1800-123-123</Typography>
+            <Typography variant='subtitle2'>(+91) 9151391112</Typography>
           </Box>
           <Divider
             orientation='vertical'
@@ -84,6 +86,28 @@ export default function Navbar() {
               <img
                 src={LinkedInlogo}
                 alt='LinkedInlogo'
+                style={{ height: "30px", width: "30px" }}
+              />
+            </a>
+            <a
+              href='https://www.instagram.com/pranikatech/'
+              target='_blank'
+              rel='noreferrer'
+            >
+              <img
+                src={Instagramlogo}
+                alt='Instagramlogo'
+                style={{ height: "30px", width: "30px" }}
+              />
+            </a>
+            <a
+              href='https://www.facebook.com/profile.php?id=61560039377656'
+              target='_blank'
+              rel='noreferrer'
+            >
+              <img
+                src={Facebooklogo}
+                alt='Facebooklogo'
                 style={{ height: "30px", width: "30px" }}
               />
             </a>
