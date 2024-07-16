@@ -9,8 +9,23 @@ import {
   CardActions,
   Card,
 } from "@mui/material";
+import kamalImage from "../../images/kamal-shukla-profile-pic.png";
+import abhishekImage from "../../images/abhishek-pandey-profile-pic.png";
+import ramImage from "../../images/ram-goswami-profile-pic.png";
 
-export default function IdCards({ name, about }) {
+const imageArray = [
+  { id: 1, image: kamalImage },
+  { id: 2, image: abhishekImage },
+  { id: 3, image: ramImage },
+];
+const subject = "Inquiry about your services";
+const body = "Hello! I would like to know more about your services.";
+
+export default function IdCards({ id, name, about, link, mail }) {
+  const mailtoLink = `mailto:${mail}?subject=${encodeURIComponent(
+    subject
+  )}&body=${encodeURIComponent(body)}`;
+
   return (
     <Card
       sx={{
@@ -22,7 +37,7 @@ export default function IdCards({ name, about }) {
     >
       <CardMedia
         sx={{ height: 240, width: 280 }}
-        image='https://picsum.photos/id/237/200/300'
+        image={imageArray[id].image}
         title={name}
       />
       <CardContent>
@@ -34,10 +49,10 @@ export default function IdCards({ name, about }) {
         </Typography>
       </CardContent>
       <CardActions>
-        <IconButton>
+        <IconButton href={link} target='_blank' rel='noreferrer'>
           <LinkedInIcon sx={{ color: "blue" }} />
         </IconButton>
-        <IconButton>
+        <IconButton href={mailtoLink} target='_blank' rel='noreferrer'>
           <ForwardToInboxIcon sx={{ color: "red" }} />
         </IconButton>
       </CardActions>

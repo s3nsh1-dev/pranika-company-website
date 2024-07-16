@@ -20,8 +20,8 @@ export default function SecondryNavbar() {
         <AffixBar />
       </AppBar>
       {/* <Body /> */}
-      {/* <AboutPranikaAccordian /> */}
-      {/* <MeetOurTeam /> */}
+      <AboutPranikaAccordian />
+      <MeetOurTeam />
     </div>
   );
 }
