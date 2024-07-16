@@ -9,11 +9,11 @@ import TeamSummary from "../derived-pages/TeamSummary";
 export default function Homepage() {
   return (
     <>
-      {/* <Navbar />
+      <Navbar />
       <SecondryNavbar />
-      <PrimaryFooter />
-      <Footer /> */}
       <TeamSummary />
+      <PrimaryFooter />
+      <Footer />
     </>
   );
 }
