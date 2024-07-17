@@ -33,7 +33,7 @@ export default function MemberDivision({
         },
         alignItems: "center",
         marginTop: "30px",
-        color: "#070133",
+        color: "#070066",
         boxShadow: "10px 10px 15px",
       }}
     >
@@ -42,7 +42,7 @@ export default function MemberDivision({
         src={imageSelection[id]["image"]}
         alt='images'
         sx={{ maxHeight: 300, maxWidth: 300, borderRadius: "20px" }}
-        border='5px solid #070133'
+        border='5px solid #070066'
       />
       <Box sx={{ textAlign: { xs: "center", md: "left" } }} padding={2}>
         <Typography variant='h4' fontWeight='bold'>

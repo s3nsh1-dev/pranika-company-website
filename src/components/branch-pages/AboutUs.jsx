@@ -4,7 +4,7 @@ import image from "../../images/building-nobg.png";
 
 export default function AboutUs() {
   return (
-    <Box sx={{ padding: "20px", color: "#070133" }}>
+    <Box sx={{ padding: "20px", color: "#070066" }}>
       <Typography variant='h3' textAlign='center' fontWeight='bold' padding={2}>
         Welcome to Pranika Technologies and Consulting Private Limited
       </Typography>
