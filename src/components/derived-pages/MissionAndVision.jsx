@@ -8,10 +8,10 @@ import { Box } from "@mui/material";
 export default function MissionAndVission() {
   return (
     <Box>
-      {/* <ItServiceInfoPage /> */}
+      <ItServiceInfoPage />
       <CloudMigrationInfoPage />
-      {/* <TransformativeTechInfoPage /> */}
-      {/* <TrainingOfferingInfoPage /> */}
+      <TransformativeTechInfoPage />
+      <TrainingOfferingInfoPage />
     </Box>
   );
 }
