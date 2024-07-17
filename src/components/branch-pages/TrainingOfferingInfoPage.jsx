@@ -1,5 +1,10 @@
 import React from "react";
+import { Typography, Box } from "@mui/material";
 
 export default function TrainingOfferingInfoPage() {
-  return <div>Professional Training Offering</div>;
+  return (
+    <Box>
+      <Typography>Professional Training Offering</Typography>
+    </Box>
+  );
 }
