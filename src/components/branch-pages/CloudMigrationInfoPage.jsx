@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Grid, Typography, useMediaQuery, useTheme } from "@mui/material";
 import TimelineUI from "./TimelineUI";
 
 const cloudInfoArray = [
@@ -24,23 +24,33 @@ const cloudInfoArray = [
 ];
 
 export default function CloudMigrationInfoPage() {
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
   return (
-    <Box sx={{ textAlign: "center" }}>
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
       <Grid container columns={12}>
-        <Grid item xs={12} md={6}>
+        <Grid item xs={12} sm={6}>
           <Typography>{cloudInfoArray[0].heading}</Typography>
           <Typography>{cloudInfoArray[0].details}</Typography>
         </Grid>
-        <Grid item xs={12} md={6}>
+        <Grid item xs={12} sm={6}>
           <Typography>{cloudInfoArray[2].heading}</Typography>
           <Typography>{cloudInfoArray[2].details}</Typography>
         </Grid>
       </Grid>
-      <TimelineUI />
+      {!isSmallScreen && <TimelineUI />}
       <Box>
         <Typography>{cloudInfoArray[1].heading}</Typography>
         <Typography>{cloudInfoArray[1].details}</Typography>
       </Box>
+      test here
     </Box>
   );
 }
