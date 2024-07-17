@@ -1,5 +1,10 @@
 import React from "react";
+import { Typography, Box } from "@mui/material";
 
 export default function TransformativeTechInfoPage() {
-  return <div>Transformative Technology</div>;
+  return (
+    <Box>
+      <Typography>Transformative Technology</Typography>
+    </Box>
+  );
 }
