@@ -9,8 +9,8 @@ export default function MissionAndVission() {
   return (
     <Box>
       {/* <ItServiceInfoPage /> */}
-      <CloudMigrationInfoPage />
-      {/* <TransformativeTechInfoPage /> */}
+      {/* <CloudMigrationInfoPage /> */}
+      <TransformativeTechInfoPage />
       {/* <TrainingOfferingInfoPage /> */}
     </Box>
   );

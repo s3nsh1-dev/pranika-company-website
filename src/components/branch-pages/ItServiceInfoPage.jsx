@@ -7,24 +7,28 @@ const serviceDetails = [
     heading: "Strategic IT Consulting",
     details:
       "Our strategic IT consulting services help businesses align their technology initiatives with their overarching goals. We work closely with our clients to assess their current IT landscape, identify pain points, and develop customized roadmaps that drive digital transformation and long-term success.",
+    color: "red",
   },
   {
     id: 2,
     heading: "Business Process Optimization",
     details:
       "By leveraging our expertise in business process analysis and automation, we help organizations streamline their operations, improve efficiency, and enhance productivity. Our holistic approach ensures that every aspect of your business  functions seamlessly, enabling you to focus on core competencies.",
+    color: "green",
   },
   {
     id: 3,
     heading: "IT Infrastructure Consulting",
     details:
       "From network design and hardware selection to system integration and maintenance, our IT infrastructure consulting services provide comprehensive solutions that ensure the reliability, scalability, and security of your technology infrastructure. We help you build a robust foundation for your digital initiatives.",
+    color: "blue",
   },
   {
     id: 4,
     heading: "Data and Analytics Consulting",
     details:
       "Unlock the power of your data with our data and analytics consulting services. We help businesses harness the insights buried within their data, enabling them to make informed decisions, optimize performance, and gain a competitive edge in the market.",
+    color: "orange",
   },
 ];
 
@@ -44,7 +48,13 @@ export default function ItServiceInfoPage() {
       >
         <Button
           variant='outlined'
-          sx={{ height: "40px", fontSize: "25px", border: "2px solid" }}
+          sx={{
+            height: "40px",
+            fontSize: "25px",
+            border: "2px solid",
+            borderRadius: "50%",
+            color: info.color,
+          }}
         >
           {info.id}
         </Button>
@@ -60,10 +70,10 @@ export default function ItServiceInfoPage() {
 
   return (
     <Box>
-      <Typography variant='h3' textAlign='center'>
-        IT SERVICES
+      <Typography variant='h3' textAlign='center' padding={8}>
+        IT Services
       </Typography>
-      <Grid container columns={12} sx={{ padding: "20px 0px" }}>
+      <Grid container columns={12}>
         {renderServices}
       </Grid>
     </Box>

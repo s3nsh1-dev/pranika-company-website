@@ -29,9 +29,9 @@ export default function TimelineUI() {
         >
           <Typography sx={{ writingMode: "vertical-lr" }}>━━</Typography>
           <Button
-            variant='outlined'
+            variant='contained'
             sx={{ margin: "10px", border: "2px solid", fontWeight: "bold" }}
-            color='error'
+            color='secondary'
           >
             1
           </Button>
@@ -39,10 +39,10 @@ export default function TimelineUI() {
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           </Typography>
         </Box>
-        <Typography>{dashes}</Typography>
+        <Typography>{dashes}━━━━</Typography>
       </Box>
       <Box sx={{ display: "flex", alignItems: "center" }}>
-        <Typography>━━━━━━━</Typography>
+        <Typography>{dashes}</Typography>
         <Box
           sx={{
             display: "flex",
@@ -54,7 +54,7 @@ export default function TimelineUI() {
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           </Typography>
           <Button
-            variant='outlined'
+            variant='contained'
             sx={{ margin: "10px", border: "2px solid", fontWeight: "bold" }}
             color='warning'
           >
@@ -62,10 +62,10 @@ export default function TimelineUI() {
           </Button>
           <Typography sx={{ writingMode: "vertical-lr" }}>━━</Typography>
         </Box>
-        <Typography>{dashes}</Typography>
+        <Typography>{dashes}━━━━</Typography>
       </Box>
       <Box sx={{ display: "flex", alignItems: "center" }}>
-        <Typography>━━━━━━━</Typography>
+        <Typography>{dashes}</Typography>
         <Box
           sx={{
             display: "flex",
@@ -75,7 +75,7 @@ export default function TimelineUI() {
         >
           <Typography sx={{ writingMode: "vertical-lr" }}>━━</Typography>
           <Button
-            variant='outlined'
+            variant='contained'
             sx={{ margin: "10px", border: "2px solid", fontWeight: "bold" }}
             color='success'
           >
