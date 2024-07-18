@@ -10,7 +10,7 @@ const StyledMenu = styled(Menu)(({ theme }) => ({
   "& .MuiPaper-root": {
     marginTop: "10px",
     boxShadow: "none",
-    borderRadius: "0px 0px 10px 10px",
+    borderRadius: "none",
     // width: "200px", // Adjust the width here
     // height: "auto", // Adjust the height here if needed
   },
@@ -20,7 +20,7 @@ const StyledSubMenu = styled(Menu)(({ theme }) => ({
   "& .MuiPaper-root": {
     marginTop: "-10px",
     boxShadow: "none",
-    borderRadius: "0px 0px 10px 0px",
+    borderRadius: "none",
     // width: "200px", // Adjust the width here
     // height: "auto", // Adjust the height here if needed
   },
@@ -97,11 +97,18 @@ export default function AffixBar() {
     <>
       <Toolbar>
         <Box sx={{ display: { xs: "none", md: "flex", flexGrow: 1 } }}>
-          <Link to='/home'>
+          <Box
+            component={Link}
+            to='/home'
+            sx={{
+              textDecoration: "none",
+              color: "inherit", // or any other color you prefer
+            }}
+          >
             <Button variant='text' size='large' color='inherit'>
               HOME
             </Button>
-          </Link>
+          </Box>
           <Button
             variant='text'
             size='large'
@@ -147,26 +154,44 @@ export default function AffixBar() {
               getContentAnchorEl={null} // Prevents the menu from shifting vertically
             >
               <MenuItem onClick={handleProfileMenuClose}>
-                TRAINING & PLACEMENT PROGRAM
+                DATA ANALYTICS
               </MenuItem>
               <MenuItem onClick={handleProfileMenuClose}>
-                CONSULTANCY & RECRUITMENT
+                DATA TRANSFORMATION
+              </MenuItem>
+              <MenuItem onClick={handleProfileMenuClose}>
+                DATA OPERATIONS
               </MenuItem>
             </StyledSubMenu>
-            <MenuItem onClick={handleClose}>DATA ANALYTICS</MenuItem>
-            <MenuItem onClick={handleClose}>DATA TRANSFORMATION</MenuItem>
-            <MenuItem onClick={handleClose}>DATA OPERATIONS</MenuItem>
+            <MenuItem onClick={handleClose}>
+              TRAINING & PLACEMENT PROGRAM DATA
+            </MenuItem>
+            <MenuItem onClick={handleClose}>CONSULTANCY & RECRUITMENT</MenuItem>
           </StyledMenu>
-          <Link to='/mission&vision'>
+          <Box
+            component={Link}
+            to='/mission&vision'
+            sx={{
+              textDecoration: "none",
+              color: "inherit", // or any other color you prefer
+            }}
+          >
             <Button variant='text' size='large' color='inherit'>
               MISSION & VISION
             </Button>
-          </Link>
-          <Link to='/comingsoon'>
+          </Box>
+          <Box
+            component={Link}
+            to='/comingsoon'
+            sx={{
+              textDecoration: "none",
+              color: "inherit", // or any other color you prefer
+            }}
+          >
             <Button variant='text' size='large' color='inherit'>
               CAREERS
             </Button>
-          </Link>
+          </Box>
           <Button
             aria-controls={Boolean(anchorElWhy) ? "why-us" : undefined}
             aria-haspopup='true'
@@ -186,22 +211,43 @@ export default function AffixBar() {
             open={Boolean(anchorElWhy)}
             onClose={() => setAnchorElWhy(null)}
           >
-            <Link to='/teamsummary'>
+            <Box
+              component={Link}
+              to='/teamsummary'
+              sx={{
+                textDecoration: "none",
+                color: "inherit", // or any other color you prefer
+              }}
+            >
               <MenuItem onClick={() => setAnchorElWhy(null)}>
                 OUR DREAM TEAM
               </MenuItem>
-            </Link>
-            <Link to='/about'>
+            </Box>
+            <Box
+              component={Link}
+              to='/about'
+              sx={{
+                textDecoration: "none",
+                color: "inherit", // or any other color you prefer
+              }}
+            >
               <MenuItem onClick={() => setAnchorElWhy(null)}>
                 COMPANY INSIGHTS
               </MenuItem>
-            </Link>
+            </Box>
           </StyledMenu>
-          <Link to='/contact'>
+          <Box
+            component={Link}
+            to='/contact'
+            sx={{
+              textDecoration: "none",
+              color: "inherit", // or any other color you prefer
+            }}
+          >
             <Button variant='text' size='large' color='inherit'>
               CONTACT US
             </Button>
-          </Link>
+          </Box>
         </Box>
         <Search>
           <SearchIconWrapper>

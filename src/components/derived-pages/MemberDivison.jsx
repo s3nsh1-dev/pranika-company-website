@@ -49,7 +49,7 @@ export default function MemberDivision({
           {name}
         </Typography>
         <Typography variant='body2' fontWeight='bold'>
-          {`<company-position>`}
+          {/* {`<company-position>`} */}
           {position}
         </Typography>
 

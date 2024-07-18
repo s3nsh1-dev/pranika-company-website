@@ -26,14 +26,13 @@ const accorContent = {
 const panelData = [
   {
     panel: "panel1",
-    title: "Achievements of 2020",
-    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    title: "Heading -1",
+    content: "Content -1",
   },
   {
     panel: "panel2",
-    title: "Achievements of 2021",
-    content:
-      "Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.",
+    title: "Heading - 2",
+    content: "Content - 2",
   },
   {
     panel: "panel3",
