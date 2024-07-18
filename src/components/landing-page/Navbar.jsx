@@ -6,7 +6,14 @@ import Instagramlogo from "../../images/instagram-icon.png";
 import plogo from "../../images/p-bg-less-copy.png";
 import { Outlet, Link } from "react-router-dom";
 
-import { AppBar, Box, Toolbar, Typography, Divider } from "@mui/material";
+import {
+  AppBar,
+  Box,
+  Toolbar,
+  Typography,
+  Divider,
+  Button,
+} from "@mui/material";
 
 export default function Navbar() {
   return (
@@ -20,7 +27,14 @@ export default function Navbar() {
         }}
       >
         <Toolbar disableGutters>
-          <Link to='/'>
+          <Box
+            component={Link}
+            to='/'
+            sx={{
+              textDecoration: "none",
+              color: "inherit", // or any other color you prefer
+            }}
+          >
             <Box sx={{ display: "flex", marginLeft: "70px" }}>
               <img
                 src={plogo}
@@ -36,7 +50,7 @@ export default function Navbar() {
                 Pranika Technologies and Consulting Pvt. Ltd.
               </Typography>
             </Box>
-          </Link>
+          </Box>
           <Box
             sx={{ display: "flex", flexDirection: "row", marginLeft: "580px" }}
           >
