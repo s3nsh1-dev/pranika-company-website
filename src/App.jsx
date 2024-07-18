@@ -1,28 +1,33 @@
 import React from "react";
-import Navbar from "./components/landing-page/Navbar";
-import Body from "./components//landing-page/Body";
-import Footer from "./components//landing-page/Footer";
 import Homepage from "./components/home-page/Homepage";
-import PrimaryFooter from "./components/home-page/PrimaryFooter";
-import SecondryNavbar from "./components/home-page/SecondryNavbar";
-import ComingSoon from "./components/branch-pages/ComingSoon";
+import LandingPage from "./components/branch-pages/LandingPage";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ErrorPage from "./components/branch-pages/ErrorPage";
-import AboutUs from "./components/branch-pages/AboutUs";
+import TeamSummary from "./components/derived-pages/TeamSummary";
+import MissionAndVission from "./components/derived-pages/MissionAndVision";
 import ContactUs from "./components/branch-pages/ContactUs";
+import ComingSoon from "./components/branch-pages/ComingSoon";
+import Navbar from "./components/landing-page/Navbar";
+import Footer from "./components/landing-page/Footer";
+import AboutUs from "./components/branch-pages/AboutUs";
 
 export default function App() {
   return (
-    <div>
-      {/* <Navbar /> */}
-      {/* <SecondryNavbar /> */}
-      {/* <Body /> */}
-      {/* <ComingSoon /> */}
-      {/* <ErrorPage /> */}
-      {/* <AboutUs /> */}
-      {/* <ContactUs /> */}
-      {/* <PrimaryFooter /> */}
-      {/* <Footer /> */}
-      <Homepage />
-    </div>
+    <>
+      <Navbar />
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<LandingPage />} />
+          <Route path='/home' element={<Homepage />} />
+          <Route path='*' element={<ErrorPage />} />
+          <Route path='/contact' element={<ContactUs />} />
+          <Route path='/mission&vision' element={<MissionAndVission />} />
+          <Route path='/teamsummary' element={<TeamSummary />} />
+          <Route path='/comingsoon' element={<ComingSoon />} />
+          <Route path='/about' element={<AboutUs />} />
+        </Routes>
+      </BrowserRouter>
+      <Footer />
+    </>
   );
 }
