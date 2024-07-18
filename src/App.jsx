@@ -14,8 +14,8 @@ import AboutUs from "./components/branch-pages/AboutUs";
 export default function App() {
   return (
     <>
-      <Navbar />
       <BrowserRouter>
+        <Navbar />
         <Routes>
           <Route path='/' element={<LandingPage />} />
           <Route path='/home' element={<Homepage />} />
