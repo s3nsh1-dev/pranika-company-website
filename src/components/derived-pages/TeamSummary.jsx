@@ -2,6 +2,8 @@ import React from "react";
 import MemberDivison from "./MemberDivison";
 import { Box, Typography } from "@mui/material";
 import bgimage from "../../images/bg-image.jpg";
+import SecondryNavbar from "../home-page/SecondryNavbar";
+import PrimaryFooter from "../home-page/PrimaryFooter";
 
 const aboutTeam = [
   {
@@ -53,31 +55,35 @@ export default function TeamSummary() {
     );
   });
   return (
-    <Box
-      sx={{
-        backgroundImage: `url(${bgimage})`,
-        backgroundSize: "cover", // Ensures the background image covers the entire box
-        backgroundPosition: "center", // Centers the background image
-        backgroundBlendMode: "hard-light",
-        backgroundRepeat: "no-repeat",
-      }}
-    >
+    <>
+      <SecondryNavbar />
       <Box
         sx={{
-          margin: { xs: " 0px 20px", sm: " 0px 40px", md: "0px 120px" },
+          backgroundImage: `url(${bgimage})`,
+          backgroundSize: "cover", // Ensures the background image covers the entire box
+          backgroundPosition: "center", // Centers the background image
+          backgroundBlendMode: "hard-light",
+          backgroundRepeat: "no-repeat",
         }}
       >
-        <Typography
-          variant='h3'
-          textAlign='center'
-          fontWeight='bold'
-          color='white'
-          sx={{ paddingTop: "40px" }}
+        <Box
+          sx={{
+            margin: { xs: " 0px 20px", sm: " 0px 40px", md: "0px 120px" },
+          }}
         >
-          MIND BEHIND OUR VISION
-        </Typography>
-        <Box sx={{ paddingBottom: "50px" }}>{renderMemberDivision}</Box>
+          <Typography
+            variant='h3'
+            textAlign='center'
+            fontWeight='bold'
+            color='white'
+            sx={{ paddingTop: "40px" }}
+          >
+            MIND BEHIND OUR VISION
+          </Typography>
+          <Box sx={{ paddingBottom: "50px" }}>{renderMemberDivision}</Box>
+        </Box>
       </Box>
-    </Box>
+      <PrimaryFooter />
+    </>
   );
 }

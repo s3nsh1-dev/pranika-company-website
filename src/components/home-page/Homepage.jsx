@@ -1,20 +1,18 @@
 import React from "react";
-import Navbar from "../landing-page/Navbar";
 import SecondryNavbar from "./SecondryNavbar";
-import Footer from "../landing-page/Footer";
 import PrimaryFooter from "./PrimaryFooter";
-import TeamSummary from "../derived-pages/TeamSummary";
-import MissionAndVision from "../derived-pages/MissionAndVision";
+import Body from "../landing-page/Body";
+import AboutPranikaAccordion from "./AboutPranikaAccordian";
+import MeetOurTeam from "./MeetOurTeam";
 
 export default function Homepage() {
   return (
     <>
-      {/* <Navbar /> */}
-      {/* <SecondryNavbar /> */}
-      {/* <TeamSummary /> */}
-      <MissionAndVision />
-      {/* <PrimaryFooter /> */}
-      {/* <Footer /> */}
+      <SecondryNavbar />
+      <Body />
+      <AboutPranikaAccordion />
+      <MeetOurTeam />
+      <PrimaryFooter />
     </>
   );
 }
