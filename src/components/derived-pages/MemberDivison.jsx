@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Paper, Typography, IconButton, Divider } from "@mui/material";
-import kamalImage from "../../images/kamal-shukla-profile-pic.png";
-import abhishekImage from "../../images/abhishek-pandey-profile-pic.png";
+import kamalImage from "../../images/kamal-shukla-profile-pic.jpeg";
+import abhishekImage from "../../images/abhishek-pandey-profile-pic.jpeg";
 import rajImage from "../../images/ram-goswami-profile-pic.png";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import ForwardToInboxIcon from "@mui/icons-material/ForwardToInbox";

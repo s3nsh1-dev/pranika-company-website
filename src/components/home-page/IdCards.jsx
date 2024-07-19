@@ -9,8 +9,8 @@ import {
   CardActions,
   Card,
 } from "@mui/material";
-import kamalImage from "../../images/kamal-shukla-profile-pic.png";
-import abhishekImage from "../../images/abhishek-pandey-profile-pic.png";
+import kamalImage from "../../images/kamal-shukla-profile-pic.jpeg";
+import abhishekImage from "../../images/abhishek-pandey-profile-pic.jpeg";
 import ramImage from "../../images/ram-goswami-profile-pic.png";
 
 const imageArray = [

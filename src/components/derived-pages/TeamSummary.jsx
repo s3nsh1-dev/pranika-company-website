@@ -13,7 +13,7 @@ const aboutTeam = [
     shortSummary:
       "12 years as MSBI professional, specializing in  Power BI, SQL, and Azure. Helping others to indroduce with professional Data Analytics.",
     longSummary:
-      "Having approx. 12 years of experience in IT and I am an MSBI Professional with expertise in POWER BI,SQL and AZURE DATA FACTORY. Seeking for a job which gives me an opportunity to develop myself as well as the organisation by enhancing my skills as well as giving me a scope to contribute my knowledge, ideas and hard work towards growth of the organisation. And willing to work on any technology.",
+      "With a decade of IT experience, this accomplished MSBI professional and leader has expertise in Power BI, SQL, Azure Data Factory, and cloud technologies. Their extensive knowledge in cloud solutions facilitates scalable and efficient data management. As a strategic manager, they excel in leading teams, driving innovative solutions, and optimizing processes to achieve organizational goals and enhance overall performance.",
     profileLink: "https://www.linkedin.com/in/kamalshuklaptech/",
     mail: "kamal.shukla@pranikatech.com",
   },
@@ -24,7 +24,7 @@ const aboutTeam = [
     shortSummary:
       "HR analyst with 10+ years of experience, adept in recruitment, data analysis, and handling US clients. Proficient in Excel, Power BI, and SQL.",
     longSummary:
-      "An adept HR analyst with a proven track record in extracting actionable insights from diverse datasets. Holds a Bachelor's degree in Pharmacy and an MBA in operations and finance. Demonstrates over a decade of proficiency in recruitment processes, from candidate sourcing to successful placements, coupled with extensive experience in handling US clients. Proficient in Excel, Power BI, and SQL, with a keen ability to utilize job boards and ATS systems effectively.",
+      "An experienced HR analyst with a diverse educational background, holding a Bachelor's degree in Pharmacy and an MBA in Operations and Finance. With over a decade of expertise, this professional has a robust track record in recruitment, training, and development. They excel in streamlining HR processes and enhancing employee engagement, consistently driving operational efficiency and strategic HR initiatives. Possessing strong analytical and statistical skills, they are dedicated to continuous improvement and delivering tangible results.",
     profileLink: "https://www.linkedin.com/in/abhishekalld/",
     mail: "abhishek.p@pranikatech.com",
   },
