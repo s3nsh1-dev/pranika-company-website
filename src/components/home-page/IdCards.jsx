@@ -31,7 +31,7 @@ export default function IdCards({ id, name, about, link, mail }) {
       sx={{
         // maxWidth: 345,
         maxWidth: 280,
-        margin: " 0px 15px",
+        margin: " 5px 15px",
         flexWrap: "wrap",
       }}
     >
