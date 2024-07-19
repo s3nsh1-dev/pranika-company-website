@@ -10,6 +10,7 @@ import ComingSoon from "./components/branch-pages/ComingSoon";
 import Navbar from "./components/landing-page/Navbar";
 import Footer from "./components/landing-page/Footer";
 import AboutUs from "./components/branch-pages/AboutUs";
+import Test from "./Test";
 
 export default function App() {
   return (
@@ -28,6 +29,7 @@ export default function App() {
         </Routes>
       </BrowserRouter>
       <Footer />
+      {/* <Test /> */}
     </>
   );
 }
