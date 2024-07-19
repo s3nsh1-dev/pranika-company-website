@@ -1,23 +1,53 @@
 import React from "react";
-import { Button } from "@mui/material";
+import { Box, Container, Typography, Button, useTheme } from "@mui/material";
+import { styled } from "@mui/system";
+import vback from "../../images/crop-video-7.mp4";
 import { Outlet, Link } from "react-router-dom";
-import video from "../../images/crop-video-7.mp4";
 import "./Body.css";
 
-export default function Body() {
+const HeroContainer = styled(Box)(({ theme }) => ({
+  position: "relative",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  minHeight: "100vh",
+  color: theme.palette.common.white,
+  padding: theme.spacing(4),
+  overflow: "hidden",
+  [theme.breakpoints.down("md")]: {
+    textAlign: "center",
+  },
+}));
+
+const VideoBackground = styled("video")({
+  position: "absolute",
+  top: 0,
+  left: 0,
+  width: "100%",
+  height: "100%",
+  objectFit: "cover",
+  zIndex: -1,
+});
+
+const Body = () => {
+  const theme = useTheme();
+
   return (
-    <>
-      <div className='body-container'>
-        <video autoPlay loop muted className='background-video'>
-          <source src={video} type='video/mp4' />
-          Your browser does not support the video tag.
-        </video>
-        <div className='overlay'>
-          <div className='welcome-card puff-in-center'>
-            <div>
-              <h1 className='transparent-text'>Explore our Features</h1>
-            </div>
-            <Link to='/home'>
+    <HeroContainer theme={theme}>
+      <VideoBackground autoPlay loop muted>
+        <source src={vback} type='video/mp4' />
+        Your browser does not support the video tag.
+      </VideoBackground>
+      {/* <HeroContent maxWidth='md' theme={theme}> */}
+      <Box>
+        <Box className='overlay'>
+          <Box className='welcome-card puff-in-center'>
+            <Box>
+              <Typography variant='h2' className='transparent-text'>
+                Explore our Features
+              </Typography>
+            </Box>
+            <Box component={Link} to='/home'>
               <Button
                 variant='outlined'
                 className='roll-in-left'
@@ -32,11 +62,14 @@ export default function Body() {
               >
                 START
               </Button>
-            </Link>
-          </div>
-        </div>
-      </div>
+            </Box>
+          </Box>
+        </Box>
+      </Box>
+      {/* </HeroContent> */}
       <Outlet />
-    </>
+    </HeroContainer>
   );
-}
+};
+
+export default Body;

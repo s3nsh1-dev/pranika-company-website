@@ -1,9 +1,9 @@
 import React from "react";
-import YTlogo from "../../images/yt-icon.png";
-import LinkedInlogo from "../../images/linkedin-icon.png";
-import Facebooklogo from "../../images/facebook-icon.png";
-import Instagramlogo from "../../images/instagram-icon.png";
-import plogo from "../../images/p-bg-less-copy.png";
+import YTlogo from "./images/yt-icon.png";
+import LinkedInlogo from "./images/linkedin-icon.png";
+import Facebooklogo from "./images/facebook-icon.png";
+import Instagramlogo from "./images/instagram-icon.png";
+import plogo from "./images/p-bg-less-copy.png";
 import { Outlet, Link } from "react-router-dom";
 import {
   AppBar,
@@ -31,7 +31,7 @@ export default function Navbar() {
       >
         <Toolbar disableGutters>
           <Box
-            component={Link}
+            // component={Link}
             to='/'
             sx={{
               textDecoration: "none",
@@ -140,7 +140,7 @@ export default function Navbar() {
           )}
         </Toolbar>
       </AppBar>
-      <Outlet />
+      {/* <Outlet /> */}
     </>
   );
 }
