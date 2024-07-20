@@ -78,7 +78,7 @@ export default function TeamSummary() {
             color='white'
             sx={{ paddingTop: "40px" }}
           >
-            MIND BEHIND OUR VISION
+            Minds Behind Our Vision
           </Typography>
           <Box sx={{ paddingBottom: "50px" }}>{renderMemberDivision}</Box>
         </Box>

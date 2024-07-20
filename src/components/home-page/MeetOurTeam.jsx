@@ -7,7 +7,7 @@ const EmployeeData = [
     id: 0,
     name: "Kamal Shukla",
     about:
-      "12 years as MSBI professional, specializing in Power BI, SQL, and Azure. Helping others to indroduce with professional Data Analytics.",
+      "12 years as MSBI professional, specializing in Power BI, SQL, and Azure. Helping others to indroduce with professional Data Analytics & Visualization.",
     profileLink: "https://www.linkedin.com/in/kamalshuklaptech/",
     mail: "kamal.shukla@pranikatech.com",
   },
@@ -23,7 +23,7 @@ const EmployeeData = [
     id: 2,
     name: "Raj Goswami",
     about:
-      "Full Stack ReactJS Developer and freelancer. With expertise in web applications, delivering high-quality, data-driven solutions.",
+      "Full Stack ReactJS Developer and freelancer, with extensive expertise in web applications and a proven track record of delivering high-quality, data-driven solutions.",
     profileLink: "https://www.youtube.com/@RAMGI635",
     mail: "ram.goswami@pranikatech.com",
   },
