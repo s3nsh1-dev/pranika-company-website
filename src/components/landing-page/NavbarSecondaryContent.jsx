@@ -103,9 +103,6 @@ export default function NavbarSecondaryContent() {
         sx={{
           display: "flex",
           flexDirection: "row",
-          // alignItems: "center",
-          // justifyContent: "center",
-          // textAlign: "center",
         }}
       >
         {/* <Typography variant='subtitle2'>Follow Us:</Typography> */}
