@@ -4,11 +4,15 @@ import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import "./index.css";
 import App from "./App";
-import theme from "./styles/theme";
+import theme from "./custom-hooks/theme";
+import { BrowserRouter } from "react-router-dom";
+import useScrollRestoration from "./custom-hooks/useScrollRestoration";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <ThemeProvider theme={theme}>
     <CssBaseline />
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </ThemeProvider>
 );
