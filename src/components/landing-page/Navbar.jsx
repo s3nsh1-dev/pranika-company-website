@@ -1,11 +1,12 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import { AppBar, Box, Toolbar, Typography, Button } from "@mui/material";
-import Test from "../../Test";
+import { AppBar, Box, Toolbar, useMediaQuery, useTheme } from "@mui/material";
 import NavbarPrimaryContent from "./NavbarPrimaryContent";
 import NavbarSecondaryContent from "./NavbarSecondaryContent";
 
 export default function Navbar() {
+  const theme = useTheme();
+  const isSMScreen = useMediaQuery(theme.breakpoints.up("sm"));
   return (
     <>
       <Box>
@@ -19,12 +20,11 @@ export default function Navbar() {
         >
           <Toolbar disableGutters>
             <NavbarPrimaryContent />
-            {/* <NavbarSecondaryContent /> */}
+            {isSMScreen && <NavbarSecondaryContent />}
           </Toolbar>
         </AppBar>
         <Outlet />
       </Box>
-      {/* <Test /> */}
     </>
   );
 }
