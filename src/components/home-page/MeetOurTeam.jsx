@@ -38,11 +38,9 @@ const CardGrouping = {
 
 export default function MeetOurTeam() {
   return (
-    <Box sx={{ padding: "30px 0px" }}>
+    <Box sx={{ padding: "30px 0px", textAlign: "center" }}>
       <Typography
-        variant='h4'
-        fontFamily='initial'
-        textAlign='center'
+        sx={{ fontSize: { sm: "3rem", xs: "2rem" } }}
         padding='30px 0px'
       >
         Meet Our Team

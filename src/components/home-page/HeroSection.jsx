@@ -57,7 +57,10 @@ const HeroSection = () => {
         Your browser does not support the video tag.
       </VideoBackground>
       <HeroContent maxWidth='md' theme={theme}>
-        <Typography variant='h2' component='h1' gutterBottom>
+        <Typography
+          sx={{ fontSize: { sm: "3.5rem", xs: "2.5rem" }, fontWeight: "bold" }}
+          gutterBottom
+        >
           Join us and achieve greatness
         </Typography>
         <Typography variant='h5' component='p' gutterBottom>

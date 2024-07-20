@@ -85,7 +85,7 @@ export default function NavbarSecondaryContent() {
         >
           WANT TO COLLABORATE ? CALL US
         </Typography>
-        <Typography sx={{ fontSize: "0.7em", textAlign: "end" }}>
+        <Typography sx={{ fontSize: "0.85em", textAlign: "end" }}>
           (+91) 9151391112
         </Typography>
       </Box>
@@ -103,9 +103,6 @@ export default function NavbarSecondaryContent() {
         sx={{
           display: "flex",
           flexDirection: "row",
-          // alignItems: "center",
-          // justifyContent: "center",
-          // textAlign: "center",
         }}
       >
         {/* <Typography variant='subtitle2'>Follow Us:</Typography> */}
