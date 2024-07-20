@@ -70,7 +70,12 @@ export default function ItServiceInfoPage() {
 
   return (
     <Box>
-      <Typography variant='h3' textAlign='center' padding={8}>
+      <Typography
+        v
+        sx={{ fontSize: { sm: "3rem", xs: "2rem" } }}
+        padding='3%'
+        textAlign='center'
+      >
         IT Services
       </Typography>
       <Grid container columns={12}>

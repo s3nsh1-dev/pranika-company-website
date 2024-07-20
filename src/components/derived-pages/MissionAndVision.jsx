@@ -11,10 +11,12 @@ export default function MissionAndVission() {
   return (
     <Box>
       <SecondryNavbar />
-      <ItServiceInfoPage />
-      <CloudMigrationInfoPage />
-      <TransformativeTechInfoPage />
-      <TrainingOfferingInfoPage />
+      <Box sx={{ marginBottom: "30px" }}>
+        <ItServiceInfoPage />
+        <CloudMigrationInfoPage />
+        <TransformativeTechInfoPage />
+        <TrainingOfferingInfoPage />
+      </Box>
       <PrimaryFooter />
     </Box>
   );
