@@ -176,7 +176,11 @@ export default function TransformativeTechInfoPage() {
   });
   return (
     <Box>
-      <Typography variant='h3' padding={8} textAlign='center'>
+      <Typography
+        sx={{ fontSize: { sm: "3rem", xs: "2rem" } }}
+        padding='3%'
+        textAlign='center'
+      >
         Transformative Technology
       </Typography>
       <Grid

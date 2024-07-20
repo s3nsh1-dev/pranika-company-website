@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Paper, Typography, IconButton, Divider } from "@mui/material";
-import kamalImage from "../../images/kamal-shukla-profile-pic.jpeg";
-import abhishekImage from "../../images/abhishek-pandey-profile-pic.jpeg";
+import kamalImage from "../../images/kamal-shukla-profile-pic.png";
+import abhishekImage from "../../images/abhishek-pandey-profile-pic.png";
 import rajImage from "../../images/ram-goswami-profile-pic.png";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import ForwardToInboxIcon from "@mui/icons-material/ForwardToInbox";
@@ -41,7 +41,13 @@ export default function MemberDivision({
         component='img'
         src={imageSelection[id]["image"]}
         alt='images'
-        sx={{ maxHeight: 300, maxWidth: 300, borderRadius: "20px" }}
+        sx={{
+          height: 300,
+          width: 400,
+          minHeight: 250,
+          minWidth: 200,
+          borderRadius: "20px",
+        }}
         border='5px solid #070066'
       />
       <Box sx={{ textAlign: { xs: "center", md: "left" } }} padding={2}>
