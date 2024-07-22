@@ -33,35 +33,40 @@ const socialMediaIcons = [
 ];
 
 export default function NavbarSecondaryContent() {
+  const handleClick = (phoneNumber) => {
+    return () => {
+      window.location.href = `tel:${phoneNumber}`;
+    };
+  };
+
   const renderingSocialMediaIcons = socialMediaIcons.map((socialMedia) => {
     return (
-      <>
-        <IconButton
-          key={socialMedia.id}
+      <IconButton
+        key={socialMedia.id}
+        sx={{
+          padding: "0px",
+        }}
+      >
+        <Box
+          component='a'
+          href={socialMedia.url}
+          target='_blank'
+          rel='noreferrer'
           sx={{
-            padding: "0px",
+            display: "inline-flex",
+            alignItems: "center",
           }}
         >
-          <Box
-            component={`a`}
-            href={socialMedia.url}
-            target='_blank'
-            rel='noreferrer'
-            sx={{
-              display: "inline-flex",
-              alignItems: "center",
-            }}
-          >
-            <img
-              src={socialMedia.image}
-              alt={socialMedia.alt}
-              style={{ height: "35px", width: "35px" }}
-            />
-          </Box>
-        </IconButton>
-      </>
+          <img
+            src={socialMedia.image}
+            alt={socialMedia.alt}
+            style={{ height: "35px", width: "35px" }}
+          />
+        </Box>
+      </IconButton>
     );
   });
+
   return (
     <Box
       sx={{
@@ -83,11 +88,15 @@ export default function NavbarSecondaryContent() {
           textOverflow='ellipsis'
           sx={{ fontSize: "0.8em", textAlign: "end" }}
         >
-          WANT TO COLLABORATE ? CALL US
+          WANT TO COLLABORATE? CALL US
         </Typography>
-        <Typography sx={{ fontSize: "0.85em", textAlign: "end" }}>
+        <Box
+          component={Typography}
+          sx={{ fontSize: "0.85em", textAlign: "end", color: "white" }}
+          onClick={handleClick("+919151391112")}
+        >
           (+91) 9151391112
-        </Typography>
+        </Box>
       </Box>
       <Divider
         orientation='vertical'
@@ -105,7 +114,6 @@ export default function NavbarSecondaryContent() {
           flexDirection: "row",
         }}
       >
-        {/* <Typography variant='subtitle2'>Follow Us:</Typography> */}
         {renderingSocialMediaIcons}
       </Box>
     </Box>

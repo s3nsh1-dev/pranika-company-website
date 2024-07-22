@@ -13,8 +13,6 @@ const StyledMenu = styled(Menu)(({ theme }) => ({
     marginTop: "10px",
     boxShadow: "none",
     borderRadius: "none",
-    // width: "200px", // Adjust the width here
-    // height: "auto", // Adjust the height here if needed
   },
 }));
 
@@ -23,8 +21,6 @@ const StyledSubMenu = styled(Menu)(({ theme }) => ({
     marginTop: "-10px",
     boxShadow: "none",
     borderRadius: "none",
-    // width: "200px", // Adjust the width here
-    // height: "auto", // Adjust the height here if needed
   },
 }));
 
@@ -70,35 +66,25 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function AffixBar() {
-  const [servicesMenu, setServiceMenu] = useState(null);
-  const [itServicesMenu, setItServicesMenu] = useState(null);
-  const [knowMeMenu, setKnowMeMenu] = useState(null);
+  const [menuState, setMenuState] = useState({
+    servicesMenu: null,
+    itServicesMenu: null,
+    knowMeMenu: null,
+  });
 
-  const isServicesOpen = Boolean(servicesMenu);
-  const isItServicesMenuOpen = Boolean(itServicesMenu);
-  const isKnowMeOpen = Boolean(knowMeMenu);
-
-  const handleClickServices = (event) => {
-    setServiceMenu(event.currentTarget);
-  };
-  const handleCloseSevices = () => {
-    setServiceMenu(null);
-    setItServicesMenu(null);
+  const handleMenuClick = (menu) => (event) => {
+    event.stopPropagation();
+    setMenuState((prev) => ({
+      ...prev,
+      [menu]: event.currentTarget,
+    }));
   };
 
-  const handleClickItServicesMenu = (event) => {
-    event.stopPropagation(); // Prevent the main menu from closing
-    setItServicesMenu(event.currentTarget);
-  };
-  const handleCloseItServicesMenu = () => {
-    setItServicesMenu(null);
-  };
-
-  const handleClickKnowMe = (event) => {
-    setKnowMeMenu(event.currentTarget);
-  };
-  const handleCloseKnowMe = () => {
-    setKnowMeMenu(null);
+  const handleMenuClose = (menu) => () => {
+    setMenuState((prev) => ({
+      ...prev,
+      [menu]: null,
+    }));
   };
 
   return (
@@ -110,7 +96,7 @@ export default function AffixBar() {
             to='/home'
             sx={{
               textDecoration: "none",
-              color: "inherit", // or any other color you prefer
+              color: "inherit",
             }}
           >
             <Button variant='text' size='large' color='inherit'>
@@ -122,12 +108,14 @@ export default function AffixBar() {
             size='large'
             color='inherit'
             id='services-button'
-            aria-controls={isServicesOpen ? "services-id" : undefined}
+            aria-controls={
+              Boolean(menuState.servicesMenu) ? "services-id" : undefined
+            }
             aria-haspopup='true'
-            aria-expanded={isServicesOpen ? "true" : undefined}
-            onClick={handleClickServices}
+            aria-expanded={Boolean(menuState.servicesMenu) ? "true" : undefined}
+            onClick={handleMenuClick("servicesMenu")}
             endIcon={
-              isServicesOpen ? (
+              Boolean(menuState.servicesMenu) ? (
                 <KeyboardArrowUpIcon />
               ) : (
                 <KeyboardArrowDownIcon />
@@ -138,9 +126,9 @@ export default function AffixBar() {
           </Button>
           <StyledMenu
             id='services-id'
-            anchorEl={servicesMenu}
-            open={isServicesOpen}
-            onClose={handleCloseSevices}
+            anchorEl={menuState.servicesMenu}
+            open={Boolean(menuState.servicesMenu)}
+            onClose={handleMenuClose("servicesMenu")}
             MenuListProps={{
               "aria-labelledby": "services-button",
             }}
@@ -148,14 +136,16 @@ export default function AffixBar() {
             <MenuItem
               id='itservice-button'
               aria-controls={
-                isItServicesMenuOpen ? "itservice-menu" : undefined
+                Boolean(menuState.itServicesMenu) ? "itservice-menu" : undefined
               }
               aria-haspopup='true'
-              aria-expanded={isItServicesMenuOpen ? "true" : undefined}
-              onClick={handleClickItServicesMenu}
+              aria-expanded={
+                Boolean(menuState.itServicesMenu) ? "true" : undefined
+              }
+              onClick={handleMenuClick("itServicesMenu")}
             >
               IT SERVICES
-              {isItServicesMenuOpen ? (
+              {Boolean(menuState.itServicesMenu) ? (
                 <KeyboardArrowLeftIcon />
               ) : (
                 <KeyboardArrowRightIcon />
@@ -163,9 +153,9 @@ export default function AffixBar() {
             </MenuItem>
             <StyledSubMenu
               id='itservice-menu'
-              anchorEl={itServicesMenu}
-              open={isItServicesMenuOpen}
-              onClose={handleCloseItServicesMenu}
+              anchorEl={menuState.itServicesMenu}
+              open={Boolean(menuState.itServicesMenu)}
+              onClose={handleMenuClose("itServicesMenu")}
               anchorOrigin={{
                 vertical: "top",
                 horizontal: "right",
@@ -174,25 +164,25 @@ export default function AffixBar() {
                 vertical: "top",
                 horizontal: "left",
               }}
-              getContentAnchorEl={null} // Prevents the menu from shifting vertically
+              getContentAnchorEl={null}
               MenuListProps={{
                 "aria-labelledby": "itservice-button",
               }}
             >
-              <MenuItem onClick={handleCloseItServicesMenu}>
+              <MenuItem onClick={handleMenuClose("itServicesMenu")}>
                 DATA ANALYTICS
               </MenuItem>
-              <MenuItem onClick={handleCloseItServicesMenu}>
+              <MenuItem onClick={handleMenuClose("itServicesMenu")}>
                 DATA TRANSFORMATION
               </MenuItem>
-              <MenuItem onClick={handleCloseItServicesMenu}>
+              <MenuItem onClick={handleMenuClose("itServicesMenu")}>
                 DATA OPERATIONS
               </MenuItem>
             </StyledSubMenu>
-            <MenuItem onClick={handleCloseSevices}>
+            <MenuItem onClick={handleMenuClose("servicesMenu")}>
               TRAINING & PLACEMENT PROGRAM DATA
             </MenuItem>
-            <MenuItem onClick={handleCloseSevices}>
+            <MenuItem onClick={handleMenuClose("servicesMenu")}>
               CONSULTANCY & RECRUITMENT
             </MenuItem>
           </StyledMenu>
@@ -201,7 +191,7 @@ export default function AffixBar() {
             to='/mission&vision'
             sx={{
               textDecoration: "none",
-              color: "inherit", // or any other color you prefer
+              color: "inherit",
             }}
           >
             <Button variant='text' size='large' color='inherit'>
@@ -213,7 +203,7 @@ export default function AffixBar() {
             to='/comingsoon'
             sx={{
               textDecoration: "none",
-              color: "inherit", // or any other color you prefer
+              color: "inherit",
             }}
           >
             <Button variant='text' size='large' color='inherit'>
@@ -222,45 +212,55 @@ export default function AffixBar() {
           </Box>
           <Button
             id='knowMe-button'
-            aria-controls={isKnowMeOpen ? "know-me" : undefined}
+            aria-controls={
+              Boolean(menuState.knowMeMenu) ? "know-me" : undefined
+            }
             aria-haspopup='true'
-            aria-expanded={isKnowMeOpen ? "true" : undefined}
+            aria-expanded={Boolean(menuState.knowMeMenu) ? "true" : undefined}
             disableElevation
             variant='text'
             size='large'
             color='inherit'
-            onClick={handleClickKnowMe}
+            onClick={handleMenuClick("knowMeMenu")}
             endIcon={
-              isKnowMeOpen ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />
+              Boolean(menuState.knowMeMenu) ? (
+                <KeyboardArrowUpIcon />
+              ) : (
+                <KeyboardArrowDownIcon />
+              )
             }
           >
             KNOW US
           </Button>
           <StyledMenu
             id='know-me'
-            anchorEl={knowMeMenu}
-            open={isKnowMeOpen}
-            onClose={handleCloseKnowMe}
+            anchorEl={menuState.knowMeMenu}
+            open={Boolean(menuState.knowMeMenu)}
+            onClose={handleMenuClose("knowMeMenu")}
           >
             <Box
               component={Link}
               to='/teamsummary'
               sx={{
                 textDecoration: "none",
-                color: "inherit", // or any other color you prefer
+                color: "inherit",
               }}
             >
-              <MenuItem onClick={handleCloseKnowMe}>OUR DREAM TEAM</MenuItem>
+              <MenuItem onClick={handleMenuClose("knowMeMenu")}>
+                OUR DREAM TEAM
+              </MenuItem>
             </Box>
             <Box
               component={Link}
               to='/about'
               sx={{
                 textDecoration: "none",
-                color: "inherit", // or any other color you prefer
+                color: "inherit",
               }}
             >
-              <MenuItem onClick={handleCloseKnowMe}>COMPANY INSIGHTS</MenuItem>
+              <MenuItem onClick={handleMenuClose("knowMeMenu")}>
+                COMPANY INSIGHTS
+              </MenuItem>
             </Box>
           </StyledMenu>
           <Box
@@ -268,7 +268,7 @@ export default function AffixBar() {
             to='/contact'
             sx={{
               textDecoration: "none",
-              color: "inherit", // or any other color you prefer
+              color: "inherit",
             }}
           >
             <Button variant='text' size='large' color='inherit'>
