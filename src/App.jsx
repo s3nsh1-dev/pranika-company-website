@@ -13,7 +13,9 @@ import AboutUs from "./components/branch-pages/AboutUs";
 import useScrollRestoration from "./custom-hooks/useScrollRestoration";
 
 const App = () => {
-  useScrollRestoration(); // Ensure this is called within the context of BrowserRouter
+  // Ensure this is called within the context of BrowserRouter
+  // Following func. makes sure to scroll on top left every time URL changes
+  useScrollRestoration();
 
   return (
     <>

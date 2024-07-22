@@ -4,15 +4,15 @@ import SearchIcon from "@mui/icons-material/Search";
 import { styled, alpha } from "@mui/material/styles";
 import { Outlet, Link } from "react-router-dom";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
+import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 
 const StyledMenu = styled(Menu)(({ theme }) => ({
   "& .MuiPaper-root": {
     marginTop: "10px",
     boxShadow: "none",
     borderRadius: "none",
-    // width: "200px", // Adjust the width here
-    // height: "auto", // Adjust the height here if needed
   },
 }));
 
@@ -21,8 +21,6 @@ const StyledSubMenu = styled(Menu)(({ theme }) => ({
     marginTop: "-10px",
     boxShadow: "none",
     borderRadius: "none",
-    // width: "200px", // Adjust the width here
-    // height: "auto", // Adjust the height here if needed
   },
 }));
 
@@ -68,29 +66,25 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function AffixBar() {
-  const [anchorEl, setAnchorEl] = useState(null);
-  const [anchorElWhy, setAnchorElWhy] = useState(null);
-  const [profileMenuAnchorEl, setProfileMenuAnchorEl] = useState(null);
+  const [menuState, setMenuState] = useState({
+    servicesMenu: null,
+    itServicesMenu: null,
+    knowMeMenu: null,
+  });
 
-  const open = Boolean(anchorEl);
-  const profileMenuOpen = Boolean(profileMenuAnchorEl);
-
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
+  const handleMenuClick = (menu) => (event) => {
+    event.stopPropagation();
+    setMenuState((prev) => ({
+      ...prev,
+      [menu]: event.currentTarget,
+    }));
   };
 
-  const handleClose = () => {
-    setAnchorEl(null);
-    setProfileMenuAnchorEl(null);
-  };
-
-  const handleProfileMenuClick = (event) => {
-    event.stopPropagation(); // Prevent the main menu from closing
-    setProfileMenuAnchorEl(event.currentTarget);
-  };
-
-  const handleProfileMenuClose = () => {
-    setProfileMenuAnchorEl(null);
+  const handleMenuClose = (menu) => () => {
+    setMenuState((prev) => ({
+      ...prev,
+      [menu]: null,
+    }));
   };
 
   return (
@@ -102,7 +96,7 @@ export default function AffixBar() {
             to='/home'
             sx={{
               textDecoration: "none",
-              color: "inherit", // or any other color you prefer
+              color: "inherit",
             }}
           >
             <Button variant='text' size='large' color='inherit'>
@@ -113,36 +107,55 @@ export default function AffixBar() {
             variant='text'
             size='large'
             color='inherit'
-            id='basic-button'
-            aria-controls={open ? "basic-menu" : undefined}
+            id='services-button'
+            aria-controls={
+              Boolean(menuState.servicesMenu) ? "services-id" : undefined
+            }
             aria-haspopup='true'
-            aria-expanded={open ? "true" : undefined}
-            onClick={handleClick}
+            aria-expanded={Boolean(menuState.servicesMenu) ? "true" : undefined}
+            onClick={handleMenuClick("servicesMenu")}
+            endIcon={
+              Boolean(menuState.servicesMenu) ? (
+                <KeyboardArrowUpIcon />
+              ) : (
+                <KeyboardArrowDownIcon />
+              )
+            }
           >
-            Services <KeyboardArrowDownIcon />
+            Services
           </Button>
           <StyledMenu
-            id='basic-menu'
-            anchorEl={anchorEl}
-            open={open}
-            onClose={handleClose}
+            id='services-id'
+            anchorEl={menuState.servicesMenu}
+            open={Boolean(menuState.servicesMenu)}
+            onClose={handleMenuClose("servicesMenu")}
             MenuListProps={{
-              "aria-labelledby": "basic-button",
+              "aria-labelledby": "services-button",
             }}
           >
             <MenuItem
-              aria-controls={profileMenuOpen ? "profile-menu" : undefined}
+              id='itservice-button'
+              aria-controls={
+                Boolean(menuState.itServicesMenu) ? "itservice-menu" : undefined
+              }
               aria-haspopup='true'
-              aria-expanded={profileMenuOpen ? "true" : undefined}
-              onClick={handleProfileMenuClick}
+              aria-expanded={
+                Boolean(menuState.itServicesMenu) ? "true" : undefined
+              }
+              onClick={handleMenuClick("itServicesMenu")}
             >
-              IT SERVICES <KeyboardArrowRightIcon />
+              IT SERVICES
+              {Boolean(menuState.itServicesMenu) ? (
+                <KeyboardArrowLeftIcon />
+              ) : (
+                <KeyboardArrowRightIcon />
+              )}
             </MenuItem>
             <StyledSubMenu
-              id='profile-menu'
-              anchorEl={profileMenuAnchorEl}
-              open={profileMenuOpen}
-              onClose={handleProfileMenuClose}
+              id='itservice-menu'
+              anchorEl={menuState.itServicesMenu}
+              open={Boolean(menuState.itServicesMenu)}
+              onClose={handleMenuClose("itServicesMenu")}
               anchorOrigin={{
                 vertical: "top",
                 horizontal: "right",
@@ -151,29 +164,34 @@ export default function AffixBar() {
                 vertical: "top",
                 horizontal: "left",
               }}
-              getContentAnchorEl={null} // Prevents the menu from shifting vertically
+              getContentAnchorEl={null}
+              MenuListProps={{
+                "aria-labelledby": "itservice-button",
+              }}
             >
-              <MenuItem onClick={handleProfileMenuClose}>
+              <MenuItem onClick={handleMenuClose("itServicesMenu")}>
                 DATA ANALYTICS
               </MenuItem>
-              <MenuItem onClick={handleProfileMenuClose}>
+              <MenuItem onClick={handleMenuClose("itServicesMenu")}>
                 DATA TRANSFORMATION
               </MenuItem>
-              <MenuItem onClick={handleProfileMenuClose}>
+              <MenuItem onClick={handleMenuClose("itServicesMenu")}>
                 DATA OPERATIONS
               </MenuItem>
             </StyledSubMenu>
-            <MenuItem onClick={handleClose}>
+            <MenuItem onClick={handleMenuClose("servicesMenu")}>
               TRAINING & PLACEMENT PROGRAM DATA
             </MenuItem>
-            <MenuItem onClick={handleClose}>CONSULTANCY & RECRUITMENT</MenuItem>
+            <MenuItem onClick={handleMenuClose("servicesMenu")}>
+              CONSULTANCY & RECRUITMENT
+            </MenuItem>
           </StyledMenu>
           <Box
             component={Link}
             to='/mission&vision'
             sx={{
               textDecoration: "none",
-              color: "inherit", // or any other color you prefer
+              color: "inherit",
             }}
           >
             <Button variant='text' size='large' color='inherit'>
@@ -185,7 +203,7 @@ export default function AffixBar() {
             to='/comingsoon'
             sx={{
               textDecoration: "none",
-              color: "inherit", // or any other color you prefer
+              color: "inherit",
             }}
           >
             <Button variant='text' size='large' color='inherit'>
@@ -193,33 +211,42 @@ export default function AffixBar() {
             </Button>
           </Box>
           <Button
-            aria-controls={Boolean(anchorElWhy) ? "why-us" : undefined}
+            id='knowMe-button'
+            aria-controls={
+              Boolean(menuState.knowMeMenu) ? "know-me" : undefined
+            }
             aria-haspopup='true'
-            aria-expanded={Boolean(anchorElWhy) ? "true" : undefined}
+            aria-expanded={Boolean(menuState.knowMeMenu) ? "true" : undefined}
             disableElevation
             variant='text'
             size='large'
             color='inherit'
-            onClick={(event) => setAnchorElWhy(event.currentTarget)}
-            endIcon={<KeyboardArrowDownIcon />}
+            onClick={handleMenuClick("knowMeMenu")}
+            endIcon={
+              Boolean(menuState.knowMeMenu) ? (
+                <KeyboardArrowUpIcon />
+              ) : (
+                <KeyboardArrowDownIcon />
+              )
+            }
           >
             KNOW US
           </Button>
           <StyledMenu
-            id='who-menu'
-            anchorEl={anchorElWhy}
-            open={Boolean(anchorElWhy)}
-            onClose={() => setAnchorElWhy(null)}
+            id='know-me'
+            anchorEl={menuState.knowMeMenu}
+            open={Boolean(menuState.knowMeMenu)}
+            onClose={handleMenuClose("knowMeMenu")}
           >
             <Box
               component={Link}
               to='/teamsummary'
               sx={{
                 textDecoration: "none",
-                color: "inherit", // or any other color you prefer
+                color: "inherit",
               }}
             >
-              <MenuItem onClick={() => setAnchorElWhy(null)}>
+              <MenuItem onClick={handleMenuClose("knowMeMenu")}>
                 OUR DREAM TEAM
               </MenuItem>
             </Box>
@@ -228,10 +255,10 @@ export default function AffixBar() {
               to='/about'
               sx={{
                 textDecoration: "none",
-                color: "inherit", // or any other color you prefer
+                color: "inherit",
               }}
             >
-              <MenuItem onClick={() => setAnchorElWhy(null)}>
+              <MenuItem onClick={handleMenuClose("knowMeMenu")}>
                 COMPANY INSIGHTS
               </MenuItem>
             </Box>
@@ -241,7 +268,7 @@ export default function AffixBar() {
             to='/contact'
             sx={{
               textDecoration: "none",
-              color: "inherit", // or any other color you prefer
+              color: "inherit",
             }}
           >
             <Button variant='text' size='large' color='inherit'>

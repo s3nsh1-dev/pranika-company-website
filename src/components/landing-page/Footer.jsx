@@ -27,7 +27,6 @@ export default function Footer() {
           className='no-change-link'
           target='_blank'
           style={{ color: "aqua" }}
-          without
           rel='noreferrer'
         >
           PranikaTechTeam
