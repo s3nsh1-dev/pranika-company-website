@@ -4,7 +4,9 @@ import SearchIcon from "@mui/icons-material/Search";
 import { styled, alpha } from "@mui/material/styles";
 import { Outlet, Link } from "react-router-dom";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
+import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 
 const StyledMenu = styled(Menu)(({ theme }) => ({
   "& .MuiPaper-root": {
@@ -68,29 +70,35 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function AffixBar() {
-  const [anchorEl, setAnchorEl] = useState(null);
-  const [anchorElWhy, setAnchorElWhy] = useState(null);
-  const [profileMenuAnchorEl, setProfileMenuAnchorEl] = useState(null);
+  const [servicesMenu, setServiceMenu] = useState(null);
+  const [itServicesMenu, setItServicesMenu] = useState(null);
+  const [knowMeMenu, setKnowMeMenu] = useState(null);
 
-  const open = Boolean(anchorEl);
-  const profileMenuOpen = Boolean(profileMenuAnchorEl);
+  const isServicesOpen = Boolean(servicesMenu);
+  const isItServicesMenuOpen = Boolean(itServicesMenu);
+  const isKnowMeOpen = Boolean(knowMeMenu);
 
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
+  const handleClickServices = (event) => {
+    setServiceMenu(event.currentTarget);
+  };
+  const handleCloseSevices = () => {
+    setServiceMenu(null);
+    setItServicesMenu(null);
   };
 
-  const handleClose = () => {
-    setAnchorEl(null);
-    setProfileMenuAnchorEl(null);
-  };
-
-  const handleProfileMenuClick = (event) => {
+  const handleClickItServicesMenu = (event) => {
     event.stopPropagation(); // Prevent the main menu from closing
-    setProfileMenuAnchorEl(event.currentTarget);
+    setItServicesMenu(event.currentTarget);
+  };
+  const handleCloseItServicesMenu = () => {
+    setItServicesMenu(null);
   };
 
-  const handleProfileMenuClose = () => {
-    setProfileMenuAnchorEl(null);
+  const handleClickKnowMe = (event) => {
+    setKnowMeMenu(event.currentTarget);
+  };
+  const handleCloseKnowMe = () => {
+    setKnowMeMenu(null);
   };
 
   return (
@@ -113,36 +121,51 @@ export default function AffixBar() {
             variant='text'
             size='large'
             color='inherit'
-            id='basic-button'
-            aria-controls={open ? "basic-menu" : undefined}
+            id='services-button'
+            aria-controls={isServicesOpen ? "services-id" : undefined}
             aria-haspopup='true'
-            aria-expanded={open ? "true" : undefined}
-            onClick={handleClick}
+            aria-expanded={isServicesOpen ? "true" : undefined}
+            onClick={handleClickServices}
+            endIcon={
+              isServicesOpen ? (
+                <KeyboardArrowUpIcon />
+              ) : (
+                <KeyboardArrowDownIcon />
+              )
+            }
           >
-            Services <KeyboardArrowDownIcon />
+            Services
           </Button>
           <StyledMenu
-            id='basic-menu'
-            anchorEl={anchorEl}
-            open={open}
-            onClose={handleClose}
+            id='services-id'
+            anchorEl={servicesMenu}
+            open={isServicesOpen}
+            onClose={handleCloseSevices}
             MenuListProps={{
-              "aria-labelledby": "basic-button",
+              "aria-labelledby": "services-button",
             }}
           >
             <MenuItem
-              aria-controls={profileMenuOpen ? "profile-menu" : undefined}
+              id='itservice-button'
+              aria-controls={
+                isItServicesMenuOpen ? "itservice-menu" : undefined
+              }
               aria-haspopup='true'
-              aria-expanded={profileMenuOpen ? "true" : undefined}
-              onClick={handleProfileMenuClick}
+              aria-expanded={isItServicesMenuOpen ? "true" : undefined}
+              onClick={handleClickItServicesMenu}
             >
-              IT SERVICES <KeyboardArrowRightIcon />
+              IT SERVICES
+              {isItServicesMenuOpen ? (
+                <KeyboardArrowLeftIcon />
+              ) : (
+                <KeyboardArrowRightIcon />
+              )}
             </MenuItem>
             <StyledSubMenu
-              id='profile-menu'
-              anchorEl={profileMenuAnchorEl}
-              open={profileMenuOpen}
-              onClose={handleProfileMenuClose}
+              id='itservice-menu'
+              anchorEl={itServicesMenu}
+              open={isItServicesMenuOpen}
+              onClose={handleCloseItServicesMenu}
               anchorOrigin={{
                 vertical: "top",
                 horizontal: "right",
@@ -152,21 +175,26 @@ export default function AffixBar() {
                 horizontal: "left",
               }}
               getContentAnchorEl={null} // Prevents the menu from shifting vertically
+              MenuListProps={{
+                "aria-labelledby": "itservice-button",
+              }}
             >
-              <MenuItem onClick={handleProfileMenuClose}>
+              <MenuItem onClick={handleCloseItServicesMenu}>
                 DATA ANALYTICS
               </MenuItem>
-              <MenuItem onClick={handleProfileMenuClose}>
+              <MenuItem onClick={handleCloseItServicesMenu}>
                 DATA TRANSFORMATION
               </MenuItem>
-              <MenuItem onClick={handleProfileMenuClose}>
+              <MenuItem onClick={handleCloseItServicesMenu}>
                 DATA OPERATIONS
               </MenuItem>
             </StyledSubMenu>
-            <MenuItem onClick={handleClose}>
+            <MenuItem onClick={handleCloseSevices}>
               TRAINING & PLACEMENT PROGRAM DATA
             </MenuItem>
-            <MenuItem onClick={handleClose}>CONSULTANCY & RECRUITMENT</MenuItem>
+            <MenuItem onClick={handleCloseSevices}>
+              CONSULTANCY & RECRUITMENT
+            </MenuItem>
           </StyledMenu>
           <Box
             component={Link}
@@ -193,23 +221,26 @@ export default function AffixBar() {
             </Button>
           </Box>
           <Button
-            aria-controls={Boolean(anchorElWhy) ? "why-us" : undefined}
+            id='knowMe-button'
+            aria-controls={isKnowMeOpen ? "know-me" : undefined}
             aria-haspopup='true'
-            aria-expanded={Boolean(anchorElWhy) ? "true" : undefined}
+            aria-expanded={isKnowMeOpen ? "true" : undefined}
             disableElevation
             variant='text'
             size='large'
             color='inherit'
-            onClick={(event) => setAnchorElWhy(event.currentTarget)}
-            endIcon={<KeyboardArrowDownIcon />}
+            onClick={handleClickKnowMe}
+            endIcon={
+              isKnowMeOpen ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />
+            }
           >
             KNOW US
           </Button>
           <StyledMenu
-            id='who-menu'
-            anchorEl={anchorElWhy}
-            open={Boolean(anchorElWhy)}
-            onClose={() => setAnchorElWhy(null)}
+            id='know-me'
+            anchorEl={knowMeMenu}
+            open={isKnowMeOpen}
+            onClose={handleCloseKnowMe}
           >
             <Box
               component={Link}
@@ -219,9 +250,7 @@ export default function AffixBar() {
                 color: "inherit", // or any other color you prefer
               }}
             >
-              <MenuItem onClick={() => setAnchorElWhy(null)}>
-                OUR DREAM TEAM
-              </MenuItem>
+              <MenuItem onClick={handleCloseKnowMe}>OUR DREAM TEAM</MenuItem>
             </Box>
             <Box
               component={Link}
@@ -231,9 +260,7 @@ export default function AffixBar() {
                 color: "inherit", // or any other color you prefer
               }}
             >
-              <MenuItem onClick={() => setAnchorElWhy(null)}>
-                COMPANY INSIGHTS
-              </MenuItem>
+              <MenuItem onClick={handleCloseKnowMe}>COMPANY INSIGHTS</MenuItem>
             </Box>
           </StyledMenu>
           <Box
