@@ -367,6 +367,7 @@ export default function AffixBar() {
           <StyledInputBase
             placeholder='Search…'
             inputProps={{ "aria-label": "search" }}
+            disabled
           />
         </Search>
       </Toolbar>
@@ -383,24 +384,60 @@ export default function AffixBar() {
             onKeyDown={toggleDrawer(false)}
           >
             <List>
-              <ListItem button>
-                <ListItemText primary='Home' />
-              </ListItem>
+              <Box
+                component={Link}
+                to='/home'
+                sx={{
+                  textDecoration: "none",
+                  color: "inherit",
+                }}
+              >
+                <ListItem button>
+                  <ListItemText primary='Home' />
+                </ListItem>
+              </Box>
               <ListItem button onClick={handleClickOpen("serviceDrawerOpen")}>
                 <ListItemText primary='Services' />
               </ListItem>
-              <ListItem button>
-                <ListItemText primary='Mission & Vision' />
-              </ListItem>
-              <ListItem button>
-                <ListItemText primary='Careers' />
-              </ListItem>
+              <Box
+                component={Link}
+                to='/mission&vision'
+                sx={{
+                  textDecoration: "none",
+                  color: "inherit",
+                }}
+              >
+                <ListItem button>
+                  <ListItemText primary='Mission & Vision' />
+                </ListItem>
+              </Box>
+              <Box
+                component={Link}
+                to='/comingsoon'
+                sx={{
+                  textDecoration: "none",
+                  color: "inherit",
+                }}
+              >
+                <ListItem button>
+                  <ListItemText primary='Careers' />
+                </ListItem>
+              </Box>
               <ListItem button onClick={handleClickOpen("knowMeDrawerOpen")}>
                 <ListItemText primary='Know us' />
               </ListItem>
-              <ListItem button>
-                <ListItemText primary='Contact us' />
-              </ListItem>
+              <Box
+                component={Link}
+                to='/contact'
+                sx={{
+                  textDecoration: "none",
+                  color: "inherit",
+                }}
+              >
+                <ListItem button>
+                  <ListItemText primary='Contact us' />
+                </ListItem>
+              </Box>
             </List>
           </Box>
         </Drawer>
@@ -418,15 +455,42 @@ export default function AffixBar() {
             onKeyDown={handleClickClose("serviceDrawerOpen")}
           >
             <List>
-              <ListItem button>
-                <ListItemText primary='Data Analytics' />
-              </ListItem>
-              <ListItem button>
-                <ListItemText primary='Data Transformation' />
-              </ListItem>
-              <ListItem button>
-                <ListItemText primary='Data Operations' />
-              </ListItem>
+              <Box
+                component={Link}
+                to='/comingsoon'
+                sx={{
+                  textDecoration: "none",
+                  color: "inherit",
+                }}
+              >
+                <ListItem button>
+                  <ListItemText primary='Data Analytics' />
+                </ListItem>
+              </Box>
+              <Box
+                component={Link}
+                to='/comingsoon'
+                sx={{
+                  textDecoration: "none",
+                  color: "inherit",
+                }}
+              >
+                <ListItem button>
+                  <ListItemText primary='Data Transformation' />
+                </ListItem>
+              </Box>
+              <Box
+                component={Link}
+                to='/comingsoon'
+                sx={{
+                  textDecoration: "none",
+                  color: "inherit",
+                }}
+              >
+                <ListItem button>
+                  <ListItemText primary='Data Operations' />
+                </ListItem>
+              </Box>
             </List>
             <Divider />
             <List>
@@ -453,12 +517,30 @@ export default function AffixBar() {
             onKeyDown={handleClickClose("knowMeDrawerOpen")}
           >
             <List>
-              <ListItem button>
-                <ListItemText primary='Our dream team' />
-              </ListItem>
-              <ListItem button>
-                <ListItemText primary='Company Insights' />
-              </ListItem>
+              <Box
+                component={Link}
+                to='/teamsummary'
+                sx={{
+                  textDecoration: "none",
+                  color: "inherit",
+                }}
+              >
+                <ListItem button>
+                  <ListItemText primary='Our dream team' />
+                </ListItem>
+              </Box>
+              <Box
+                component={Link}
+                to='/about'
+                sx={{
+                  textDecoration: "none",
+                  color: "inherit",
+                }}
+              >
+                <ListItem button>
+                  <ListItemText primary='Company Insights' />
+                </ListItem>
+              </Box>
             </List>
             <Divider />
             <List>
