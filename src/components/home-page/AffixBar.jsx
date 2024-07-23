@@ -301,7 +301,7 @@ export default function AffixBar() {
             </Button>
           </Box>
         </Box>
-        <Search>
+        {/* <Search>
           <SearchIconWrapper>
             <SearchIcon />
           </SearchIconWrapper>
@@ -309,7 +309,7 @@ export default function AffixBar() {
             placeholder='Search…'
             inputProps={{ "aria-label": "search" }}
           />
-        </Search>
+        </Search> */}
       </Toolbar>
       <Outlet />
     </>
