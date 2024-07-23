@@ -11,12 +11,14 @@ import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 import Divider from "@mui/material/Divider";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
-import { Button } from "@mui/material";
+import Button from "@mui/material/Button";
 
 export default function Test() {
-  const [drawerOpen, setDrawerOpen] = useState(false);
-  const [nestedDrawerOpen, setNestedDrawerOpen] = useState(false);
-  const [nestedDrawerAnchor, setNestedDrawerAnchor] = useState(null);
+  const [drawerOptions, setDrawerOptions] = useState({
+    drawerOpen: false,
+    serviceDrawerOpen: false,
+    knowMeDrawerOpen: false,
+  });
 
   const toggleDrawer = (open) => (event) => {
     if (
@@ -25,25 +27,31 @@ export default function Test() {
     ) {
       return;
     }
-    setDrawerOpen(open);
+    setDrawerOptions((prev) => ({
+      ...prev,
+      drawerOpen: open,
+    }));
   };
 
-  const handleLoginClick = (event) => {
+  const handleClickOpen = (drawerValue) => (event) => {
     event.stopPropagation();
-    setNestedDrawerAnchor(event.currentTarget);
-    setNestedDrawerOpen(true);
+    setDrawerOptions((prev) => ({
+      ...prev,
+      [drawerValue]: true,
+    }));
   };
 
-  const handleNestedDrawerClose = () => {
-    setNestedDrawerOpen(false);
-    setNestedDrawerAnchor(null);
+  const handleClickClose = (drawerValue) => () => {
+    setDrawerOptions((prev) => ({
+      ...prev,
+      [drawerValue]: false,
+    }));
   };
 
   return (
     <Box>
       <AppBar position='static'>
         <Toolbar>
-          {/* Hamburger Menu Button */}
           <IconButton
             size='large'
             edge='start'
@@ -57,12 +65,14 @@ export default function Test() {
           <Typography variant='h6' component='div' sx={{ flexGrow: 1 }}>
             Company
           </Typography>
-          {/* Desktop Buttons */}
         </Toolbar>
       </AppBar>
 
-      {/* Main Drawer for Mobile */}
-      <Drawer anchor='left' open={drawerOpen} onClose={toggleDrawer(false)}>
+      <Drawer
+        anchor='left'
+        open={drawerOptions.drawerOpen}
+        onClose={toggleDrawer(false)}
+      >
         <Box
           sx={{ width: 250 }}
           role='presentation'
@@ -73,7 +83,7 @@ export default function Test() {
             <ListItem button>
               <ListItemText primary='Home' />
             </ListItem>
-            <ListItem button onClick={handleLoginClick}>
+            <ListItem button onClick={handleClickOpen("serviceDrawerOpen")}>
               <ListItemText primary='Services' />
             </ListItem>
             <ListItem button>
@@ -82,7 +92,7 @@ export default function Test() {
             <ListItem button>
               <ListItemText primary='Careers' />
             </ListItem>
-            <ListItem button>
+            <ListItem button onClick={handleClickOpen("knowMeDrawerOpen")}>
               <ListItemText primary='Know us' />
             </ListItem>
             <ListItem button>
@@ -92,18 +102,17 @@ export default function Test() {
         </Box>
       </Drawer>
 
-      {/* Nested Drawer for Login */}
       <Drawer
         anchor='left'
-        open={nestedDrawerOpen}
-        onClose={handleNestedDrawerClose}
+        open={drawerOptions.serviceDrawerOpen}
+        onClose={handleClickClose("serviceDrawerOpen")}
         sx={{ width: 250 }}
       >
         <Box
           sx={{ width: 250 }}
           role='presentation'
-          onClick={handleNestedDrawerClose}
-          onKeyDown={handleNestedDrawerClose}
+          onClick={handleClickClose("serviceDrawerOpen")}
+          onKeyDown={handleClickClose("serviceDrawerOpen")}
         >
           <List>
             <ListItem button>
@@ -118,7 +127,42 @@ export default function Test() {
           </List>
           <Divider />
           <List>
-            <ListItem components={Button} onClick={handleNestedDrawerClose}>
+            <ListItem
+              component={Button}
+              onClick={handleClickClose("serviceDrawerOpen")}
+            >
+              <KeyboardBackspaceIcon /> Back
+            </ListItem>
+          </List>
+        </Box>
+      </Drawer>
+
+      <Drawer
+        anchor='left'
+        open={drawerOptions.knowMeDrawerOpen}
+        onClose={handleClickClose("knowMeDrawerOpen")}
+        sx={{ width: 250 }}
+      >
+        <Box
+          sx={{ width: 250 }}
+          role='presentation'
+          onClick={handleClickClose("knowMeDrawerOpen")}
+          onKeyDown={handleClickClose("knowMeDrawerOpen")}
+        >
+          <List>
+            <ListItem button>
+              <ListItemText primary='Our dream team' />
+            </ListItem>
+            <ListItem button>
+              <ListItemText primary='Company Insights' />
+            </ListItem>
+          </List>
+          <Divider />
+          <List>
+            <ListItem
+              component={Button}
+              onClick={handleClickClose("knowMeDrawerOpen")}
+            >
               <KeyboardBackspaceIcon /> Back
             </ListItem>
           </List>
