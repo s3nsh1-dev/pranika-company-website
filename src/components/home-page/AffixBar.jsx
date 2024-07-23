@@ -99,8 +99,13 @@ export default function AffixBar() {
               color: "inherit",
             }}
           >
-            <Button variant='text' size='large' color='inherit'>
-              HOME
+            <Button
+              variant='text'
+              size='large'
+              color='inherit'
+              sx={{ textTransform: "none" }}
+            >
+              Home
             </Button>
           </Box>
           <Button
@@ -121,6 +126,7 @@ export default function AffixBar() {
                 <KeyboardArrowDownIcon />
               )
             }
+            sx={{ textTransform: "none" }}
           >
             Services
           </Button>
@@ -144,7 +150,7 @@ export default function AffixBar() {
               }
               onClick={handleMenuClick("itServicesMenu")}
             >
-              IT SERVICES
+              IT Services
               {Boolean(menuState.itServicesMenu) ? (
                 <KeyboardArrowLeftIcon />
               ) : (
@@ -170,20 +176,20 @@ export default function AffixBar() {
               }}
             >
               <MenuItem onClick={handleMenuClose("itServicesMenu")}>
-                DATA ANALYTICS
+                Data Analytics
               </MenuItem>
               <MenuItem onClick={handleMenuClose("itServicesMenu")}>
-                DATA TRANSFORMATION
+                Data Transformation
               </MenuItem>
               <MenuItem onClick={handleMenuClose("itServicesMenu")}>
-                DATA OPERATIONS
+                Data Operations
               </MenuItem>
             </StyledSubMenu>
             <MenuItem onClick={handleMenuClose("servicesMenu")}>
-              TRAINING & PLACEMENT PROGRAM DATA
+              Training & Placement Programs
             </MenuItem>
             <MenuItem onClick={handleMenuClose("servicesMenu")}>
-              CONSULTANCY & RECRUITMENT
+              Consultancy & Recruitment
             </MenuItem>
           </StyledMenu>
           <Box
@@ -194,8 +200,13 @@ export default function AffixBar() {
               color: "inherit",
             }}
           >
-            <Button variant='text' size='large' color='inherit'>
-              MISSION & VISION
+            <Button
+              variant='text'
+              size='large'
+              color='inherit'
+              sx={{ textTransform: "none" }}
+            >
+              Mission and Vision
             </Button>
           </Box>
           <Box
@@ -206,8 +217,13 @@ export default function AffixBar() {
               color: "inherit",
             }}
           >
-            <Button variant='text' size='large' color='inherit'>
-              CAREERS
+            <Button
+              variant='text'
+              size='large'
+              color='inherit'
+              sx={{ textTransform: "none" }}
+            >
+              Careers
             </Button>
           </Box>
           <Button
@@ -218,6 +234,7 @@ export default function AffixBar() {
             aria-haspopup='true'
             aria-expanded={Boolean(menuState.knowMeMenu) ? "true" : undefined}
             disableElevation
+            sx={{ textTransform: "none" }}
             variant='text'
             size='large'
             color='inherit'
@@ -230,7 +247,7 @@ export default function AffixBar() {
               )
             }
           >
-            KNOW US
+            Know us
           </Button>
           <StyledMenu
             id='know-me'
@@ -247,7 +264,7 @@ export default function AffixBar() {
               }}
             >
               <MenuItem onClick={handleMenuClose("knowMeMenu")}>
-                OUR DREAM TEAM
+                Our dream team
               </MenuItem>
             </Box>
             <Box
@@ -258,8 +275,11 @@ export default function AffixBar() {
                 color: "inherit",
               }}
             >
-              <MenuItem onClick={handleMenuClose("knowMeMenu")}>
-                COMPANY INSIGHTS
+              <MenuItem
+                onClick={handleMenuClose("knowMeMenu")}
+                sx={{ textTransform: "none" }}
+              >
+                Company insights
               </MenuItem>
             </Box>
           </StyledMenu>
@@ -271,12 +291,17 @@ export default function AffixBar() {
               color: "inherit",
             }}
           >
-            <Button variant='text' size='large' color='inherit'>
-              CONTACT US
+            <Button
+              variant='text'
+              size='large'
+              color='inherit'
+              sx={{ textTransform: "none" }}
+            >
+              Contact us
             </Button>
           </Box>
         </Box>
-        <Search>
+        {/* <Search>
           <SearchIconWrapper>
             <SearchIcon />
           </SearchIconWrapper>
@@ -284,7 +309,7 @@ export default function AffixBar() {
             placeholder='Search…'
             inputProps={{ "aria-label": "search" }}
           />
-        </Search>
+        </Search> */}
       </Toolbar>
       <Outlet />
     </>

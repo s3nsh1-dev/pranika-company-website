@@ -11,6 +11,7 @@ import Navbar from "./components/landing-page/Navbar";
 import Footer from "./components/landing-page/Footer";
 import AboutUs from "./components/branch-pages/AboutUs";
 import useScrollRestoration from "./custom-hooks/useScrollRestoration";
+import Test from "./Test";
 
 const App = () => {
   // Ensure this is called within the context of BrowserRouter
@@ -19,7 +20,7 @@ const App = () => {
 
   return (
     <>
-      <Navbar />
+      {/* <Navbar />
       <Routes>
         <Route path='/' element={<LandingPage />} />
         <Route path='/home' element={<Homepage />} />
@@ -30,7 +31,8 @@ const App = () => {
         <Route path='/comingsoon' element={<ComingSoon />} />
         <Route path='/about' element={<AboutUs />} />
       </Routes>
-      <Footer />
+      <Footer /> */}
+      <Test />
     </>
   );
 };
