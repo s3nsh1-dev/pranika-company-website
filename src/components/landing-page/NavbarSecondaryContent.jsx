@@ -86,13 +86,13 @@ export default function NavbarSecondaryContent() {
       >
         <Typography
           textOverflow='ellipsis'
-          sx={{ fontSize: "0.8em", textAlign: "end" }}
+          sx={{ fontSize: "0.9em", textAlign: "end" }}
         >
-          WANT TO COLLABORATE? CALL US
+          Want to collaborate? Call us
         </Typography>
         <Box
           component={Typography}
-          sx={{ fontSize: "0.85em", textAlign: "end", color: "white" }}
+          sx={{ fontSize: "0.8em", textAlign: "end", color: "white" }}
           onClick={handleClick("+919151391112")}
         >
           (+91) 9151391112
