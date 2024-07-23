@@ -19,6 +19,7 @@ export default function ContactForm() {
         borderRadius: "8px",
         boxShadow: "2px 2px 10px rgba(0,0,0,0.1)",
         margin: "20px",
+        backgroundColor: "rgba(0, 0, 0, 0.5)",
       }}
     >
       <Typography variant='h5' gutterBottom>
@@ -38,7 +39,12 @@ export default function ContactForm() {
                   variant='outlined'
                   fullWidth
                   required
-                  sx={{ border: "1px solid white" }}
+                  sx={{
+                    border: "1px solid white",
+                    "& input::placeholder": {
+                      color: "grey",
+                    },
+                  }}
                 />
               )}
             />
@@ -55,7 +61,12 @@ export default function ContactForm() {
                   fullWidth
                   type='email'
                   required
-                  sx={{ border: "1px solid white" }}
+                  sx={{
+                    border: "1px solid white",
+                    "& input::placeholder": {
+                      color: "grey",
+                    },
+                  }}
                   placeholder='Email *'
                 />
               )}
@@ -75,7 +86,12 @@ export default function ContactForm() {
                   multiline
                   rows={4}
                   required
-                  sx={{ border: "1px solid white" }}
+                  sx={{
+                    border: "1px solid white",
+                    "& textarea::placeholder": {
+                      color: "grey",
+                    },
+                  }}
                 />
               )}
             />

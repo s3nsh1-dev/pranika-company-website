@@ -72,7 +72,7 @@ export default function AboutUs() {
           fontWeight='bold'
           padding={6}
         >
-          Core of PTCPL
+          Core of Pranika Tech
         </Typography>
         <Grid container sx={{ paddingBottom: "30px" }}>
           {renderingCoreOfPTCPL}

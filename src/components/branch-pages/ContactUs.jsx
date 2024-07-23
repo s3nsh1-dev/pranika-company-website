@@ -38,7 +38,12 @@ export default function ContactUs() {
             },
           }}
         >
-          <Typography variant='h4' fontWeight='bold' gutterBottom>
+          <Typography
+            variant='h4'
+            fontWeight='bold'
+            gutterBottom
+            sx={{ textShadow: "2px 2px grey" }}
+          >
             JOIN US
           </Typography>
           <Typography
@@ -46,7 +51,9 @@ export default function ContactUs() {
             component='div'
             padding={2}
             sx={{
+              backgroundColor: "rgba(0, 0, 0, 0.5)",
               border: "2px solid white",
+              borderRadius: "10px",
               maxWidth: "90vw",
               "@media (min-width: 600px)": {
                 maxWidth: "35vw",
@@ -56,11 +63,11 @@ export default function ContactUs() {
             <p>
               For more information about our services or to schedule a
               consultation, please feel free to reach out to us at{" "}
-              <a href='mailto:info@pranikatech.com' style={{ color: "green" }}>
+              <a href='mailto:info@pranikatech.com' style={{ color: "aqua" }}>
                 info@pranikatech.com
               </a>{" "}
               or visit our website at{" "}
-              <a href='https://www.pranikatech.com' style={{ color: "green" }}>
+              <a href='https://www.pranikatech.com' style={{ color: "aqua" }}>
                 www.pranikatech.com
               </a>
               .
