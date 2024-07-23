@@ -1,10 +1,10 @@
 import React from "react";
-import { AppBar } from "@mui/material";
+import { AppBar, Box } from "@mui/material";
 import AffixBar from "./AffixBar";
 
 export default function SecondryNavbar() {
   return (
-    <div>
+    <Box>
       <AppBar
         position='sticky'
         sx={{
@@ -14,6 +14,6 @@ export default function SecondryNavbar() {
       >
         <AffixBar />
       </AppBar>
-    </div>
+    </Box>
   );
 }

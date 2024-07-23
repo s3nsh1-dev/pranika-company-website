@@ -43,9 +43,7 @@ export default function MemberDivision({
         alt='images'
         sx={{
           height: 300,
-          width: 400,
-          minHeight: 250,
-          minWidth: 200,
+          maxWidth: 230,
           borderRadius: "20px",
         }}
         border='5px solid #070066'

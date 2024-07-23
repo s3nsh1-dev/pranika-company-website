@@ -28,17 +28,17 @@ const aboutTeam = [
     profileLink: "https://www.linkedin.com/in/abhishekalld/",
     mail: "abhishek.p@pranikatech.com",
   },
-  {
-    id: 2,
-    name: "Raj Goswami",
-    position: "",
-    shortSummary:
-      "Full Stack ReactJS Developer and freelancer. With expertise in web applications, delivering high-quality, data-driven solutions.",
-    longSummary:
-      "Seasoned Full Stack ReactJS Developer with extensive experience in creating dynamic and responsive web applications. Currently working as a freelancer, Ram specializes in leveraging ReactJS to develop comprehensive, user-friendly interfaces and robust back-end systems. Expertise spans across React, JavaScript, TypeScript and a variety of other web development technologies. With a strong focus on delivering high-quality, data-driven solutions success found on numerous projects that integrate seamlessly with data analytics tools.",
-    profileLink: "https://www.youtube.com/@RAMGI635",
-    mail: "ram.goswami@pranikatech.com",
-  },
+  // {
+  //   id: 2,
+  //   name: "Raj Goswami",
+  //   position: "",
+  //   shortSummary:
+  //     "Full Stack ReactJS Developer and freelancer. With expertise in web applications, delivering high-quality, data-driven solutions.",
+  //   longSummary:
+  //     "Seasoned Full Stack ReactJS Developer with extensive experience in creating dynamic and responsive web applications. Currently working as a freelancer, Ram specializes in leveraging ReactJS to develop comprehensive, user-friendly interfaces and robust back-end systems. Expertise spans across React, JavaScript, TypeScript and a variety of other web development technologies. With a strong focus on delivering high-quality, data-driven solutions success found on numerous projects that integrate seamlessly with data analytics tools.",
+  //   profileLink: "https://www.youtube.com/@RAMGI635",
+  //   mail: "ram.goswami@pranikatech.com",
+  // },
 ];
 export default function TeamSummary() {
   const renderMemberDivision = aboutTeam.map((member) => {

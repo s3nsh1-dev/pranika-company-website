@@ -1,6 +1,13 @@
 import React from "react";
 import { Outlet, Link } from "react-router-dom";
-import { Button, Grid, Typography, IconButton, Divider } from "@mui/material";
+import {
+  Button,
+  Grid,
+  Typography,
+  IconButton,
+  Divider,
+  Box,
+} from "@mui/material";
 import { FaFacebook, FaLinkedin, FaInstagram, FaYoutube } from "react-icons/fa";
 
 const IconArray = [
@@ -48,14 +55,20 @@ export default function PrimaryFooter() {
           </Typography>
           <Typography variant='subtitle2'>
             Tower - A1, Supertech Ecovillage I, Sector 1, Bisrakh, Greater
-            Noida(West), India PINCODE:201306
+            Noida(West), India
           </Typography>
           <Typography variant='subtitle2'>Phone: (+91) 9151391112</Typography>
           <Typography variant='subtitle2'>
             Email:&nbsp;
-            <a href={mailtoLink} target='_blank' rel='noopener noreferrer'>
+            <Box
+              component='a'
+              href={mailtoLink}
+              target='_blank'
+              rel='noopener noreferrer'
+              color='aqua'
+            >
               info@pranikatech.com
-            </a>
+            </Box>
           </Typography>
         </Grid>
         <Divider

@@ -1,12 +1,28 @@
 import React, { useState } from "react";
-import { Toolbar, Button, Box, Menu, MenuItem, InputBase } from "@mui/material";
+import {
+  Toolbar,
+  Button,
+  Box,
+  Menu,
+  MenuItem,
+  InputBase,
+  IconButton,
+  Drawer,
+  List,
+  ListItem,
+  ListItemText,
+  Divider,
+} from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import { styled, alpha } from "@mui/material/styles";
 import { Outlet, Link } from "react-router-dom";
+import MenuIcon from "@mui/icons-material/Menu";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
+import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
+// import AffixbarMobileDrawer from "./AffixbarMobileDrawer";
 
 const StyledMenu = styled(Menu)(({ theme }) => ({
   "& .MuiPaper-root": {
@@ -87,9 +103,52 @@ export default function AffixBar() {
     }));
   };
 
+  const [drawerOptions, setDrawerOptions] = useState({
+    drawerOpen: false,
+    serviceDrawerOpen: false,
+    knowMeDrawerOpen: false,
+  });
+
+  const toggleDrawer = (open) => (event) => {
+    if (
+      event.type === "keydown" &&
+      (event.key === "Tab" || event.key === "Shift")
+    ) {
+      return;
+    }
+    setDrawerOptions((prev) => ({
+      ...prev,
+      drawerOpen: open,
+    }));
+  };
+
+  const handleClickOpen = (drawerValue) => (event) => {
+    event.stopPropagation();
+    setDrawerOptions((prev) => ({
+      ...prev,
+      [drawerValue]: true,
+    }));
+  };
+
+  const handleClickClose = (drawerValue) => () => {
+    setDrawerOptions((prev) => ({
+      ...prev,
+      [drawerValue]: false,
+    }));
+  };
   return (
     <>
       <Toolbar>
+        <IconButton
+          size='large'
+          edge='start'
+          color='inherit'
+          aria-label='menu'
+          sx={{ mr: 2, display: { xs: "block", md: "none" } }} // Show only on mobile
+          onClick={toggleDrawer(true)}
+        >
+          <MenuIcon />
+        </IconButton>
         <Box sx={{ display: { xs: "none", md: "flex", flexGrow: 1 } }}>
           <Box
             component={Link}
@@ -301,16 +360,200 @@ export default function AffixBar() {
             </Button>
           </Box>
         </Box>
-        {/* <Search>
+        <Search>
           <SearchIconWrapper>
             <SearchIcon />
           </SearchIconWrapper>
           <StyledInputBase
             placeholder='Search…'
             inputProps={{ "aria-label": "search" }}
+            disabled
           />
-        </Search> */}
+        </Search>
       </Toolbar>
+      <Box>
+        <Drawer
+          anchor='left'
+          open={drawerOptions.drawerOpen}
+          onClose={toggleDrawer(false)}
+        >
+          <Box
+            sx={{ width: 250 }}
+            role='presentation'
+            onClick={toggleDrawer(false)}
+            onKeyDown={toggleDrawer(false)}
+          >
+            <List>
+              <Box
+                component={Link}
+                to='/home'
+                sx={{
+                  textDecoration: "none",
+                  color: "inherit",
+                }}
+              >
+                <ListItem button>
+                  <ListItemText primary='Home' />
+                </ListItem>
+              </Box>
+              <ListItem button onClick={handleClickOpen("serviceDrawerOpen")}>
+                <ListItemText primary='Services' />
+              </ListItem>
+              <Box
+                component={Link}
+                to='/mission&vision'
+                sx={{
+                  textDecoration: "none",
+                  color: "inherit",
+                }}
+              >
+                <ListItem button>
+                  <ListItemText primary='Mission & Vision' />
+                </ListItem>
+              </Box>
+              <Box
+                component={Link}
+                to='/comingsoon'
+                sx={{
+                  textDecoration: "none",
+                  color: "inherit",
+                }}
+              >
+                <ListItem button>
+                  <ListItemText primary='Careers' />
+                </ListItem>
+              </Box>
+              <ListItem button onClick={handleClickOpen("knowMeDrawerOpen")}>
+                <ListItemText primary='Know us' />
+              </ListItem>
+              <Box
+                component={Link}
+                to='/contact'
+                sx={{
+                  textDecoration: "none",
+                  color: "inherit",
+                }}
+              >
+                <ListItem button>
+                  <ListItemText primary='Contact us' />
+                </ListItem>
+              </Box>
+            </List>
+          </Box>
+        </Drawer>
+
+        <Drawer
+          anchor='left'
+          open={drawerOptions.serviceDrawerOpen}
+          onClose={handleClickClose("serviceDrawerOpen")}
+          sx={{ width: 250 }}
+        >
+          <Box
+            sx={{ width: 250 }}
+            role='presentation'
+            onClick={handleClickClose("serviceDrawerOpen")}
+            onKeyDown={handleClickClose("serviceDrawerOpen")}
+          >
+            <List>
+              <Box
+                component={Link}
+                to='/comingsoon'
+                sx={{
+                  textDecoration: "none",
+                  color: "inherit",
+                }}
+              >
+                <ListItem button>
+                  <ListItemText primary='Data Analytics' />
+                </ListItem>
+              </Box>
+              <Box
+                component={Link}
+                to='/comingsoon'
+                sx={{
+                  textDecoration: "none",
+                  color: "inherit",
+                }}
+              >
+                <ListItem button>
+                  <ListItemText primary='Data Transformation' />
+                </ListItem>
+              </Box>
+              <Box
+                component={Link}
+                to='/comingsoon'
+                sx={{
+                  textDecoration: "none",
+                  color: "inherit",
+                }}
+              >
+                <ListItem button>
+                  <ListItemText primary='Data Operations' />
+                </ListItem>
+              </Box>
+            </List>
+            <Divider />
+            <List>
+              <ListItem
+                component={Button}
+                onClick={handleClickClose("serviceDrawerOpen")}
+              >
+                <KeyboardBackspaceIcon /> Back
+              </ListItem>
+            </List>
+          </Box>
+        </Drawer>
+
+        <Drawer
+          anchor='left'
+          open={drawerOptions.knowMeDrawerOpen}
+          onClose={handleClickClose("knowMeDrawerOpen")}
+          sx={{ width: 250 }}
+        >
+          <Box
+            sx={{ width: 250 }}
+            role='presentation'
+            onClick={handleClickClose("knowMeDrawerOpen")}
+            onKeyDown={handleClickClose("knowMeDrawerOpen")}
+          >
+            <List>
+              <Box
+                component={Link}
+                to='/teamsummary'
+                sx={{
+                  textDecoration: "none",
+                  color: "inherit",
+                }}
+              >
+                <ListItem button>
+                  <ListItemText primary='Our dream team' />
+                </ListItem>
+              </Box>
+              <Box
+                component={Link}
+                to='/about'
+                sx={{
+                  textDecoration: "none",
+                  color: "inherit",
+                }}
+              >
+                <ListItem button>
+                  <ListItemText primary='Company Insights' />
+                </ListItem>
+              </Box>
+            </List>
+            <Divider />
+            <List>
+              <ListItem
+                component={Button}
+                onClick={handleClickClose("knowMeDrawerOpen")}
+              >
+                <KeyboardBackspaceIcon /> Back
+              </ListItem>
+            </List>
+          </Box>
+        </Drawer>
+      </Box>
       <Outlet />
     </>
   );
