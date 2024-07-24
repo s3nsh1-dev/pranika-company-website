@@ -11,6 +11,7 @@ import Navbar from "./components/landing-page/Navbar";
 import Footer from "./components/landing-page/Footer";
 import AboutUs from "./components/branch-pages/AboutUs";
 import useScrollRestoration from "./custom-hooks/useScrollRestoration";
+import TrainingPrograms from "./components/derived-pages/TrainingPrograms";
 // import Test from "./Test";
 
 const App = () => {
@@ -30,6 +31,7 @@ const App = () => {
         <Route path='/teamsummary' element={<TeamSummary />} />
         <Route path='/comingsoon' element={<ComingSoon />} />
         <Route path='/about' element={<AboutUs />} />
+        <Route path='/training' element={<TrainingPrograms />} />
       </Routes>
       <Footer />
       {/* <Test /> */}

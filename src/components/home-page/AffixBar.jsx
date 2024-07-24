@@ -17,6 +17,10 @@ import SearchIcon from "@mui/icons-material/Search";
 import { styled, alpha } from "@mui/material/styles";
 import { Outlet, Link } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
+import Accordion from "@mui/material/Accordion";
+import AccordionSummary from "@mui/material/AccordionSummary";
+import AccordionDetails from "@mui/material/AccordionDetails";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
@@ -234,22 +238,68 @@ export default function AffixBar() {
                 "aria-labelledby": "itservice-button",
               }}
             >
-              <MenuItem onClick={handleMenuClose("itServicesMenu")}>
-                Data Analytics
-              </MenuItem>
-              <MenuItem onClick={handleMenuClose("itServicesMenu")}>
-                Data Transformation
-              </MenuItem>
-              <MenuItem onClick={handleMenuClose("itServicesMenu")}>
-                Data Operations
-              </MenuItem>
+              <Box
+                component={Link}
+                to='/comingsoon'
+                sx={{
+                  textDecoration: "none",
+                  color: "inherit",
+                }}
+              >
+                <MenuItem onClick={handleMenuClose("itServicesMenu")}>
+                  Data Analytics
+                </MenuItem>
+              </Box>
+              <Box
+                component={Link}
+                to='/comingsoon'
+                sx={{
+                  textDecoration: "none",
+                  color: "inherit",
+                }}
+              >
+                <MenuItem onClick={handleMenuClose("itServicesMenu")}>
+                  Data Transformation
+                </MenuItem>
+              </Box>
+              <Box
+                component={Link}
+                to='/comingsoon'
+                sx={{
+                  textDecoration: "none",
+                  color: "inherit",
+                }}
+              >
+                <MenuItem onClick={handleMenuClose("itServicesMenu")}>
+                  Data Operations
+                </MenuItem>
+              </Box>
             </StyledSubMenu>
-            <MenuItem onClick={handleMenuClose("servicesMenu")}>
-              Training & Placement Programs
-            </MenuItem>
-            <MenuItem onClick={handleMenuClose("servicesMenu")}>
-              Consultancy & Recruitment
-            </MenuItem>
+
+            <Box
+              component={Link}
+              to='/training'
+              sx={{
+                textDecoration: "none",
+                color: "inherit",
+              }}
+            >
+              <MenuItem onClick={handleMenuClose("servicesMenu")}>
+                Training Programs
+              </MenuItem>
+            </Box>
+            <Box
+              component={Link}
+              to='/comingsoon'
+              sx={{
+                textDecoration: "none",
+                color: "inherit",
+              }}
+            >
+              <MenuItem onClick={handleMenuClose("servicesMenu")}>
+                Consultancy & Recruitment
+              </MenuItem>
+            </Box>
           </StyledMenu>
           <Box
             component={Link}
@@ -380,7 +430,7 @@ export default function AffixBar() {
           <Box
             sx={{ width: 250 }}
             role='presentation'
-            onClick={toggleDrawer(false)}
+            // onClick={toggleDrawer(false)}
             onKeyDown={toggleDrawer(false)}
           >
             <List>
@@ -396,9 +446,16 @@ export default function AffixBar() {
                   <ListItemText primary='Home' />
                 </ListItem>
               </Box>
+              <Divider component='li' />
               <ListItem button onClick={handleClickOpen("serviceDrawerOpen")}>
                 <ListItemText primary='Services' />
+                {Boolean(drawerOptions.serviceDrawerOpen) ? (
+                  <KeyboardArrowLeftIcon sx={{ color: "grey" }} />
+                ) : (
+                  <KeyboardArrowRightIcon sx={{ color: "grey" }} />
+                )}
               </ListItem>
+              <Divider component='li' />
               <Box
                 component={Link}
                 to='/mission&vision'
@@ -411,6 +468,7 @@ export default function AffixBar() {
                   <ListItemText primary='Mission & Vision' />
                 </ListItem>
               </Box>
+              <Divider component='li' />
               <Box
                 component={Link}
                 to='/comingsoon'
@@ -423,9 +481,52 @@ export default function AffixBar() {
                   <ListItemText primary='Careers' />
                 </ListItem>
               </Box>
-              <ListItem button onClick={handleClickOpen("knowMeDrawerOpen")}>
-                <ListItemText primary='Know us' />
-              </ListItem>
+              <Divider component='li' />
+              <Accordion
+                elevation={0}
+                sx={{
+                  border: "none",
+                  boxShadow: "none",
+                  "&:before": {
+                    display: "none",
+                  },
+                }}
+              >
+                <AccordionSummary
+                  expandIcon={<ExpandMoreIcon />}
+                  aria-controls='panel3-content'
+                  id='panel3-header'
+                >
+                  Know me
+                </AccordionSummary>
+                <AccordionDetails>
+                  <Box
+                    component={Link}
+                    to='/teamsummary'
+                    sx={{
+                      textDecoration: "none",
+                      color: "inherit",
+                    }}
+                  >
+                    <ListItem button>
+                      <ListItemText primary='Our dream team'></ListItemText>
+                    </ListItem>
+                  </Box>
+                  <Box
+                    component={Link}
+                    to='/about'
+                    sx={{
+                      textDecoration: "none",
+                      color: "inherit",
+                    }}
+                  >
+                    <ListItem button>
+                      <ListItemText primary='Company insights'></ListItemText>
+                    </ListItem>
+                  </Box>
+                </AccordionDetails>
+              </Accordion>
+              <Divider component='li' />
               <Box
                 component={Link}
                 to='/contact'
@@ -451,22 +552,71 @@ export default function AffixBar() {
           <Box
             sx={{ width: 250 }}
             role='presentation'
-            onClick={handleClickClose("serviceDrawerOpen")}
+            // onClick={handleClickClose("serviceDrawerOpen")}
             onKeyDown={handleClickClose("serviceDrawerOpen")}
           >
             <List>
+              <Accordion elevation={0}>
+                <AccordionSummary
+                  expandIcon={<ExpandMoreIcon />}
+                  aria-controls='panel3-content'
+                  id='panel3-header'
+                >
+                  It Services
+                </AccordionSummary>
+                <AccordionDetails>
+                  <Box
+                    component={Link}
+                    to='/comingsoon'
+                    sx={{
+                      textDecoration: "none",
+                      color: "inherit",
+                    }}
+                  >
+                    <ListItem button>
+                      <ListItemText primary='Data Analytics'></ListItemText>
+                    </ListItem>
+                  </Box>
+                  <Box
+                    component={Link}
+                    to='/comingsoon'
+                    sx={{
+                      textDecoration: "none",
+                      color: "inherit",
+                    }}
+                  >
+                    <ListItem button>
+                      <ListItemText primary='Data Transformation'></ListItemText>
+                    </ListItem>
+                  </Box>
+                  <Box
+                    component={Link}
+                    to='/comingsoon'
+                    sx={{
+                      textDecoration: "none",
+                      color: "inherit",
+                    }}
+                  >
+                    <ListItem button>
+                      <ListItemText primary='Data Operations'></ListItemText>
+                    </ListItem>
+                  </Box>
+                </AccordionDetails>
+              </Accordion>
+              <Divider component='li' />
               <Box
                 component={Link}
-                to='/comingsoon'
+                to='/training'
                 sx={{
                   textDecoration: "none",
                   color: "inherit",
                 }}
               >
                 <ListItem button>
-                  <ListItemText primary='Data Analytics' />
+                  <ListItemText primary='Training Programs' />
                 </ListItem>
               </Box>
+              <Divider component='li' />
               <Box
                 component={Link}
                 to='/comingsoon'
@@ -476,79 +626,18 @@ export default function AffixBar() {
                 }}
               >
                 <ListItem button>
-                  <ListItemText primary='Data Transformation' />
-                </ListItem>
-              </Box>
-              <Box
-                component={Link}
-                to='/comingsoon'
-                sx={{
-                  textDecoration: "none",
-                  color: "inherit",
-                }}
-              >
-                <ListItem button>
-                  <ListItemText primary='Data Operations' />
+                  <ListItemText primary='Consultancy & Recruitment' />
                 </ListItem>
               </Box>
             </List>
             <Divider />
             <List>
-              <ListItem
-                component={Button}
-                onClick={handleClickClose("serviceDrawerOpen")}
-              >
-                <KeyboardBackspaceIcon /> Back
-              </ListItem>
-            </List>
-          </Box>
-        </Drawer>
-
-        <Drawer
-          anchor='left'
-          open={drawerOptions.knowMeDrawerOpen}
-          onClose={handleClickClose("knowMeDrawerOpen")}
-          sx={{ width: 250 }}
-        >
-          <Box
-            sx={{ width: 250 }}
-            role='presentation'
-            onClick={handleClickClose("knowMeDrawerOpen")}
-            onKeyDown={handleClickClose("knowMeDrawerOpen")}
-          >
-            <List>
-              <Box
-                component={Link}
-                to='/teamsummary'
-                sx={{
-                  textDecoration: "none",
-                  color: "inherit",
-                }}
-              >
-                <ListItem button>
-                  <ListItemText primary='Our dream team' />
-                </ListItem>
-              </Box>
-              <Box
-                component={Link}
-                to='/about'
-                sx={{
-                  textDecoration: "none",
-                  color: "inherit",
-                }}
-              >
-                <ListItem button>
-                  <ListItemText primary='Company Insights' />
-                </ListItem>
-              </Box>
-            </List>
-            <Divider />
-            <List>
-              <ListItem
-                component={Button}
-                onClick={handleClickClose("knowMeDrawerOpen")}
-              >
-                <KeyboardBackspaceIcon /> Back
+              <ListItem button onClick={handleClickClose("serviceDrawerOpen")}>
+                <KeyboardBackspaceIcon sx={{ color: "#070066" }} />
+                <ListItemText
+                  primary='Back to main'
+                  sx={{ color: "#070066" }}
+                />
               </ListItem>
             </List>
           </Box>
