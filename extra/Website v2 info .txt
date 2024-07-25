@@ -1,0 +1,14 @@
+What will be in Version2: 
+=========================
+Improvement on component to make easy to explore website as well as backend code.
+New Pages for IT services.
+Efficient Code Management.
+Best folder and code management
+
+Suggestion: Let me know what is needed to add or edit in website
+================================================================
+The background should be HD quality and blue in color.
+Delegate Affix bar code
+Make Affix bar sticking around
+Error page image in ugly on mobile
+Primart Footer is taking extra space given by upper component
