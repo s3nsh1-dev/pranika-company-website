@@ -1,5 +1,5 @@
 import React from "react";
 
 export default function ShowDataAnalytics() {
-  return <div></div>;
+  return <div>Data Analytics Page</div>;
 }
