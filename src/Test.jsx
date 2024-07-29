@@ -1,85 +1,47 @@
-import React, { useState } from "react";
-import {
-  Box,
-  Typography,
-  Accordion,
-  AccordionSummary,
-  AccordionDetails,
-  Button,
-} from "@mui/material";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import { Link } from "react-router-dom";
+import * as React from "react";
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
+import Paper from "@mui/material/Paper";
 
-const courseInformation = [
-  { id: 0, courseName: "Big Data", courseLink: "/comingsoon" },
-  { id: 1, courseName: "Data Science", courseLink: "/comingsoon" },
-  { id: 2, courseName: "Power BI", courseLink: "/comingsoon" },
-  { id: 3, courseName: "Machine Learning", courseLink: "/comingsoon" },
-  { id: 4, courseName: "Generative AI", courseLink: "/comingsoon" },
-  { id: 5, courseName: "Azure", courseLink: "/comingsoon" },
-  { id: 6, courseName: "AWS", courseLink: "/comingsoon" },
-  { id: 7, courseName: "ReactJS", courseLink: "/comingsoon" },
+function createData(name, calories, fat, carbs, protein) {
+  return { name, calories, fat, carbs, protein };
+}
+
+const rows = [
+  createData("Frozen yoghurt", 159, 6.0, 24, 4.0),
+  createData("Ice cream sandwich", 237, 9.0, 37, 4.3),
+  createData("Eclair", 262, 16.0, 24, 6.0),
+  createData("Cupcake", 305, 3.7, 67, 4.3),
+  createData("Gingerbread", 356, 16.0, 49, 3.9),
 ];
 
-export default function Test() {
-  const [expandedId, setExpandedId] = useState(null);
-
-  const handleAccordionChange = (id) => {
-    setExpandedId((prevExpandedId) => (prevExpandedId === id ? null : id));
-  };
-
+export default function DenseTable() {
   return (
-    <Box sx={{ padding: "0 10px" }}>
-      <Box margin='2% 0'>
-        <Typography
-          sx={{ fontSize: { sm: "3rem", xs: "2rem" } }}
-          textAlign='center'
-        >
-          Courses Offered
-        </Typography>
-        <Typography fontWeight='bold' textAlign='justify' marginTop='10px'>
-          At Pranika Technologies and Consulting Pvt. Ltd., we are dedicated to
-          equipping individuals with the skills and knowledge needed to excel in
-          today's rapidly evolving technological landscape. Our courses are
-          meticulously designed to address the current demands of the industry,
-          focusing on the latest trends and advancements in technology.
-        </Typography>
-      </Box>
-      <Box
-        sx={{
-          display: "flex",
-          flexWrap: "wrap",
-          justifyContent: "center",
-          gap: 2,
-        }}
-      >
-        {courseInformation.map((course) => (
-          <Accordion
-            key={course.id}
-            expanded={expandedId === course.id}
-            onChange={() => handleAccordionChange(course.id)}
-            sx={{
-              width: "calc(50% - 16px)",
-              flex: "1 1 calc(50% - 16px)",
-              mb: 2,
-            }}
-          >
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls={`panel-${course.id}-content`}
-              id={`panel-${course.id}-header`}
-            >
-              {course.courseName}
-            </AccordionSummary>
-            <AccordionDetails>
-              Course details for {course.courseName} will go here.
-            </AccordionDetails>
-            <Button component={Link} to={course.courseLink}>
-              Learn More
-            </Button>
-          </Accordion>
-        ))}
-      </Box>
-    </Box>
+    <TableContainer component={Paper}>
+      <Table sx={{ minWidth: 650 }} size='small' aria-label='a dense table'>
+        <TableHead>
+          <TableRow>
+            <TableCell>Industry Expertise</TableCell>
+            <TableCell>Industry Expertise</TableCell>
+            <TableCell>Industry Expertise</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          <TableRow sx={{ "&:last-child td, &:last-child th": { border: 0 } }}>
+            <TableCell>Healthcare</TableCell>
+            <TableCell>Healthcare</TableCell>
+            <TableCell>Healthcare</TableCell>
+            <TableCell>
+              Enhanced patient outcomes through data-driven insights and
+              predictive models.
+            </TableCell>
+          </TableRow>
+        </TableBody>
+      </Table>
+    </TableContainer>
   );
 }

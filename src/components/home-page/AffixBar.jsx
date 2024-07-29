@@ -240,7 +240,7 @@ export default function AffixBar() {
             >
               <Box
                 component={Link}
-                to='/comingsoon'
+                to='/data-analytics'
                 sx={{
                   textDecoration: "none",
                   color: "inherit",
@@ -567,7 +567,7 @@ export default function AffixBar() {
                 <AccordionDetails>
                   <Box
                     component={Link}
-                    to='/comingsoon'
+                    to='/data-analytics'
                     sx={{
                       textDecoration: "none",
                       color: "inherit",
