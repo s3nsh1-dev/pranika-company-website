@@ -12,6 +12,10 @@ import Footer from "./components/landing-page/Footer";
 import AboutUs from "./components/branch-pages/AboutUs";
 import useScrollRestoration from "./custom-hooks/useScrollRestoration";
 import TrainingPrograms from "./components/derived-pages/TrainingPrograms";
+import ShowDataTransformation from "./components/derived-pages/ShowDataTransformation";
+import ShowDataAnalytics from "./components/derived-pages/ShowDataAnalytics";
+import ShowDataOperations from "./components/derived-pages/ShowDataOperations";
+import ConsultancyAndRecruitment from "./components/derived-pages/ConsultancyAndRecruitment";
 import Test from "./Test";
 
 const App = () => {
@@ -32,6 +36,16 @@ const App = () => {
         <Route path='/comingsoon' element={<ComingSoon />} />
         <Route path='/about' element={<AboutUs />} />
         <Route path='/training' element={<TrainingPrograms />} />
+        <Route path='/data-analytics' element={<ShowDataAnalytics />} />
+        <Route path='/data-operations' element={<ShowDataOperations />} />
+        <Route
+          path='/data-transformation'
+          element={<ShowDataTransformation />}
+        />
+        <Route
+          path='/consult-recruit'
+          element={<ConsultancyAndRecruitment />}
+        />
         <Route path='/test' element={<Test />} />
       </Routes>
       <Footer />
