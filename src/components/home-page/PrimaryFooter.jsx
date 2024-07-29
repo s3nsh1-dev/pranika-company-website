@@ -47,7 +47,12 @@ export default function PrimaryFooter() {
       <Grid
         container
         spacing={2}
-        sx={{ backgroundColor: "#0b0178", color: "white", padding: 4 }}
+        sx={{
+          backgroundColor: "#0b0178",
+          color: "white",
+          padding: "40px",
+          marginTop: "1px",
+        }}
       >
         <Grid item xs={12} sm={4} padding={2}>
           <Typography variant='h6' fontWeight='bold'>
