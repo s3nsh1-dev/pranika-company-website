@@ -290,7 +290,7 @@ export default function AffixBar() {
             </Box>
             <Box
               component={Link}
-              to='/comingsoon'
+              to='/consult-recruit'
               sx={{
                 textDecoration: "none",
                 color: "inherit",
@@ -619,7 +619,7 @@ export default function AffixBar() {
               <Divider component='li' />
               <Box
                 component={Link}
-                to='/comingsoon'
+                to='/consult-recruit'
                 sx={{
                   textDecoration: "none",
                   color: "inherit",
