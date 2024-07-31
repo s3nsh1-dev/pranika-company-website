@@ -1,47 +1,41 @@
-import * as React from "react";
-import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
-import TableCell from "@mui/material/TableCell";
-import TableContainer from "@mui/material/TableContainer";
-import TableHead from "@mui/material/TableHead";
-import TableRow from "@mui/material/TableRow";
-import Paper from "@mui/material/Paper";
+import React from "react";
+import {
+  Card,
+  CardHeader,
+  CardMedia,
+  CardContent,
+  CardActions,
+  IconButton,
+  Typography,
+} from "@mui/material";
+import image from "./images/error-page-image.png";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import ShareIcon from "@mui/icons-material/Share";
 
-function createData(name, calories, fat, carbs, protein) {
-  return { name, calories, fat, carbs, protein };
-}
-
-const rows = [
-  createData("Frozen yoghurt", 159, 6.0, 24, 4.0),
-  createData("Ice cream sandwich", 237, 9.0, 37, 4.3),
-  createData("Eclair", 262, 16.0, 24, 6.0),
-  createData("Cupcake", 305, 3.7, 67, 4.3),
-  createData("Gingerbread", 356, 16.0, 49, 3.9),
-];
-
-export default function DenseTable() {
+export default function RecipeReviewCard() {
   return (
-    <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650 }} size='small' aria-label='a dense table'>
-        <TableHead>
-          <TableRow>
-            <TableCell>Industry Expertise</TableCell>
-            <TableCell>Industry Expertise</TableCell>
-            <TableCell>Industry Expertise</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          <TableRow sx={{ "&:last-child td, &:last-child th": { border: 0 } }}>
-            <TableCell>Healthcare</TableCell>
-            <TableCell>Healthcare</TableCell>
-            <TableCell>Healthcare</TableCell>
-            <TableCell>
-              Enhanced patient outcomes through data-driven insights and
-              predictive models.
-            </TableCell>
-          </TableRow>
-        </TableBody>
-      </Table>
-    </TableContainer>
+    <Card sx={{ maxWidth: 345 }}>
+      <CardHeader
+        title='Advanced Data Analytics'
+        subheader='Apache Spark & Hadoop'
+      />
+      <CardMedia component='img' height='194' image={image} alt='Paella dish' />
+      <CardContent>
+        <Typography variant='body2' textAlign='justify'>
+          Our expertise in big data technologies such as Apache Spark and Hadoop
+          allows us to manage and analyze vast amounts of data efficiently.
+          Whether you need real-time analytics or batch processing, we can help
+          you derive actionable insights from your data.
+        </Typography>
+      </CardContent>
+      <CardActions disableSpacing>
+        <IconButton aria-label='add to favorites'>
+          <FavoriteIcon />
+        </IconButton>
+        <IconButton aria-label='share'>
+          <ShareIcon />
+        </IconButton>
+      </CardActions>
+    </Card>
   );
 }
