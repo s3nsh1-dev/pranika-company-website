@@ -62,6 +62,7 @@ export default function ShowRecruitmentSteps() {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
+        marginBottom: "20px",
       }}
     >
       <Typography
