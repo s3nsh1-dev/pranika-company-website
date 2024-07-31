@@ -121,7 +121,6 @@ export default function ShowRecruitmentNeeds() {
           >
             <Paper
               component='fieldset'
-              //   elevation={5}
               sx={{ border: `2px solid ${boxColor}`, padding: "20px" }}
             >
               <Typography
