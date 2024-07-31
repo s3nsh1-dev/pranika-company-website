@@ -76,11 +76,11 @@ export default function ShowRecruitmentNeeds() {
     <>
       <Box>
         <Typography
-          sx={{ fontSize: { sm: "3rem", xs: "2rem" } }}
+          sx={{ fontSize: { sm: "2.5rem", xs: "2rem" } }}
           textAlign='center'
           padding={5}
         >
-          Why Choose Us for Your Recruitment Needs?
+          Why Choose Us ?
         </Typography>
       </Box>
       <Box sx={{ margin: "0px 2% 10px 2%" }}>
@@ -91,27 +91,35 @@ export default function ShowRecruitmentNeeds() {
             md={6}
             sx={{
               display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
             }}
           >
-            {recruitmentPoints.map((info) => {
-              return (
-                <Button
-                  color={info.color}
-                  key={info.id}
-                  variant='outlined'
-                  size='large'
-                  sx={{
-                    textTransform: "none",
-                    marginBottom: "20px",
-                  }}
-                  onClick={handleData(info.content, info.color, info.title)}
-                >
-                  {info.title}
-                </Button>
-              );
-            })}
+            <Box
+              sx={{
+                width: 800,
+                display: "flex",
+                flexDirection: "row",
+                flexWrap: "wrap",
+                justifyContent: "center",
+              }}
+            >
+              {recruitmentPoints.map((info) => {
+                return (
+                  <Button
+                    color={info.color}
+                    key={info.id}
+                    variant='outlined'
+                    size='large'
+                    sx={{
+                      textTransform: "none",
+                      margin: "10px",
+                    }}
+                    onClick={handleData(info.content, info.color, info.title)}
+                  >
+                    {info.title}
+                  </Button>
+                );
+              })}
+            </Box>
           </Grid>
           <Grid
             item

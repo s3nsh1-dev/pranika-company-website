@@ -62,14 +62,15 @@ export default function ShowRecruitmentSteps() {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
+        marginBottom: "20px",
       }}
     >
       <Typography
-        sx={{ fontSize: { sm: "3rem", xs: "2rem" } }}
+        sx={{ fontSize: { sm: "2.5rem", xs: "2rem" } }}
         textAlign='center'
         padding={2}
       >
-        Our Process
+        Talent Acquisition Approach
       </Typography>
       <Box
         sx={{

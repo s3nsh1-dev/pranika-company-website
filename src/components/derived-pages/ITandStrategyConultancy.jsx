@@ -176,11 +176,8 @@ export default function ITandStrategyConultancy() {
           })}
         </Box>
       </Box>
-      <Box textAlign='justify' sx={{ padding: "5%" }}>
-        <Typography
-          fontWeight='bold'
-          sx={{ fontSize: { md: "1.3rem", xs: "1.1rem" } }}
-        >
+      <Box textAlign='justify' sx={{ padding: "2%" }}>
+        <Typography fontWeight='bold'>
           By choosing Pranika Technologies and Consulting Pvt. Ltd., you are
           partnering with a consultancy that not only provides technical
           expertise but also understands the strategic implications of
