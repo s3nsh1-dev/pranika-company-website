@@ -8,35 +8,20 @@ export default function RecruitmentForBuisness() {
   return (
     <>
       <ShowRecruitmentIntro />
+      <ShowRecruitmentSteps />
       <ShowRecruitmentNeeds />
-      <Box sx={{ padding: "2%" }}>
-        <Typography
-          sx={{ fontSize: { sm: "3rem", xs: "2rem" } }}
-          textAlign='center'
-          padding={2}
-        >
-          Ready to Transform Your Hiring Process?
-        </Typography>
-        <Typography>
-          Partner with Pranika Technologies and Consulting Pvt. Ltd. and
-          experience the difference that expert recruitment solutions can make.
-          Contact us today to learn more about how we can help you find and hire
-          the best talent for your organization.
-        </Typography>
-        <Typography>
-          <span style={{ fontWeight: "bold" }}>Contact Us: </span>
-          <Box component='a' href={`mailto:info@pranikatech.com`}>
-            <i>info@pranikatech.com</i>
-          </Box>
-        </Typography>
-        <Typography>
-          <span style={{ fontWeight: "bold" }}>Call Us: </span>
-          <Box component='a' href={`tel:+919151391112`}>
-            <i>(+91) 9151391112</i>
-          </Box>
+      <Box textAlign='justify' sx={{ padding: "2%" }}>
+        <Typography fontWeight='bold'>
+          Pranika Technologies and Consulting Pvt. Ltd. is your trusted partner
+          in providing cutting-edge IT consulting, seamless cloud migrations,
+          transformative technology solutions, and comprehensive professional
+          training. With the addition of the ISO 9000:2015 certification, we
+          further solidify our commitment to excellence. Our team of skilled
+          experts ensures that our processes align with global best practices,
+          empowering businesses to navigate the ever-evolving digital landscape
+          and achieve their goals.
         </Typography>
       </Box>
-      <ShowRecruitmentSteps />
     </>
   );
 }
