@@ -56,7 +56,7 @@ const partnerUsData = [
 export default function ITandStrategyConultancy() {
   return (
     <Box>
-      <Typography textAlign='justify' sx={{ padding: "20px 5% 0px 5%" }}>
+      <Box textAlign='justify' sx={{ padding: "20px 5% 0px 5%" }}>
         <Typography
           fontWeight='bold'
           sx={{ fontSize: { md: "1.3rem", xs: "1.1rem" } }}
@@ -69,7 +69,7 @@ export default function ITandStrategyConultancy() {
         and Consulting Pvt. Ltd., we specialize in delivering top-tier IT and
         strategy consulting services designed to help you harness the full
         potential of modern technologies and achieve your business goals.
-      </Typography>
+      </Box>
       <ShowITConsultancyStack />
       <Box
         sx={{
