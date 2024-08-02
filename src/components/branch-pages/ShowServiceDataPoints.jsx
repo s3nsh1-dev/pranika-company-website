@@ -1,6 +1,5 @@
 import React from "react";
 import { Box, Grid, Typography, Button } from "@mui/material";
-import styled from "styled-components";
 import dataInfoGraphic from "../../images/dataAnalytics-1.png";
 
 const contentPoints = [
