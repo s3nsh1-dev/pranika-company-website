@@ -4,13 +4,13 @@ import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 import { Outlet, Link } from "react-router-dom";
 
 const analyticsTitle = {
-  backgroundColor: "rgba(196, 232, 193, 0.5)",
+  backgroundColor: "rgb(255,255,255,0.2)",
   border: "4px solid white",
   borderRadius: "20px",
   padding: "15px",
   textAlign: "center",
   color: "white",
-  textShadow: "2px 2px #006300",
+  textShadow: "2px 2px 6px black",
 };
 
 export default function ShowServiceSubTitle({ image, title, subtitle }) {

@@ -1,5 +1,6 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
+import TitleContactLinks from "./TitleContactLinks";
 
 export default function ShowRecruitmentIntro() {
   return (
@@ -24,18 +25,7 @@ export default function ShowRecruitmentIntro() {
           more about how we can help you find and hire the best talent for your
           organization.
         </Typography>
-        <Typography>
-          <span style={{ fontWeight: "bold" }}>Contact Us: </span>
-          <Box component='a' href={`mailto:info@pranikatech.com`}>
-            <i>info@pranikatech.com</i>
-          </Box>
-        </Typography>
-        <Typography>
-          <span style={{ fontWeight: "bold" }}>Call Us: </span>
-          <Box component='a' href={`tel:+919151391112`}>
-            <i>(+91) 9151391112</i>
-          </Box>
-        </Typography>
+        <TitleContactLinks />
       </Box>
     </>
   );

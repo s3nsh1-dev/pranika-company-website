@@ -252,7 +252,7 @@ export default function AffixBar() {
               </Box>
               <Box
                 component={Link}
-                to='/comingsoon'
+                to='/data-transformation'
                 sx={{
                   textDecoration: "none",
                   color: "inherit",
@@ -264,7 +264,7 @@ export default function AffixBar() {
               </Box>
               <Box
                 component={Link}
-                to='/comingsoon'
+                to='/data-operations'
                 sx={{
                   textDecoration: "none",
                   color: "inherit",
@@ -579,7 +579,7 @@ export default function AffixBar() {
                   </Box>
                   <Box
                     component={Link}
-                    to='/comingsoon'
+                    to='/data-transformation'
                     sx={{
                       textDecoration: "none",
                       color: "inherit",
@@ -591,7 +591,7 @@ export default function AffixBar() {
                   </Box>
                   <Box
                     component={Link}
-                    to='/comingsoon'
+                    to='/data-operations'
                     sx={{
                       textDecoration: "none",
                       color: "inherit",

@@ -62,7 +62,18 @@ export default function PrimaryFooter() {
             Tower - A1, Supertech Ecovillage I, Sector 1, Bisrakh, Greater
             Noida(West), India
           </Typography>
-          <Typography variant='subtitle2'>Phone: (+91) 9151391112</Typography>
+          <Typography variant='subtitle2'>
+            Phone:{" "}
+            <Typography
+              component='a'
+              href='tel:+919151391112'
+              rel='noopener noreferrer'
+              fontWeight='bold'
+              color='aqua'
+            >
+              (+91) 9151391112
+            </Typography>
+          </Typography>
           <Typography variant='subtitle2'>
             Email:&nbsp;
             <Box
@@ -111,9 +122,13 @@ export default function PrimaryFooter() {
           </Typography>
           <Link to='/contact'>
             <Button
-              variant='contained'
-              color='success'
-              sx={{ marginTop: "10px" }}
+              variant='outlined'
+              color='error'
+              sx={{
+                marginTop: "10px",
+                textTransform: "none",
+                border: "1px solid",
+              }}
             >
               Request a Meeting
             </Button>
