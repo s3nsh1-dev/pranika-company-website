@@ -57,12 +57,12 @@ export default function ShowDataAnalytics() {
         title={title}
         subtitle={subtitle}
       />
+      <WhyChooseDataAnalytics />
       <ShowServiceDataPoints
         image={analyticsImage}
         title={pointsTitle}
         contentPoints={contentPoints}
       />
-      <WhyChooseDataAnalytics />
       <ShowDataAnalyticsApplication />
       <PrimaryFooter />
     </>

@@ -65,7 +65,7 @@ export default function ShowDataAnalyticsApplication() {
       columns={12}
       sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}
     >
-      <Grid item xs={12} md={8} sx={{ padding: "3%" }}>
+      <Grid item xs={12} md={8} sx={{ padding: "10px 3%" }}>
         <List>
           <SubTitle>Industry Expertise</SubTitle>
           {industry.map((info) => {

@@ -6,7 +6,7 @@ export default function ChoosingDataTransformation({ title, content }) {
     return (
       <Paper
         key={data.id}
-        elevation={5}
+        elevation={10}
         sx={{
           display: "flex",
           flexDirection: "column",
@@ -17,7 +17,7 @@ export default function ChoosingDataTransformation({ title, content }) {
           maxWidth: 500,
           borderRadius: "20px",
           border: "4px solid white",
-          backgroundColor: "green",
+          backgroundColor: data.color,
           color: "white",
         }}
       >
@@ -28,7 +28,6 @@ export default function ChoosingDataTransformation({ title, content }) {
           component='ul'
           margin={0}
           sx={{
-            border: "4px solid orange",
             backgroundColor: "white",
             color: "black",
             borderRadius: "20px",
@@ -42,11 +41,12 @@ export default function ChoosingDataTransformation({ title, content }) {
     );
   });
   return (
-    <Box>
+    <Box marginBottom='20px'>
       <Typography
         textAlign='center'
         fontSize={{ xs: "2rem", md: "2.5rem" }}
         fontWeight='bold'
+        marginBottom='20px'
       >
         {title}
       </Typography>

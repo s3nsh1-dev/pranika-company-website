@@ -60,6 +60,7 @@ const secondaryDataPoints = [
       "Our team of seasoned data scientists, engineers, and analysts brings years of experience in handling complex data transformation projects across various industries.",
       "We stay ahead of the curve with continuous learning and adoption of the latest technologies and methodologies.",
     ],
+    color: "blue",
   },
   {
     id: 1,
@@ -68,6 +69,7 @@ const secondaryDataPoints = [
       "From data extraction, cleansing, and integration to advanced analytics and visualization, we offer end-to-end data transformation services tailored to your needs.",
       "Our customized solutions ensure seamless integration with your existing systems and workflows.",
     ],
+    color: "purple",
   },
   {
     id: 2,
@@ -76,6 +78,7 @@ const secondaryDataPoints = [
       "We leverage industry-best practices and proven methodologies to ensure data accuracy, consistency, and reliability.",
       "Our systematic approach minimizes risks and maximizes efficiency, delivering high-quality results on time and within budget.",
     ],
+    color: "orange",
   },
   {
     id: 3,
@@ -84,6 +87,7 @@ const secondaryDataPoints = [
       "Utilizing the latest tools and technologies, including AI, machine learning, and big data platforms, we transform your data into actionable insights.",
       "Our advanced analytics capabilities help you uncover hidden patterns and trends for strategic decision-making.",
     ],
+    color: "red",
   },
   {
     id: 4,
@@ -92,6 +96,7 @@ const secondaryDataPoints = [
       "We prioritize our clients' needs and work closely with them to understand their unique challenges and goals.",
       "Our dedicated support and transparent communication ensure a smooth and successful data transformation journey.",
     ],
+    color: "green",
   },
 ];
 
@@ -111,14 +116,14 @@ export default function ShowDataTransformation() {
         title={pageTitle}
         content={pageStartingContent}
       />
-      <ChoosingDataTransformation
-        title={secondaryDataPointsTitle}
-        content={secondaryDataPoints}
-      />
       <ShowServiceDataPoints
         image={transformationImage}
         title={pointsTitle}
         contentPoints={contentPoints}
+      />
+      <ChoosingDataTransformation
+        title={secondaryDataPointsTitle}
+        content={secondaryDataPoints}
       />
     </Box>
   );
