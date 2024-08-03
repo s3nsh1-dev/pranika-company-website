@@ -3,8 +3,8 @@ import { Box, Grid, Typography, Button } from "@mui/material";
 
 export default function ShowServiceDataPoints({ image, title, contentPoints }) {
   return (
-    <Box sx={{ padding: "40px 0px" }}>
-      <Typography textAlign='center' variant='h5' fontWeight='bold'>
+    <Box>
+      <Typography textAlign='center' fontWeight='bold' fontSize={"2rem"}>
         {title}
       </Typography>
       <Grid
@@ -36,13 +36,13 @@ export default function ShowServiceDataPoints({ image, title, contentPoints }) {
           xs={12}
           md={8}
           sx={{
-            padding: "20px",
+            padding: "0px 40px",
           }}
         >
           {contentPoints.map((point) => {
             return (
               <Box key={point.id} padding={1} sx={{ display: "list-item" }}>
-                <Typography>
+                <Typography fontSize={"1.2rem"}>
                   <span style={{ fontWeight: "bold" }}>
                     {point.primary}&nbsp;
                   </span>
