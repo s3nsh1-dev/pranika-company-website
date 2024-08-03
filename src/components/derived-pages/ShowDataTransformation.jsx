@@ -4,9 +4,10 @@ import ShowServiceDataPoints from "../branch-pages/ShowServiceDataPoints";
 import ShowDataTransformationHeader from "../branch-pages/ShowDataTransformationHeader";
 import ChoosingDataTransformation from "../branch-pages/ChoosingDataTransformation";
 import CallToActionTransformation from "../branch-pages/CallToActionTransformation";
+import SecondryNavbar from "../home-page/SecondryNavbar";
+import PrimaryFooter from "../home-page/PrimaryFooter";
 import transformationImage from "../../images/data-transformation.jpg";
-import coverImage from "../../images/coming-soon.jpg";
-import { Box } from "@mui/material";
+import coverImage from "../../images/artificial-intelligence.jpg";
 
 const title = "Data Transformation";
 const subtitle =
@@ -103,11 +104,12 @@ const secondaryDataPoints = [
 
 const pageTitle = "Transform Your Data, Transform Your Business ";
 const pageStartingContent =
-  "Leading the Way in Data Transformation Services for a Smarter Tomorrow. Introduce your firm and its commitment to excellence in data transformation. At Pranika Technologies and Consulting Pvt. Ltd., we specialize in transforming your data into powerful insights that drive informed decisions and business success. With a dedicated team of experts and a proven track record, we are your trusted partner in data transformation.";
+  "Leading the Way in Data Transformation Services for a Smarter Tomorrow. At Pranika Technologies and Consulting Pvt. Ltd., we specialize in transforming your data into powerful insights that drive informed decisions and business success. With a dedicated team of experts and a proven track record, we are your trusted partner in data transformation.";
 
 export default function ShowDataTransformation() {
   return (
-    <Box>
+    <>
+      <SecondryNavbar />
       <ShowServiceSubTitle
         image={coverImage}
         title={title}
@@ -127,6 +129,7 @@ export default function ShowDataTransformation() {
         content={secondaryDataPoints}
       />
       <CallToActionTransformation />
-    </Box>
+      <PrimaryFooter />
+    </>
   );
 }

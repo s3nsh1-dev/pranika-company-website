@@ -1,5 +1,6 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
+import TitleContactLinks from "./TitleContactLinks";
 
 export default function WhyChooseDataAnalytics() {
   return (
@@ -16,6 +17,7 @@ export default function WhyChooseDataAnalytics() {
         what we can do for you. Contact us today for a consultation and take the
         first step towards smarter, data-driven decision-making.
       </Typography>
+      <TitleContactLinks />
     </Box>
   );
 }
