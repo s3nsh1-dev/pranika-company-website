@@ -2,7 +2,7 @@ import React from "react";
 import ShowServiceSubTitle from "../branch-pages/ShowServiceSubTitle";
 import ShowServiceDataPoints from "../branch-pages/ShowServiceDataPoints";
 import ShowDataAnalyticsApplication from "../branch-pages/ShowDataAnalyticsApplication";
-import WhyChooseDataAnalytics from "../branch-pages/WhyChooseDataAnalytics";
+import ShowServiceDataHeader from "../branch-pages/ShowServiceDataHeader";
 import SecondryNavbar from "../home-page/SecondryNavbar";
 import PrimaryFooter from "../home-page/PrimaryFooter";
 import analyticsImage from "../../images/dataAnalytics-1.png";
@@ -45,6 +45,10 @@ const contentPoints = [
   },
 ];
 
+const pageTitle = "Transform Your Data into a Powerful Business Asset";
+const pageStartingContent =
+  "At Pranika Technologies and Consulting Pvt. Ltd., we specialize in delivering tailored data analytics solutions that empower businesses to unlock the full potential of their data. Partner with us to transform your data into a powerful asset that fuels your business growth. Explore our success stories, discover how we’ve helped other businesses, and see what we can do for you. Contact us today for a consultation and take the first step towards smarter, data-driven decision-making.";
+
 const pointsTitle =
   "Transform Your Data into Actionable Insights with Our Expertise";
 
@@ -57,7 +61,7 @@ export default function ShowDataAnalytics() {
         title={title}
         subtitle={subtitle}
       />
-      <WhyChooseDataAnalytics />
+      <ShowServiceDataHeader title={pageTitle} content={pageStartingContent} />
       <ShowServiceDataPoints
         image={analyticsImage}
         title={pointsTitle}

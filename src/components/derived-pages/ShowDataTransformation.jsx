@@ -1,7 +1,7 @@
 import React from "react";
 import ShowServiceSubTitle from "../branch-pages/ShowServiceSubTitle";
 import ShowServiceDataPoints from "../branch-pages/ShowServiceDataPoints";
-import ShowDataTransformationHeader from "../branch-pages/ShowDataTransformationHeader";
+import ShowServiceDataHeader from "../branch-pages/ShowServiceDataHeader";
 import ChoosingDataTransformation from "../branch-pages/ChoosingDataTransformation";
 import CallToActionTransformation from "../branch-pages/CallToActionTransformation";
 import SecondryNavbar from "../home-page/SecondryNavbar";
@@ -17,37 +17,37 @@ const pointsTitle = "Transformative Data Solutions for Your Business";
 const contentPoints = [
   {
     id: 0,
-    primary: "Data Extraction and Ingestion",
+    primary: "Data Extraction and Ingestion:",
     secondary:
       "Efficiently gather data from diverse sources, including databases, cloud platforms, and IoT devices.",
   },
   {
     id: 1,
-    primary: "Data Cleansing and Enrichment",
+    primary: "Data Cleansing and Enrichment:",
     secondary:
       "Remove inconsistencies and inaccuracies, enriching your data with additional context and relevance.",
   },
   {
     id: 2,
-    primary: "Data Integration",
+    primary: "Data Integration:",
     secondary:
       "Seamlessly integrate data from multiple sources to create a unified, comprehensive dataset.",
   },
   {
     id: 3,
-    primary: "Data Warehousing",
+    primary: "Data Warehousing:",
     secondary:
       "Design and implement scalable data warehouses for efficient storage, retrieval, and analysis.",
   },
   {
     id: 4,
-    primary: "Data Analytics and Visualization",
+    primary: "Data Analytics and Visualization:",
     secondary:
       "Leverage advanced analytics to uncover insights and present them through intuitive visualizations.",
   },
   {
     id: 5,
-    primary: "Machine Learning and AI",
+    primary: "Machine Learning and AI:",
     secondary:
       "Implement machine learning models and AI algorithms to predict trends and automate decision-making.",
   },
@@ -115,10 +115,7 @@ export default function ShowDataTransformation() {
         title={title}
         subtitle={subtitle}
       />
-      <ShowDataTransformationHeader
-        title={pageTitle}
-        content={pageStartingContent}
-      />
+      <ShowServiceDataHeader title={pageTitle} content={pageStartingContent} />
       <ShowServiceDataPoints
         image={transformationImage}
         title={pointsTitle}
