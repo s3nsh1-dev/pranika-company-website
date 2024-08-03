@@ -1,45 +1,11 @@
 import React from "react";
 import { Box, Grid, Typography, Button } from "@mui/material";
-import dataInfoGraphic from "../../images/dataAnalytics-1.png";
 
-const contentPoints = [
-  {
-    id: 0,
-    primary: "Comprehensive Data Analysis & Interpretation:",
-    secondary:
-      "We help you understand complex data patterns, turning raw data into meaningful insights that drive strategic decisions.",
-  },
-  {
-    id: 1,
-    primary: "Advanced Data Visualization:",
-    secondary:
-      "Our visually engaging and interactive dashboards simplify complex datasets, enabling you to quickly grasp key metrics and trends.",
-  },
-  {
-    id: 2,
-    primary: "Predictive Analytics & Forecasting:",
-    secondary:
-      "With our predictive models, anticipate future trends and make proactive decisions to stay ahead of the competition.",
-  },
-  {
-    id: 3,
-    primary: "Data Management & Warehousing:",
-    secondary:
-      "We organize and secure your data, ensuring it's easily accessible and ready for analysis, while maintaining the highest standards of data integrity.",
-  },
-  {
-    id: 4,
-    primary: "Customized Business Intelligence Solutions:",
-    secondary:
-      "Our solutions are tailored to meet your unique business needs, providing you with actionable insights that improve operational efficiency and profitability.",
-  },
-];
-
-export default function ShowServiceDataPoints() {
+export default function ShowServiceDataPoints({ image, title, contentPoints }) {
   return (
     <Box sx={{ padding: "40px 0px" }}>
       <Typography textAlign='center' variant='h5' fontWeight='bold'>
-        Transform Your Data into Actionable Insights with Our Expertise
+        {title}
       </Typography>
       <Grid
         container
@@ -56,7 +22,7 @@ export default function ShowServiceDataPoints() {
           xs={12}
           md={4}
           component='img'
-          src={dataInfoGraphic}
+          src={image}
           alt='datainfographic'
           sx={{
             minHeight: 300,
