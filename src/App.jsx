@@ -16,6 +16,8 @@ import ShowDataTransformation from "./components/derived-pages/ShowDataTransform
 import ShowDataAnalytics from "./components/derived-pages/ShowDataAnalytics";
 import ShowDataOperations from "./components/derived-pages/ShowDataOperations";
 import ConsultancyAndRecruitment from "./components/derived-pages/ConsultancyAndRecruitment";
+import DigitalMarketing from "./components/home-page/DigitalMarketing";
+import Careers from "./components/home-page/Careers";
 import Test from "./Test";
 
 const App = () => {
@@ -35,9 +37,11 @@ const App = () => {
         <Route path='/teamsummary' element={<TeamSummary />} />
         <Route path='/comingsoon' element={<ComingSoon />} />
         <Route path='/about' element={<AboutUs />} />
+        <Route path='/careers' element={<Careers />} />
         <Route path='/training' element={<TrainingPrograms />} />
         <Route path='/data-analytics' element={<ShowDataAnalytics />} />
         <Route path='/data-operations' element={<ShowDataOperations />} />
+        <Route path='/digital-marketing' element={<DigitalMarketing />} />
         <Route
           path='/data-transformation'
           element={<ShowDataTransformation />}

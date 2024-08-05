@@ -275,7 +275,18 @@ export default function AffixBar() {
                 </MenuItem>
               </Box>
             </StyledSubMenu>
-
+            <Box
+              component={Link}
+              to='/digital-marketing'
+              sx={{
+                textDecoration: "none",
+                color: "inherit",
+              }}
+            >
+              <MenuItem onClick={handleMenuClose("servicesMenu")}>
+                Digital Marketing
+              </MenuItem>
+            </Box>
             <Box
               component={Link}
               to='/training'
@@ -320,7 +331,7 @@ export default function AffixBar() {
           </Box>
           <Box
             component={Link}
-            to='/comingsoon'
+            to='/careers'
             sx={{
               textDecoration: "none",
               color: "inherit",
