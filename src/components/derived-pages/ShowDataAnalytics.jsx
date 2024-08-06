@@ -2,7 +2,7 @@ import React from "react";
 import ShowServiceSubTitle from "../branch-pages/ShowServiceSubTitle";
 import ShowServiceDataPoints from "../branch-pages/ShowServiceDataPoints";
 import ShowDataAnalyticsApplication from "../branch-pages/ShowDataAnalyticsApplication";
-import ShowServiceDataHeader from "../branch-pages/ShowServiceDataHeader";
+import ShowPageDescriptionAndLinks from "../branch-pages/ShowPageDescriptionAndLinks";
 import SecondryNavbar from "../home-page/SecondryNavbar";
 import PrimaryFooter from "../home-page/PrimaryFooter";
 import analyticsImage from "../../images/dataAnalytics-1.png";
@@ -61,7 +61,10 @@ export default function ShowDataAnalytics() {
         title={title}
         subtitle={subtitle}
       />
-      <ShowServiceDataHeader title={pageTitle} content={pageStartingContent} />
+      <ShowPageDescriptionAndLinks
+        title={pageTitle}
+        content={pageStartingContent}
+      />
       <ShowServiceDataPoints
         image={analyticsImage}
         title={pointsTitle}
