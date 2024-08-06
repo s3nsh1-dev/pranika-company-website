@@ -2,9 +2,9 @@ import React from "react";
 import { Box, Typography } from "@mui/material";
 import TitleContactLinks from "./TitleContactLinks";
 
-export default function ShowServiceDataHeader({ title, content }) {
+export default function ShowPageDescriptionAndLinks({ title, content }) {
   return (
-    <Box sx={{ padding: " 20px 40px 40px 40px" }}>
+    <Box sx={{ padding: " 20px 40px" }}>
       <Typography fontWeight='bold' fontSize={"1.5rem"}>
         {title}
       </Typography>

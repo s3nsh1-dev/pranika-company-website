@@ -1,7 +1,7 @@
 import React from "react";
 import ShowServiceSubTitle from "../branch-pages/ShowServiceSubTitle";
 import ShowServiceDataPoints from "../branch-pages/ShowServiceDataPoints";
-import ShowServiceDataHeader from "../branch-pages/ShowServiceDataHeader";
+import ShowPageDescriptionAndLinks from "../branch-pages/ShowPageDescriptionAndLinks";
 import ChoosingDataTransformation from "../branch-pages/ChoosingDataTransformation";
 import CallToActionTransformation from "../branch-pages/CallToActionTransformation";
 import SecondryNavbar from "../home-page/SecondryNavbar";
@@ -115,7 +115,10 @@ export default function ShowDataTransformation() {
         title={title}
         subtitle={subtitle}
       />
-      <ShowServiceDataHeader title={pageTitle} content={pageStartingContent} />
+      <ShowPageDescriptionAndLinks
+        title={pageTitle}
+        content={pageStartingContent}
+      />
       <ShowServiceDataPoints
         image={transformationImage}
         title={pointsTitle}

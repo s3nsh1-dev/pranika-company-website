@@ -1,14 +1,23 @@
 import React from "react";
 import SecondryNavbar from "./SecondryNavbar";
 import PrimaryFooter from "./PrimaryFooter";
-import { Box } from "@mui/material";
+import AboutDigitalMarketing from "../branch-pages/AboutDigitalMarketing";
+import ShowPageDescriptionAndLinks from "../branch-pages/ShowPageDescriptionAndLinks";
+import { Box, Typography } from "@mui/material";
+
+const pageTitle = "Digial Markteting";
+const pageTitleContent = "How digital marketing is changing world";
 
 export default function DigitalMarketing() {
   return (
-    <Box>
+    <>
       <SecondryNavbar />
-      Digital Marketing
+      <ShowPageDescriptionAndLinks
+        title={pageTitle}
+        content={pageTitleContent}
+      />
+      <AboutDigitalMarketing />
       <PrimaryFooter />
-    </Box>
+    </>
   );
 }

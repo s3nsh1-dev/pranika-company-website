@@ -1,6 +1,6 @@
 import React from "react";
 import ShowITConsultancyStack from "../branch-pages/ShowITConsultancyStack";
-import ShowConsultancyHeader from "../branch-pages/ShowConsultancyHeader";
+import ShowPageDescriptionAndLinks from "../branch-pages/ShowPageDescriptionAndLinks";
 import ShowWhyUsForConsultancy from "../branch-pages/ShowWhyUsForConsultancy";
 import ShowItConsultancyFooter from "../branch-pages/ShowItConsultancyFooter";
 import tailored from "../../images/Tailored-Solutions.jpg";
@@ -55,10 +55,13 @@ const partnerUsData = [
   },
 ];
 
+const title = "Why Choose Our Consulting Services?";
+const titleContent =
+  "In today's fast-paced and technology-driven world, businesses need more than just basic IT support—they need strategic, cutting-edge solutions that drive growth, efficiency, and innovation. At Pranika Technologies and Consulting Pvt. Ltd., we specialize in delivering top-tier IT and strategy consulting services designed to help you harness the full potential of modern technologies and achieve your business goals.";
 export default function ITandStrategyConultancy() {
   return (
     <>
-      <ShowConsultancyHeader />
+      <ShowPageDescriptionAndLinks title={title} content={titleContent} />
       <ShowITConsultancyStack />
       <ShowWhyUsForConsultancy partnerUsData={partnerUsData} />
       <ShowItConsultancyFooter />
