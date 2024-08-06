@@ -3,7 +3,7 @@ import SecondryNavbar from "./SecondryNavbar";
 import PrimaryFooter from "./PrimaryFooter";
 import AboutDigitalMarketing from "../branch-pages/AboutDigitalMarketing";
 import ShowPageDescriptionAndLinks from "../branch-pages/ShowPageDescriptionAndLinks";
-import { Box, Typography } from "@mui/material";
+// import { Box, Typography } from "@mui/material";
 
 const pageTitle = "Digial Markteting";
 const pageTitleContent = "How digital marketing is changing world";
