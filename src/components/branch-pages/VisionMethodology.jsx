@@ -1,83 +1,7 @@
 import React from "react";
 import { Typography, Box } from "@mui/material";
-import suitcase from "../../images/suitcase.png";
-import employees from "../../images/employees.png";
-import research from "../../images/seo.png";
-import schedule from "../../images/daily-task.png";
-import interview from "../../images/meeting.png";
-import onboarding from "../../images/onboarding.png";
 import "./visionMethodology.css";
-
-const pranikaMethodologies = [
-  {
-    id: 0,
-    title: "Evolving Business Needs",
-    image: suitcase,
-    pointsCount: 3,
-    points: [
-      "Identifying a job requirement.",
-      "Initial Discussion.",
-      "JD provided by the Client",
-    ],
-  },
-  {
-    id: 1,
-    title: "Talent Acquisition Tool",
-    image: employees,
-    pointsCount: 4,
-    points: [
-      "Unique Talent Acquisition Questionnaire.",
-      "Understanding the organization’s real need.",
-      "Calibrating with the client.",
-      "High Level Detailed Job Profile.",
-    ],
-  },
-  {
-    id: 2,
-    title: "Research",
-    image: research,
-    pointsCount: 3,
-    points: [
-      "Data Driven talent Intelligence.",
-      "Finding and using social insights to identify relevant candidates.",
-      "Leveraging Industry trends to create Predictive Hiring Strategies.",
-    ],
-  },
-  {
-    id: 3,
-    title: "Customized Mandate Assessment Tool",
-    image: schedule,
-    pointsCount: 4,
-    points: [
-      "Candidate Review & opportunity profiling.",
-      "Market Feedback.",
-      "Benchmarking of candidate.",
-      "Behavioral & competency assessment & Candidate’s persona.",
-    ],
-  },
-  {
-    id: 4,
-    title: "Interview and Assessment with the Client",
-    image: interview,
-    pointsCount: 4,
-    points: [
-      "Facilitation of the interview.",
-      "Discreet and confidential background checks.",
-      "360-degree referencing.",
-      "Negotiating and building the employer’s brand.",
-    ],
-  },
-  {
-    id: 5,
-    title: "Onboarding",
-    image: onboarding,
-    pointsCount: 2,
-    points: [
-      "Assimilating the candidate into the new position.",
-      "Interactions at regular intervals until a period of 6 months to solidify the candidates tenure with the company.",
-    ],
-  },
-];
+import { pranikaMethodologies } from "../../constants/MissionAndVisionContants";
 
 export default function VisionMethodology() {
   const renderMethodologies = pranikaMethodologies.map((method) => {
@@ -94,8 +18,8 @@ export default function VisionMethodology() {
         <Box className='card__content'>
           <Typography className='card__title'>{method.title}</Typography>
           <ul>
-            {method.points.map((point) => {
-              return <li key={method.id}>{point}</li>;
+            {method.points.map((point, index) => {
+              return <li key={index + method.id}>{point}</li>;
             })}
           </ul>
         </Box>
