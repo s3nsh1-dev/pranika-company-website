@@ -1,10 +1,11 @@
 import React from "react";
-import { Box, Typography, List, ListItem } from "@mui/material";
+import { Box, Typography, List } from "@mui/material";
 import { Outlet } from "react-router-dom";
 import SecondryNavbar from "../home-page/SecondryNavbar";
 import PrimaryFooter from "../home-page/PrimaryFooter";
 import { commitmentsDetails } from "../../constants/TrainingPageConstants";
-import OfferedCoursesInfoAccordian from "../branch-pages/OfferedCoursesInfoAccordian";
+import TrainingCoursesInfoAccordian from "../branch-pages/TrainingCoursesInfoAccordian";
+import TrainingCommitmentDetails from "../branch-pages/TrainingCommitmentDetails";
 
 export default function TrainingPrograms() {
   return (
@@ -27,7 +28,7 @@ export default function TrainingPrograms() {
             technology.
           </Typography>
         </Box>
-        <OfferedCoursesInfoAccordian />
+        <TrainingCoursesInfoAccordian />
         <Box sx={{ padding: "40px 0px" }}>
           <List>
             <Typography variant='h5' fontWeight='bold'>
@@ -35,12 +36,7 @@ export default function TrainingPrograms() {
             </Typography>
             {commitmentsDetails.map((commit) => {
               return (
-                <ListItem key={commit.id}>
-                  <Typography textAlign='justify'>
-                    <span style={{ fontWeight: "bold" }}>{commit.title}: </span>
-                    {commit.details}
-                  </Typography>
-                </ListItem>
+                <TrainingCommitmentDetails key={commit.id} commit={commit} />
               );
             })}
           </List>
@@ -53,7 +49,6 @@ export default function TrainingPrograms() {
           </Typography>
         </Box>
       </Box>
-
       <PrimaryFooter />
       <Outlet />
     </>

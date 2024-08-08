@@ -40,7 +40,7 @@ const masonryColumns = {
   md: 2,
   xl: 2,
 };
-export default function OfferedCoursesInfoAccordian() {
+export default function TrainingCoursesInfoAccordian() {
   const renderingCoursesInformation = courseInformation.map(
     ({
       id,
