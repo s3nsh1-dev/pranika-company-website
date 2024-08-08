@@ -1,36 +1,6 @@
 import { Typography, Box, Button, Grid } from "@mui/material";
 import React from "react";
-
-const serviceDetails = [
-  {
-    id: 1,
-    heading: "Strategic IT Consulting",
-    details:
-      "Our strategic IT consulting services help businesses align their technology initiatives with their overarching goals. We work closely with our clients to assess their current IT landscape, identify pain points, and develop customized roadmaps that drive digital transformation and long-term success.",
-    color: "red",
-  },
-  {
-    id: 2,
-    heading: "Business Process Optimization",
-    details:
-      "By leveraging our expertise in business process analysis and automation, we help organizations streamline their operations, improve efficiency, and enhance productivity. Our holistic approach ensures that every aspect of your business  functions seamlessly, enabling you to focus on core competencies.",
-    color: "green",
-  },
-  {
-    id: 3,
-    heading: "IT Infrastructure Consulting",
-    details:
-      "From network design and hardware selection to system integration and maintenance, our IT infrastructure consulting services provide comprehensive solutions that ensure the reliability, scalability, and security of your technology infrastructure. We help you build a robust foundation for your digital initiatives.",
-    color: "blue",
-  },
-  {
-    id: 4,
-    heading: "Data and Analytics Consulting",
-    details:
-      "Unlock the power of your data with our data and analytics consulting services. We help businesses harness the insights buried within their data, enabling them to make informed decisions, optimize performance, and gain a competitive edge in the market.",
-    color: "orange",
-  },
-];
+import { serviceDetails } from "../../constants/MissionAndVisionContants";
 
 export default function ItServiceInfoPage() {
   const renderServices = serviceDetails.map((info) => {
@@ -56,7 +26,7 @@ export default function ItServiceInfoPage() {
             color: info.color,
           }}
         >
-          {info.id}
+          {info.point}
         </Button>
         <Box sx={{ padding: "0px 10px" }}>
           <Typography variant='h6' fontWeight='bold'>
@@ -71,7 +41,6 @@ export default function ItServiceInfoPage() {
   return (
     <Box>
       <Typography
-        v
         sx={{ fontSize: { sm: "3rem", xs: "2rem" } }}
         padding='3%'
         textAlign='center'
