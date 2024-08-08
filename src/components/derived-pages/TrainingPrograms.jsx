@@ -12,6 +12,7 @@ import {
   ListItem,
   ListItemText,
 } from "@mui/material";
+import Masonry from "@mui/lab/Masonry";
 import { Outlet, Link } from "react-router-dom";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import SecondryNavbar from "../home-page/SecondryNavbar";
@@ -102,9 +103,9 @@ export default function TrainingPrograms() {
             technology.
           </Typography>
         </Box>
-        <Grid container spacing={2}>
+        <Masonry columns={{ xs: "1", sm: "1", md: "2", xl: "2" }} spacing={2}>
           {renderingCoursesInformation}
-        </Grid>
+        </Masonry>
         <Box sx={{ padding: "40px 0px" }}>
           <List>
             <Typography variant='h5' fontWeight='bold'>
