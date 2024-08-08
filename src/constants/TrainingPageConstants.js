@@ -6,25 +6,25 @@ export const commitmentsDetails = [
       "Our courses are developed in collaboration with industry experts to ensure they cover the most relevant and up-to-date technologies. Whether it's data analytics, data visualization, data transformation, or data operations, our programs are tailored to provide practical skills that are directly applicable in the workplace.",
   },
   {
-    id: 0,
+    id: 1,
     title: "Expert Instructors",
     details:
       "Our instructors are seasoned professionals with extensive experience in their respective fields. They bring real-world insights and hands-on expertise to the classroom, bridging the gap between theoretical knowledge and practical application.",
   },
   {
-    id: 0,
+    id: 2,
     title: "Interactive Learning Experience",
     details:
       "We believe in a hands-on approach to learning. Our courses include interactive sessions, practical exercises, and real-world projects that enable participants to apply what they learn and build a strong portfolio.",
   },
   {
-    id: 0,
+    id: 3,
     title: "Flexible Learning Options",
     details:
       "Understanding the diverse needs of our learners, we offer flexible learning formats, including online and hybrid courses. This flexibility ensures that our programs are accessible to professionals and students alike, regardless of their location or schedule.",
   },
   {
-    id: 0,
+    id: 4,
     title: "Career Support",
     details:
       "We are committed to supporting our learners beyond the classroom. Our courses include career guidance, resume building workshops, and interview preparation sessions, designed to help participants confidently step into the job market.",
