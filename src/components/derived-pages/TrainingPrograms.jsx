@@ -21,6 +21,7 @@ import {
   commitmentsDetails,
   courseInformation,
 } from "../../constants/TrainingPageConstants";
+import OfferedCoursesInfoAccordian from "../branch-pages/OfferedCoursesInfoAccordian";
 
 const accorStyle = {
   backgroundColor: "#000a7a",
@@ -42,45 +43,17 @@ const accorContent = {
 
 export default function TrainingPrograms() {
   const renderingCoursesInformation = courseInformation.map((course) => {
+    console.log(course.content);
     return (
-      <Grid item sm={12} md={6} key={course.id}>
-        <Accordion sx={accorStyle} borderRadius='30px'>
-          <AccordionSummary
-            expandIcon={<AddCircleIcon sx={{ color: "white" }} />}
-            aria-controls='panel1-content'
-            id='panel1-header'
-          >
-            <Typography fontWeight='bold'>{course.courseName}</Typography>
-          </AccordionSummary>
-          <AccordionDetails sx={accorContent}>
-            {course.content.map((content) => (
-              <ListItem key={content.id}>
-                <ListItemText
-                  primary={content.title}
-                  secondary={content.about}
-                />
-              </ListItem>
-            ))}
-          </AccordionDetails>
-          <AccordionActions>
-            <Button
-              sx={{ textTransform: "none", color: "white" }}
-              onClick={course.downloadPDF}
-            >
-              Syllabus
-            </Button>
-            <Box
-              component={Link}
-              to={course.courseLink}
-              sx={{ textDecoration: "none", color: "inherit" }}
-            >
-              <Button sx={{ textTransform: "none", color: "white" }}>
-                Learn More
-              </Button>
-            </Box>
-          </AccordionActions>
-        </Accordion>
-      </Grid>
+      <OfferedCoursesInfoAccordian
+        key={course.id}
+        content={course.content}
+        link={course.courseLink}
+        name={course.courseName}
+        summary={course.courseSummary}
+        syllabus={course.courseSyllabus}
+        downloadPDF={course.downloadPDF}
+      />
     );
   });
   return (
