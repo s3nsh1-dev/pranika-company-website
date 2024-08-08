@@ -1,61 +1,12 @@
 import React from "react";
-import {
-  Box,
-  Grid,
-  Typography,
-  Accordion,
-  AccordionActions,
-  AccordionSummary,
-  AccordionDetails,
-  Button,
-  List,
-  ListItem,
-  ListItemText,
-} from "@mui/material";
-import Masonry from "@mui/lab/Masonry";
-import { Outlet, Link } from "react-router-dom";
-import AddCircleIcon from "@mui/icons-material/AddCircle";
+import { Box, Typography, List, ListItem } from "@mui/material";
+import { Outlet } from "react-router-dom";
 import SecondryNavbar from "../home-page/SecondryNavbar";
 import PrimaryFooter from "../home-page/PrimaryFooter";
-import {
-  commitmentsDetails,
-  courseInformation,
-} from "../../constants/TrainingPageConstants";
+import { commitmentsDetails } from "../../constants/TrainingPageConstants";
 import OfferedCoursesInfoAccordian from "../branch-pages/OfferedCoursesInfoAccordian";
 
-const accorStyle = {
-  backgroundColor: "#000a7a",
-  border: "2px solid #000a7a",
-  color: "white",
-  margin: "5px 0px",
-  padding: "0px 5px 5px 5px",
-};
-
-const accorContent = {
-  backgroundColor: "white",
-  color: "black",
-  borderRadius: "10px",
-  boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.2)",
-  transition: "box-shadow 0.3s ease-in-out",
-  textAlign: "start",
-  margin: "0px 10px",
-};
-
 export default function TrainingPrograms() {
-  const renderingCoursesInformation = courseInformation.map((course) => {
-    console.log(course.content);
-    return (
-      <OfferedCoursesInfoAccordian
-        key={course.id}
-        content={course.content}
-        link={course.courseLink}
-        name={course.courseName}
-        summary={course.courseSummary}
-        syllabus={course.courseSyllabus}
-        downloadPDF={course.downloadPDF}
-      />
-    );
-  });
   return (
     <>
       <SecondryNavbar />
@@ -76,9 +27,7 @@ export default function TrainingPrograms() {
             technology.
           </Typography>
         </Box>
-        <Masonry columns={{ xs: "1", sm: "1", md: "2", xl: "2" }} spacing={2}>
-          {renderingCoursesInformation}
-        </Masonry>
+        <OfferedCoursesInfoAccordian />
         <Box sx={{ padding: "40px 0px" }}>
           <List>
             <Typography variant='h5' fontWeight='bold'>
