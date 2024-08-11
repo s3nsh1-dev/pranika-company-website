@@ -6,7 +6,7 @@ import PrimaryFooter from "../home-page/PrimaryFooter";
 import {
   coreOfPTCPL,
   aboutPranika,
-} from "../../constants/AboutPranikaWebsitePage";
+} from "../../constants/AboutPranikaWebsitePageContants";
 
 export default function AboutUs() {
   const renderingCoreOfPTCPL = coreOfPTCPL.map((values) => {

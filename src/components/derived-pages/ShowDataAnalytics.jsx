@@ -14,7 +14,7 @@ import {
   pageTitle,
   pageStartingContent,
   pointsTitle,
-} from "../../constants/DataAnalyticsPage";
+} from "../../constants/DataAnalyticsPageContants";
 
 export default function ShowDataAnalytics() {
   return (

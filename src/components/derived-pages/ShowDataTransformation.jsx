@@ -17,7 +17,7 @@ import {
   secondaryDataPoints,
   pageTitle,
   pageStartingContent,
-} from "../../constants/DataTransformationPage";
+} from "../../constants/DataTransformationPageContants";
 
 export default function ShowDataTransformation() {
   return (

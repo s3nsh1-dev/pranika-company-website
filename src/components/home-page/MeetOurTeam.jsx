@@ -1,7 +1,7 @@
 import React from "react";
 import IdCards from "./IdCards";
 import { Typography, Box } from "@mui/material";
-import { EmployeeData } from "../../constants/TeamMembersProfileInfo";
+import { EmployeeData } from "../../constants/TeamMembersProfileInfoContant";
 
 const CardGrouping = {
   display: "flex",

@@ -17,7 +17,7 @@ import {
   pageStartingContent,
   accordianDataTitle,
   accordianData,
-} from "../../constants/DataOperationsPage";
+} from "../../constants/DataOperationsPageContants";
 
 export default function ShowDataOperations() {
   return (

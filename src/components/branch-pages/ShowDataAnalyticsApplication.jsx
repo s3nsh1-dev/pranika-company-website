@@ -6,7 +6,7 @@ import {
   industry,
   selling,
   callToAction,
-} from "../../constants/DataAnalyticsPage";
+} from "../../constants/DataAnalyticsPageContants";
 
 const SubTitle = styled("span")({
   fontSize: "1.2rem",
