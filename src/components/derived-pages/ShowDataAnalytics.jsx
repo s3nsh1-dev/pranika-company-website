@@ -7,50 +7,14 @@ import SecondryNavbar from "../home-page/SecondryNavbar";
 import PrimaryFooter from "../home-page/PrimaryFooter";
 import analyticsImage from "../../images/dataAnalytics-1.png";
 import coverImage from "../../images/analyticsCover.jpg";
-
-const title = "Data Analytics";
-const subtitle =
-  "Sharpen your competitive edge with AI and real-time analytics";
-
-const contentPoints = [
-  {
-    id: 0,
-    primary: "Comprehensive Data Analysis & Interpretation:",
-    secondary:
-      "We help you understand complex data patterns, turning raw data into meaningful insights that drive strategic decisions.",
-  },
-  {
-    id: 1,
-    primary: "Advanced Data Visualization:",
-    secondary:
-      "Our visually engaging and interactive dashboards simplify complex datasets, enabling you to quickly grasp key metrics and trends.",
-  },
-  {
-    id: 2,
-    primary: "Predictive Analytics & Forecasting:",
-    secondary:
-      "With our predictive models, anticipate future trends and make proactive decisions to stay ahead of the competition.",
-  },
-  {
-    id: 3,
-    primary: "Data Management & Warehousing:",
-    secondary:
-      "We organize and secure your data, ensuring it's easily accessible and ready for analysis, while maintaining the highest standards of data integrity.",
-  },
-  {
-    id: 4,
-    primary: "Customized Business Intelligence Solutions:",
-    secondary:
-      "Our solutions are tailored to meet your unique business needs, providing you with actionable insights that improve operational efficiency and profitability.",
-  },
-];
-
-const pageTitle = "Transform Your Data into a Powerful Business Asset";
-const pageStartingContent =
-  "At Pranika Technologies and Consulting Pvt. Ltd., we specialize in delivering tailored data analytics solutions that empower businesses to unlock the full potential of their data. Partner with us to transform your data into a powerful asset that fuels your business growth. Explore our success stories, discover how we’ve helped other businesses, and see what we can do for you. Contact us today for a consultation and take the first step towards smarter, data-driven decision-making.";
-
-const pointsTitle =
-  "Transform Your Data into Actionable Insights with Our Expertise";
+import {
+  title,
+  subtitle,
+  contentPoints,
+  pageTitle,
+  pageStartingContent,
+  pointsTitle,
+} from "../../constants/DataAnalyticsPage";
 
 export default function ShowDataAnalytics() {
   return (
