@@ -11,7 +11,7 @@ export default function Homepage() {
       <SecondryNavbar />
       <HeroSection />
       <AboutPranikaAccordion />
-      <MeetOurTeam />
+      {/* <MeetOurTeam /> */}
       <PrimaryFooter />
     </>
   );
