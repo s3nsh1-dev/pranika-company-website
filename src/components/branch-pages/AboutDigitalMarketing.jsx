@@ -1,6 +1,7 @@
 import React from "react";
-import DigitalMarketingModal from "./DigitalMarketingModal";
 import { Box } from "@mui/material";
+import { digitalMarketingPoints } from "../../constants/DigitalMarketingConstants";
+import DigitalMarketingModal from "./DigitalMarketingModal";
 
 export default function AboutDigitalMarketing() {
   return (

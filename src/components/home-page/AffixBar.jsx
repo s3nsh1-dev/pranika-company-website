@@ -375,7 +375,7 @@ export default function AffixBar() {
             open={Boolean(menuState.knowMeMenu)}
             onClose={handleMenuClose("knowMeMenu")}
           >
-            <Box
+            {/* <Box
               component={Link}
               to='/teamsummary'
               sx={{
@@ -386,7 +386,7 @@ export default function AffixBar() {
               <MenuItem onClick={handleMenuClose("knowMeMenu")}>
                 Our dream team
               </MenuItem>
-            </Box>
+            </Box> */}
             <Box
               component={Link}
               to='/about'

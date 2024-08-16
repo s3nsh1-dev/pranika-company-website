@@ -59,7 +59,7 @@ export default function AboutPranikaAccordion() {
   };
 
   return (
-    <div style={{ textAlign: "center", padding: " 0px 7% " }}>
+    <div style={{ textAlign: "center", padding: " 0px 7% 2% 7%" }}>
       <Typography
         sx={{ margin: "30px 0px", fontSize: { sm: "3rem", xs: "2rem" } }}
       >
