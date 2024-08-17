@@ -124,3 +124,14 @@ export const digitalMarketingPoints = [
     ],
   },
 ];
+
+export const pageTitle =
+  "Transform Your Digital Presence with Proven Marketing Strategies";
+export const pageTitleContent =
+  "Unlock your brand's potential with cutting-edge digital marketing solutions tailored to your business. Digital marketing is the key to connecting with your audience in the digital age. From search engines to social media, we leverage all digital channels to enhance your brand's visibility and engagement. Our expertise spans across all major digital marketing channels to drive growth for your business. From startups to established enterprises, we understand the unique needs of different sectors. Your success is our success. We tailor strategies to meet your specific business goals. Let's work together to achieve your digital marketing goals.";
+
+export const footerTitle = "What drives our success?";
+export const footerText =
+  "We are a results-driven digital marketing agency dedicated to helping businesses excel in the digital landscape. By leveraging advanced analytics, we make data-driven decisions that propel growth. Our compelling content strategies resonate with your audience, driving meaningful engagement. Stay ahead of the curve—join us to keep up with the latest trends in digital marketing.";
+export const footerContentSubText =
+  "You can also consult with our experts through our social media channels. Follow us for best support.";

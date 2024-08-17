@@ -1,7 +1,7 @@
 import React from "react";
 import { digitalMarketingPoints } from "../../constants/DigitalMarketingConstants";
 import DigitalMarketingBulletCard from "./DigitalMarketingBulletCard";
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import styled from "styled-components";
 
 const BulletCardsContainer = styled(Box)({
@@ -15,5 +15,17 @@ export default function AboutDigitalMarketing() {
   const renderMarketingPoints = digitalMarketingPoints.map((point) => {
     return <DigitalMarketingBulletCard key={point.id} point={point} />;
   });
-  return <BulletCardsContainer>{renderMarketingPoints}</BulletCardsContainer>;
+  return (
+    <Box>
+      <Typography
+        textAlign='center'
+        fontWeight='bold'
+        fontSize={"2rem"}
+        sx={{ margin: "10px 10px" }}
+      >
+        Our Comprehensive Digital Marketing Services
+      </Typography>
+      <BulletCardsContainer>{renderMarketingPoints}</BulletCardsContainer>
+    </Box>
+  );
 }
