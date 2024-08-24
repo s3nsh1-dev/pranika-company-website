@@ -1,17 +1,12 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
 import styled from "styled-components";
-// import image from "../../images/introDM.png";
-// import image from "../../images/InfluenceMarketing.png";
-// import image from "../../images/CMupscale.png";
-// import image from "../../images/DM_SEOimage.png";
-// import image from "../../images/DM_SocialMediaMarketing.png";
-// import image from "../../images/DM_EmailMarketing.png";
-import image from "../../images/DM_PPC.png";
 
 const BulletCardInfo = styled(Box)({
   display: "flex",
   flexWrap: "wrap",
+  justifyContent: "center",
+  alignItems: "center",
   borderRadius: "20px",
   boxShadow: "2px 2px 5px 2px grey",
   margin: "10px",
@@ -43,9 +38,9 @@ export default function DigitalMarketingBulletCard({ point }) {
       </Box>
       <Box
         component='img'
-        src={image}
+        src={point.image}
         alt='gghave'
-        sx={{ height: 200, width: 200, margin: "5px" }}
+        sx={{ height: 200, width: 250, margin: "5px" }}
       />
     </BulletCardInfo>
   );
