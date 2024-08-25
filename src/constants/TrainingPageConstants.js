@@ -4,30 +4,49 @@ export const commitmentsDetails = [
     title: "Industry-Relevant Curriculum",
     details:
       "Our courses are developed in collaboration with industry experts to ensure they cover the most relevant and up-to-date technologies. Whether it's data analytics, data visualization, data transformation, or data operations, our programs are tailored to provide practical skills that are directly applicable in the workplace.",
+    color: "blue",
   },
   {
     id: 1,
     title: "Expert Instructors",
     details:
       "Our instructors are seasoned professionals with extensive experience in their respective fields. They bring real-world insights and hands-on expertise to the classroom, bridging the gap between theoretical knowledge and practical application.",
+    color: "purple",
   },
   {
     id: 2,
     title: "Interactive Learning Experience",
     details:
       "We believe in a hands-on approach to learning. Our courses include interactive sessions, practical exercises, and real-world projects that enable participants to apply what they learn and build a strong portfolio.",
+    color: "orange",
   },
   {
     id: 3,
     title: "Flexible Learning Options",
     details:
       "Understanding the diverse needs of our learners, we offer flexible learning formats, including online and hybrid courses. This flexibility ensures that our programs are accessible to professionals and students alike, regardless of their location or schedule.",
+    color: "red",
   },
   {
     id: 4,
     title: "Career Support",
     details:
       "We are committed to supporting our learners beyond the classroom. Our courses include career guidance, resume building workshops, and interview preparation sessions, designed to help participants confidently step into the job market.",
+    color: "green",
+  },
+  {
+    id: 5,
+    title: "Cutting-Edge Resources",
+    details:
+      "We provide access to the latest tools, software, and resources that are essential for mastering current industry practices. Our learners gain hands-on experience with the technology and platforms used by top companies, ensuring they are well-prepared for the challenges of the modern workplace.",
+    color: "yellow",
+  },
+  {
+    id: 6,
+    title: "Continuous Learning Support",
+    details:
+      "Learning doesn’t stop after the course ends. We offer ongoing support through webinars, Q&A sessions, and access to a community of peers and instructors. This continuous learning environment helps our participants stay updated with new trends and refine their skills over time.",
+    color: "black",
   },
 ];
 
@@ -401,3 +420,7 @@ export const courseInformation = [
     },
   },
 ];
+
+export const pageHeadTitle = "How we help in upkskilling?";
+export const pageHeadContent =
+  "At Pranika Technologies and Consulting Pvt. Ltd., we are dedicated to equipping individuals with the skills and knowledge needed to excel in today's rapidly evolving technological landscape. Our courses are meticulously designed to address the current demands of the industry, focusing on the latest trends and advancements in technology.";
