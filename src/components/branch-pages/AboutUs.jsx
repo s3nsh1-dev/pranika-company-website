@@ -7,6 +7,12 @@ import {
   coreOfPTCPL,
   aboutPranika,
 } from "../../constants/AboutPranikaWebsitePageContants";
+import YoutubeVideoTemplateOne from "./YoutubeVideoTemplateOne";
+
+const link1 =
+  "https://www.youtube-nocookie.com/embed/iM8PayfmzJ4?si=KSO06Fwo411tFRrV";
+const link2 =
+  "https://www.youtube-nocookie.com/embed/NZ45Ep_53Sk?si=qVgNBdMcAcUiKDQ3";
 
 export default function AboutUs() {
   const renderingCoreOfPTCPL = coreOfPTCPL.map((values) => {
@@ -22,7 +28,7 @@ export default function AboutUs() {
   return (
     <>
       <SecondryNavbar />
-      <Box sx={{ padding: "20px", color: "#070066", textAlign: "justify" }}>
+      <Box sx={{ padding: "20px", textAlign: "justify" }}>
         <Typography
           variant='h3'
           textAlign='center'
@@ -47,6 +53,16 @@ export default function AboutUs() {
             </Box>
           </Grid>
         </Grid>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            flexWrap: "wrap",
+          }}
+        >
+          <YoutubeVideoTemplateOne sourceURL={link1} />
+          <YoutubeVideoTemplateOne sourceURL={link2} />
+        </Box>
         <Typography
           variant='h3'
           textAlign='center'
