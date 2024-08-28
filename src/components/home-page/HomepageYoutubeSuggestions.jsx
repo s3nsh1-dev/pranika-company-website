@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import YoutubeVideoTemplateTwo from "../branch-pages/YoutubeVideoTemplateTwo";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, Pagination, Stack } from "@mui/material";
 
 const youtubeLinks = [
   {
@@ -30,11 +30,33 @@ const youtubeLinks = [
 ];
 
 export default function HomepageYoutubeSuggestions() {
-  const renderPlaylistYT = youtubeLinks.map((ytLinks) => {
-    return (
-      <YoutubeVideoTemplateTwo key={ytLinks.id} sourceURL={ytLinks.link} />
-    );
-  });
+  const [pageNumber, setPageNumber] = useState(0);
+  const renderPlaylistYT = [];
+  createYTcards();
+  const handlePageChange = (event, value) => {
+    setPageNumber(value - 1);
+  };
+
+  function createYTcards() {
+    let from = 0;
+    let to = 0;
+    if (pageNumber === 0) {
+      from = 0;
+      to = 3;
+    } else {
+      from = 3;
+      to = 6;
+    }
+    for (let i = from; i < to; i++) {
+      renderPlaylistYT.push(
+        <YoutubeVideoTemplateTwo
+          key={youtubeLinks[i].id}
+          sourceURL={youtubeLinks[i].link}
+        />
+      );
+    }
+  }
+
   return (
     <Box
       sx={{
@@ -46,24 +68,29 @@ export default function HomepageYoutubeSuggestions() {
       }}
     >
       <Typography
+        textAlign='start'
+        paddingLeft='10px'
         sx={{
-          margin: "10px 0px",
+          margin: "30px 0px 10px 0px",
           fontSize: { sm: "1.5rem", xs: "1rem" },
           fontWeight: "bold",
         }}
       >
-        Watch, Learn, and Enjoy – Your Next Favorite Video Awaits!
+        Watch, Learn, and Enjoy – Your Next Opportunity Awaits!
       </Typography>
       <Box
         sx={{
           display: "flex",
-          justifyContent: "space-between",
+          justifyContent: "center",
           alignItems: "center",
           flexWrap: "wrap",
         }}
       >
         {renderPlaylistYT}
       </Box>
+      <Stack alignItems='center'>
+        <Pagination count={2} onChange={handlePageChange} />
+      </Stack>
     </Box>
   );
 }
