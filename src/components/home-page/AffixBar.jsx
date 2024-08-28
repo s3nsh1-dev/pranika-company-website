@@ -375,18 +375,6 @@ export default function AffixBar() {
             open={Boolean(menuState.knowMeMenu)}
             onClose={handleMenuClose("knowMeMenu")}
           >
-            {/* <Box
-              component={Link}
-              to='/teamsummary'
-              sx={{
-                textDecoration: "none",
-                color: "inherit",
-              }}
-            >
-              <MenuItem onClick={handleMenuClose("knowMeMenu")}>
-                Our dream team
-              </MenuItem>
-            </Box> */}
             <Box
               component={Link}
               to='/about'
@@ -432,6 +420,9 @@ export default function AffixBar() {
           />
         </Search>
       </Toolbar>
+
+      {/* SECTION FOR MOBILE */}
+
       <Box>
         <Drawer
           anchor='left'
@@ -441,7 +432,6 @@ export default function AffixBar() {
           <Box
             sx={{ width: 250 }}
             role='presentation'
-            // onClick={toggleDrawer(false)}
             onKeyDown={toggleDrawer(false)}
           >
             <List>
@@ -513,18 +503,6 @@ export default function AffixBar() {
                 <AccordionDetails>
                   <Box
                     component={Link}
-                    to='/teamsummary'
-                    sx={{
-                      textDecoration: "none",
-                      color: "inherit",
-                    }}
-                  >
-                    <ListItem button>
-                      <ListItemText primary='Our dream team'></ListItemText>
-                    </ListItem>
-                  </Box>
-                  <Box
-                    component={Link}
                     to='/about'
                     sx={{
                       textDecoration: "none",
@@ -563,7 +541,6 @@ export default function AffixBar() {
           <Box
             sx={{ width: 250 }}
             role='presentation'
-            // onClick={handleClickClose("serviceDrawerOpen")}
             onKeyDown={handleClickClose("serviceDrawerOpen")}
           >
             <List>
@@ -615,6 +592,18 @@ export default function AffixBar() {
                 </AccordionDetails>
               </Accordion>
               <Divider component='li' />
+              <Box
+                component={Link}
+                to='/digital-marketing'
+                sx={{
+                  textDecoration: "none",
+                  color: "inherit",
+                }}
+              >
+                <ListItem button>
+                  <ListItemText primary='Digital Marketing' />
+                </ListItem>
+              </Box>
               <Box
                 component={Link}
                 to='/training'
