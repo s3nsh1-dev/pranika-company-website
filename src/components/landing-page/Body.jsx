@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Container, Typography, Button, useTheme } from "@mui/material";
+import { Box, Typography, Button, useTheme } from "@mui/material";
 import { styled } from "@mui/system";
 import vback from "../../images/crop-video-7.mp4";
 import { Outlet, Link } from "react-router-dom";

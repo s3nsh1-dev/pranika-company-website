@@ -19,11 +19,14 @@ import ConsultancyAndRecruitment from "./components/derived-pages/ConsultancyAnd
 import DigitalMarketing from "./components/home-page/DigitalMarketing";
 import Careers from "./components/home-page/Careers";
 import Test from "./Test";
+import { usePageTracking } from "./custom-hooks/trackInitialPageLoad";
 
 const App = () => {
   // Ensure this is called within the context of BrowserRouter
   // Following func. makes sure to scroll on top left every time URL changes
   useScrollRestoration();
+  // for google analytics
+  usePageTracking();
 
   return (
     <>

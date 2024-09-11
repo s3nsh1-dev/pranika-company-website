@@ -5,6 +5,9 @@ import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import theme from "./custom-hooks/theme";
 import App from "./App";
+import ReactGA from "react-ga4";
+
+ReactGA.initialize("G-6ZTDQW0M5M");
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <ThemeProvider theme={theme}>
