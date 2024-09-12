@@ -2,3 +2,5 @@ RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^ index.html [L]
+
+<!-- Add a .htaccess File for Redirects (if using Apache server): Since Hostinger uses Apache by default, you'll need to add a .htaccess file to redirect all requests to index.html, allowing React to handle the routes on the client side. -->
