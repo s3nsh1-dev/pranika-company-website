@@ -11,6 +11,9 @@ import ShowPageDescriptionAndLinks from "../branch-pages/ShowPageDescriptionAndL
 import styled from "styled-components";
 import TrainingCommitments from "./TrainingCommitments";
 import TrainingPrgramFooter from "../branch-pages/TrainingPrgramFooter";
+import PosterImageForTraining from "../branch-pages/PosterImageForTraining";
+import whyImage from "../../images/WhyPranikaPoster.jpg";
+import regImage from "../../images/ResgistrationPoster.jpg";
 
 const HeadLineOfThePage = styled("p")({
   margin: 0,
@@ -32,7 +35,9 @@ export default function TrainingPrograms() {
       <Box sx={{ display: "flex", justifyContent: "center" }}>
         <TrainingCoursesInfoAccordian />
       </Box>
+      <PosterImageForTraining image={whyImage} />
       <TrainingCommitments />
+      <PosterImageForTraining image={regImage} />
       <TrainingPrgramFooter />
       <PrimaryFooter />
     </>

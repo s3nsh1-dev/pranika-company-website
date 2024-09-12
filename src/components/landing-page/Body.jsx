@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Typography, Button, useTheme } from "@mui/material";
 import { styled } from "@mui/system";
-import vback from "../../images/crop-video-7.mp4";
+import vback from "../../images/landingPageVIdeo.mp4";
 import { Outlet, Link } from "react-router-dom";
 import "./Body.css";
 
@@ -34,7 +34,7 @@ const Body = () => {
 
   return (
     <HeroContainer theme={theme}>
-      <VideoBackground autoPlay loop muted>
+      <VideoBackground autoPlay loop muted loading='lazy'>
         <source src={vback} type='video/mp4' />
         Your browser does not support the video tag.
       </VideoBackground>
