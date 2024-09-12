@@ -32,7 +32,7 @@ const App = () => {
     <>
       <Navbar />
       <Routes>
-        <Route path='/' element={<LandingPage />} />
+        <Route path='/' exact element={<LandingPage />} />
         <Route path='/home' element={<Homepage />} />
         <Route path='*' element={<ErrorPage />} />
         <Route path='/contact' element={<ContactUs />} />
