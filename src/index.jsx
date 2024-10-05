@@ -7,7 +7,7 @@ import theme from "./custom-hooks/theme";
 import App from "./App";
 import ReactGA from "react-ga4";
 
-ReactGA.initialize("G-6ZTDQW0M5M");
+ReactGA.initialize("G-HZS6DQWBQN");
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <ThemeProvider theme={theme}>
