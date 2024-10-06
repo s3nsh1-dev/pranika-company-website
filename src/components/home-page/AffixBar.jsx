@@ -240,18 +240,6 @@ export default function AffixBar() {
             >
               <Box
                 component={Link}
-                to='/project-consultation'
-                sx={{
-                  textDecoration: "none",
-                  color: "inherit",
-                }}
-              >
-                <MenuItem onClick={handleMenuClose("itServicesMenu")}>
-                  Project Consultation
-                </MenuItem>
-              </Box>
-              <Box
-                component={Link}
                 to='/data-analytics'
                 sx={{
                   textDecoration: "none",
@@ -339,6 +327,23 @@ export default function AffixBar() {
               sx={{ textTransform: "none" }}
             >
               Mission and Vision
+            </Button>
+          </Box>
+          <Box
+            component={Link}
+            to='/job-support-india'
+            sx={{
+              textDecoration: "none",
+              color: "inherit",
+            }}
+          >
+            <Button
+              variant='text'
+              size='large'
+              color='inherit'
+              sx={{ textTransform: "none" }}
+            >
+              Project Consultation
             </Button>
           </Box>
           <Box
@@ -484,6 +489,19 @@ export default function AffixBar() {
               <Divider component='li' />
               <Box
                 component={Link}
+                to='/job-support-india'
+                sx={{
+                  textDecoration: "none",
+                  color: "inherit",
+                }}
+              >
+                <ListItem button>
+                  <ListItemText primary='Project Consultation' />
+                </ListItem>
+              </Box>
+              <Divider component='li' />
+              <Box
+                component={Link}
                 to='/comingsoon'
                 sx={{
                   textDecoration: "none",
@@ -565,18 +583,6 @@ export default function AffixBar() {
                   It Services
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Box
-                    component={Link}
-                    to='/project-consultation'
-                    sx={{
-                      textDecoration: "none",
-                      color: "inherit",
-                    }}
-                  >
-                    <ListItem button>
-                      <ListItemText primary='Project Consultation'></ListItemText>
-                    </ListItem>
-                  </Box>
                   <Box
                     component={Link}
                     to='/data-analytics'

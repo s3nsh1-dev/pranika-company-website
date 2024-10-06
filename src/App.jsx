@@ -45,6 +45,7 @@ const App = () => {
         <Route path='/data-analytics' element={<ShowDataAnalytics />} />
         <Route path='/data-operations' element={<ShowDataOperations />} />
         <Route path='/digital-marketing' element={<DigitalMarketing />} />
+        <Route path='/job-support-india' element={<DigitalMarketing />} />
         <Route
           path='/data-transformation'
           element={<ShowDataTransformation />}
