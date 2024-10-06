@@ -331,6 +331,23 @@ export default function AffixBar() {
           </Box>
           <Box
             component={Link}
+            to='/job-support-india'
+            sx={{
+              textDecoration: "none",
+              color: "inherit",
+            }}
+          >
+            <Button
+              variant='text'
+              size='large'
+              color='inherit'
+              sx={{ textTransform: "none" }}
+            >
+              Project Consultation
+            </Button>
+          </Box>
+          <Box
+            component={Link}
             to='/careers'
             sx={{
               textDecoration: "none",
@@ -467,6 +484,19 @@ export default function AffixBar() {
               >
                 <ListItem button>
                   <ListItemText primary='Mission & Vision' />
+                </ListItem>
+              </Box>
+              <Divider component='li' />
+              <Box
+                component={Link}
+                to='/job-support-india'
+                sx={{
+                  textDecoration: "none",
+                  color: "inherit",
+                }}
+              >
+                <ListItem button>
+                  <ListItemText primary='Project Consultation' />
                 </ListItem>
               </Box>
               <Divider component='li' />
