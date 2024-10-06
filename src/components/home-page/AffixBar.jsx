@@ -240,6 +240,18 @@ export default function AffixBar() {
             >
               <Box
                 component={Link}
+                to='/project-consultation'
+                sx={{
+                  textDecoration: "none",
+                  color: "inherit",
+                }}
+              >
+                <MenuItem onClick={handleMenuClose("itServicesMenu")}>
+                  Project Consultation
+                </MenuItem>
+              </Box>
+              <Box
+                component={Link}
                 to='/data-analytics'
                 sx={{
                   textDecoration: "none",
@@ -553,6 +565,18 @@ export default function AffixBar() {
                   It Services
                 </AccordionSummary>
                 <AccordionDetails>
+                  <Box
+                    component={Link}
+                    to='/project-consultation'
+                    sx={{
+                      textDecoration: "none",
+                      color: "inherit",
+                    }}
+                  >
+                    <ListItem button>
+                      <ListItemText primary='Project Consultation'></ListItemText>
+                    </ListItem>
+                  </Box>
                   <Box
                     component={Link}
                     to='/data-analytics'
