@@ -7,10 +7,12 @@ import VisionMethodology from "../branch-pages/VisionMethodology";
 import SecondryNavbar from "../home-page/SecondryNavbar";
 import PrimaryFooter from "../home-page/PrimaryFooter";
 import { Box } from "@mui/material";
+import GenericKeywords from "./GenericKeywords";
 
 export default function MissionAndVission() {
   return (
-    <Box>
+    <>
+      <GenericKeywords />
       <SecondryNavbar />
       <Box
         sx={{
@@ -24,6 +26,6 @@ export default function MissionAndVission() {
         <VisionMethodology />
       </Box>
       <PrimaryFooter />
-    </Box>
+    </>
   );
 }

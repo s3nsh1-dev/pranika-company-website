@@ -15,10 +15,12 @@ import {
   pageStartingContent,
   pointsTitle,
 } from "../../constants/DataAnalyticsPageContants";
+import GenericKeywords from "./GenericKeywords";
 
 export default function ShowDataAnalytics() {
   return (
     <>
+      <GenericKeywords />
       <SecondryNavbar />
       <ShowServiceSubTitle
         image={coverImage}

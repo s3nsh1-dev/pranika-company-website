@@ -18,10 +18,12 @@ import {
   accordianDataTitle,
   accordianData,
 } from "../../constants/DataOperationsPageContants";
+import GenericKeywords from "./GenericKeywords";
 
 export default function ShowDataOperations() {
   return (
     <>
+      <GenericKeywords />
       <SecondryNavbar />
       <ShowServiceSubTitle
         image={coverImage}
