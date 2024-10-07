@@ -7,7 +7,7 @@ export default function PosterImageForTraining({ image }) {
       <Box
         component='img'
         src={image}
-        sx={{ maxWidth: "90vw", borderRadius: "10px" }}
+        sx={{ maxWidth: "55vw", borderRadius: "10px" }}
       />
     </Box>
   );
