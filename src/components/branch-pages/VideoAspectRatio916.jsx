@@ -13,7 +13,8 @@ export default function VideoAspectRatio916({ video }) {
       width='360px'
       height='640px'
       controls
-      muted
+      muted={true}
+      playsInline
       autoPlay
       loop
       sx={style}
