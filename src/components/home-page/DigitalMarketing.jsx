@@ -11,10 +11,12 @@ import {
   footerText,
   footerContentSubText,
 } from "../../constants/DigitalMarketingConstants";
+import GenericKeywords from "../derived-pages/GenericKeywords";
 
 export default function DigitalMarketing() {
   return (
     <>
+      <GenericKeywords />
       <SecondryNavbar />
       <ShowPageDescriptionAndLinks
         title={pageTitle}

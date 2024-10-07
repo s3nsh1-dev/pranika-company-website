@@ -8,6 +8,7 @@ import {
   aboutPranika,
 } from "../../constants/AboutPranikaWebsitePageContants";
 import YoutubeVideoTemplateOne from "./YoutubeVideoTemplateOne";
+import GenericKeywords from "../derived-pages/GenericKeywords";
 
 const link1 =
   "https://www.youtube-nocookie.com/embed/iM8PayfmzJ4?si=KSO06Fwo411tFRrV";
@@ -27,6 +28,7 @@ export default function AboutUs() {
   });
   return (
     <>
+      <GenericKeywords />
       <SecondryNavbar />
       <Box sx={{ padding: "20px", textAlign: "justify" }}>
         <Typography

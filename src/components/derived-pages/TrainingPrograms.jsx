@@ -14,6 +14,7 @@ import TrainingPrgramFooter from "../branch-pages/TrainingPrgramFooter";
 import PosterImageForTraining from "../branch-pages/PosterImageForTraining";
 import whyImage from "../../images/WhyPranikaPoster.jpg";
 import regImage from "../../images/ResgistrationPoster.jpg";
+import GenericKeywords from "./GenericKeywords";
 
 const HeadLineOfThePage = styled("p")({
   margin: 0,
@@ -26,6 +27,7 @@ const HeadLineOfThePage = styled("p")({
 export default function TrainingPrograms() {
   return (
     <>
+      <GenericKeywords />
       <SecondryNavbar />
       <HeadLineOfThePage>Courses Offered</HeadLineOfThePage>
       <ShowPageDescriptionAndLinks

@@ -277,6 +277,18 @@ export default function AffixBar() {
             </StyledSubMenu>
             <Box
               component={Link}
+              to='/comingsoon'
+              sx={{
+                textDecoration: "none",
+                color: "inherit",
+              }}
+            >
+              <MenuItem onClick={handleMenuClose("servicesMenu")}>
+                Project Consultation
+              </MenuItem>
+            </Box>
+            <Box
+              component={Link}
               to='/digital-marketing'
               sx={{
                 textDecoration: "none",
@@ -327,23 +339,6 @@ export default function AffixBar() {
               sx={{ textTransform: "none" }}
             >
               Mission and Vision
-            </Button>
-          </Box>
-          <Box
-            component={Link}
-            to='/job-support-india'
-            sx={{
-              textDecoration: "none",
-              color: "inherit",
-            }}
-          >
-            <Button
-              variant='text'
-              size='large'
-              color='inherit'
-              sx={{ textTransform: "none" }}
-            >
-              Project Consultation
             </Button>
           </Box>
           <Box
@@ -489,20 +484,7 @@ export default function AffixBar() {
               <Divider component='li' />
               <Box
                 component={Link}
-                to='/job-support-india'
-                sx={{
-                  textDecoration: "none",
-                  color: "inherit",
-                }}
-              >
-                <ListItem button>
-                  <ListItemText primary='Project Consultation' />
-                </ListItem>
-              </Box>
-              <Divider component='li' />
-              <Box
-                component={Link}
-                to='/comingsoon'
+                to='/careers'
                 sx={{
                   textDecoration: "none",
                   color: "inherit",
@@ -621,6 +603,19 @@ export default function AffixBar() {
                   </Box>
                 </AccordionDetails>
               </Accordion>
+              <Divider component='li' />
+              <Box
+                component={Link}
+                to='/comingsoon'
+                sx={{
+                  textDecoration: "none",
+                  color: "inherit",
+                }}
+              >
+                <ListItem button>
+                  <ListItemText primary='Project consultation' />
+                </ListItem>
+              </Box>
               <Divider component='li' />
               <Box
                 component={Link}

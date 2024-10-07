@@ -41,6 +41,15 @@ export default function ContactForm() {
                   required
                   sx={{
                     border: "1px solid white",
+                    "& .MuiOutlinedInput-root.Mui-focused": {
+                      borderColor: "white", // Change the border color when focused
+                      "& fieldset": {
+                        borderColor: "white", // Ensure the fieldset border is also white
+                      },
+                    },
+                    "& input": {
+                      color: "white",
+                    },
                     "& input::placeholder": {
                       color: "grey",
                     },
@@ -63,6 +72,15 @@ export default function ContactForm() {
                   required
                   sx={{
                     border: "1px solid white",
+                    "& .MuiOutlinedInput-root.Mui-focused": {
+                      borderColor: "white",
+                      "& fieldset": {
+                        borderColor: "white",
+                      },
+                    },
+                    "& input": {
+                      color: "white",
+                    },
                     "& input::placeholder": {
                       color: "grey",
                     },
@@ -88,6 +106,15 @@ export default function ContactForm() {
                   required
                   sx={{
                     border: "1px solid white",
+                    "& .MuiOutlinedInput-root.Mui-focused": {
+                      borderColor: "white",
+                      "& fieldset": {
+                        borderColor: "white",
+                      },
+                    },
+                    "& textarea": {
+                      color: "white",
+                    },
                     "& textarea::placeholder": {
                       color: "grey",
                     },

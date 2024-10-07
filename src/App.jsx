@@ -19,6 +19,7 @@ import ConsultancyAndRecruitment from "./components/derived-pages/ConsultancyAnd
 import DigitalMarketing from "./components/home-page/DigitalMarketing";
 import Careers from "./components/home-page/Careers";
 import Test from "./Test";
+import GenericKeywords from "./components/derived-pages/GenericKeywords";
 import { usePageTracking } from "./custom-hooks/trackInitialPageLoad";
 
 const App = () => {
@@ -30,6 +31,7 @@ const App = () => {
 
   return (
     <>
+      <GenericKeywords />
       <Navbar />
       <Routes>
         <Route path='/' exact element={<LandingPage />} />

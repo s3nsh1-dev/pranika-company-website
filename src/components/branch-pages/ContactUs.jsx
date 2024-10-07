@@ -4,10 +4,12 @@ import image from "../../images/contact-us.jpg";
 import ContactForm from "./ContactForm";
 import SecondryNavbar from "../home-page/SecondryNavbar";
 import PrimaryFooter from "../home-page/PrimaryFooter";
+import GenericKeywords from "../derived-pages/GenericKeywords";
 
 export default function ContactUs() {
   return (
     <>
+      <GenericKeywords />
       <SecondryNavbar />
       <Box
         sx={{
