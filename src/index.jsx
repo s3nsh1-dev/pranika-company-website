@@ -5,6 +5,7 @@ import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import theme from "./custom-hooks/theme";
 import App from "./App";
+import { hydrate, render } from "react-dom";
 import ReactGA from "react-ga4";
 
 ReactGA.initialize("G-HZS6DQWBQN");
@@ -19,3 +20,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     </BrowserRouter>
   </ThemeProvider>
 );
+const rootElement = document.getElementById("root");
+if (rootElement.hasChildNodes()) {
+  hydrate(<App />, rootElement);
+} else {
+  render(<App />, rootElement);
+}
