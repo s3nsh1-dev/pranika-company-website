@@ -1,0 +1,16 @@
+/              daily  1.0
+/home          daily  0.9
+/contact       monthly 0.7
+/mission&vision monthly 0.7
+/careers       monthly 0.7
+/about         monthly 0.7
+/data-analytics monthly 0.7
+/data-operations monthly 0.7
+/digital-marketing monthly 0.7
+/teamsummary   monthly 0.7
+/comingsoon    monthly 0.7
+/training      monthly 0.7
+/job-support-india monthly 0.7
+/data-transformation monthly 0.7
+/consult-recruit monthly 0.7
+/test          monthly 0.7
