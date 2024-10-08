@@ -5,24 +5,16 @@ import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import theme from "./custom-hooks/theme";
 import App from "./App";
-import { hydrate, render } from "react-dom";
 import ReactGA from "react-ga4";
 
 ReactGA.initialize("G-HZS6DQWBQN");
 
-ReactDOM.createRoot(document.getElementById("root")).render(
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
   <ThemeProvider theme={theme}>
-    {/* CssBaseline is used to make a consistence UI on HTML and It
-    sets the box-sizing property to border-box for all elements, */}
     <CssBaseline />
     <BrowserRouter>
       <App />
     </BrowserRouter>
   </ThemeProvider>
 );
-const rootElement = document.getElementById("root");
-if (rootElement.hasChildNodes()) {
-  hydrate(<App />, rootElement);
-} else {
-  render(<App />, rootElement);
-}
