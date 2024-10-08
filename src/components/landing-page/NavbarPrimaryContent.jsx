@@ -13,6 +13,7 @@ export default function NavbarPrimaryContent() {
     <Box
       component={Link}
       to='/'
+      aria-label="Go to Pranika Technologies' Landing Page"
       sx={{
         textDecoration: "none",
         color: "inherit",
@@ -26,7 +27,7 @@ export default function NavbarPrimaryContent() {
       >
         <img
           src={plogo}
-          alt='pranika-logo'
+          alt='Pranika Technologies logo'
           style={{
             height: "30px",
             width: "30px",
