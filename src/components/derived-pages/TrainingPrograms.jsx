@@ -11,10 +11,12 @@ import ShowPageDescriptionAndLinks from "../branch-pages/ShowPageDescriptionAndL
 import styled from "styled-components";
 import TrainingCommitments from "./TrainingCommitments";
 import TrainingPrgramFooter from "../branch-pages/TrainingPrgramFooter";
-import PosterImageForTraining from "../branch-pages/PosterImageForTraining";
 import whyImage from "../../images/WhyPranikaPoster.jpg";
 import regImage from "../../images/ResgistrationPoster.jpg";
+import reel1 from "../../images/info-videos/SQL Course.mp4";
+import reel2 from "../../images/info-videos/Digital Marketing Course.mp4";
 import GenericKeywords from "./GenericKeywords";
+import TrainingCourseReelsAndPoster from "./TrainingCourseReelsAndPoster";
 
 const HeadLineOfThePage = styled("p")({
   margin: 0,
@@ -37,9 +39,17 @@ export default function TrainingPrograms() {
       <Box sx={{ display: "flex", justifyContent: "center" }}>
         <TrainingCoursesInfoAccordian />
       </Box>
-      <PosterImageForTraining image={whyImage} />
+      <TrainingCourseReelsAndPoster
+        image={whyImage}
+        video={reel1}
+        reelPosition='right'
+      />
       <TrainingCommitments />
-      <PosterImageForTraining image={regImage} />
+      <TrainingCourseReelsAndPoster
+        image={regImage}
+        video={reel2}
+        reelPosition='left'
+      />
       <TrainingPrgramFooter />
       <PrimaryFooter />
     </>

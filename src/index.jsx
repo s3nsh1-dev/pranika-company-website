@@ -9,10 +9,9 @@ import ReactGA from "react-ga4";
 
 ReactGA.initialize("G-HZS6DQWBQN");
 
-ReactDOM.createRoot(document.getElementById("root")).render(
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
   <ThemeProvider theme={theme}>
-    {/* CssBaseline is used to make a consistence UI on HTML and It
-    sets the box-sizing property to border-box for all elements, */}
     <CssBaseline />
     <BrowserRouter>
       <App />
