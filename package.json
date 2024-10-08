@@ -50,13 +50,13 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
-    ],
-    "reactSnap": {
-      "inlineCss": true,
-      "puppeteerArgs": [
-        "--no-sandbox",
-        "--disable-setuid-sandbox"
-      ]
-    }
+    ]
+  },
+  "reactSnap": {
+    "inlineCss": true,
+    "puppeteerArgs": [
+      "--no-sandbox",
+      "--disable-setuid-sandbox"
+    ]
   }
 }
