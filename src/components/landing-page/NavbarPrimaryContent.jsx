@@ -1,5 +1,5 @@
 import React from "react";
-import plogo from "../../images/p-bg-less-copy.png";
+import plogo from "../../images/transparent-logo.png";
 import { Link } from "react-router-dom";
 import { Box, Typography, useMediaQuery, useTheme } from "@mui/material";
 
@@ -29,8 +29,6 @@ export default function NavbarPrimaryContent() {
           src={plogo}
           alt='Pranika Technologies logo'
           style={{
-            height: "30px",
-            width: "30px",
             borderRadius: "50px",
             margin: "0px 10px 0px 30px",
           }}
