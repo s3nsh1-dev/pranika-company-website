@@ -20,6 +20,7 @@ import DigitalMarketing from "./components/home-page/DigitalMarketing";
 import Careers from "./components/home-page/Careers";
 import Test from "./Test";
 import GenericKeywords from "./components/derived-pages/GenericKeywords";
+import ProjectConsultation from "./components/sub-pages/project-consultation/ProjectConsultation";
 import { usePageTracking } from "./custom-hooks/trackInitialPageLoad";
 
 const App = () => {
@@ -47,7 +48,7 @@ const App = () => {
         <Route path='/data-analytics' element={<ShowDataAnalytics />} />
         <Route path='/data-operations' element={<ShowDataOperations />} />
         <Route path='/digital-marketing' element={<DigitalMarketing />} />
-        <Route path='/job-support-india' element={<DigitalMarketing />} />
+        <Route path='/job-support-india' element={<ProjectConsultation />} />
         <Route
           path='/data-transformation'
           element={<ShowDataTransformation />}
