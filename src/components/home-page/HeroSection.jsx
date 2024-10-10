@@ -52,7 +52,7 @@ const HeroSection = () => {
 
   return (
     <HeroContainer theme={theme}>
-      <VideoBackground autoPlay loop muted>
+      <VideoBackground autoPlay loop muted playsInline preload='auto'>
         <source src={vback} type='video/mp4' />
         Your browser does not support the video tag.
       </VideoBackground>
