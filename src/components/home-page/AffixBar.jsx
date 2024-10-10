@@ -277,7 +277,7 @@ export default function AffixBar() {
             </StyledSubMenu>
             <Box
               component={Link}
-              to='/comingsoon'
+              to='/job-support-india'
               sx={{
                 textDecoration: "none",
                 color: "inherit",
@@ -606,7 +606,7 @@ export default function AffixBar() {
               <Divider component='li' />
               <Box
                 component={Link}
-                to='/comingsoon'
+                to='/job-support-india'
                 sx={{
                   textDecoration: "none",
                   color: "inherit",
