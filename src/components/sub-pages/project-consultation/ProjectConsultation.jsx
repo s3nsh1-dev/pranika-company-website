@@ -1,13 +1,13 @@
 import React from "react";
-import { AboutOurSupportService } from "../../../constants/ProjectConsultation";
 import SecondryNavbar from "../../home-page/SecondryNavbar";
 import PrimaryFooter from "../../home-page/PrimaryFooter";
-import ShowPageDescriptionAndLinks from "../../branch-pages/ShowPageDescriptionAndLinks";
-import FastCommunicationWithWhatsApp from "./FastCommunicationWithWhatsApp";
 import GenericKeywords from "../../derived-pages/GenericKeywords";
 import StickyWhatAppLogo from "./StickyWhatAppLogo";
-import AboutJobSupport from "./AboutJobSupport";
+import { AboutOurSupportService } from "../../../constants/ProjectConsultationConstants";
+import ShowPageDescriptionAndLinks from "../../branch-pages/ShowPageDescriptionAndLinks";
 import JobSupportTermsAndConditions from "./JobSupportTermsAndConditions";
+import FastCommunicationWithWhatsApp from "./FastCommunicationWithWhatsApp";
+import JobSupportOpeningContent from "./JobSupportOpeningContent";
 
 export default function ProjectConsultation() {
   return (
@@ -19,7 +19,8 @@ export default function ProjectConsultation() {
         content={AboutOurSupportService}
       />
       <FastCommunicationWithWhatsApp />
-      <AboutJobSupport />
+      <JobSupportOpeningContent />
+
       <JobSupportTermsAndConditions />
       <StickyWhatAppLogo />
       <PrimaryFooter />
