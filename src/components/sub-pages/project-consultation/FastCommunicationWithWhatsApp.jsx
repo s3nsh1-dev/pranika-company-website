@@ -7,6 +7,7 @@ const container = {
   justifyContent: "center",
   alignItems: "center",
   flexWrap: "wrap",
+  marginBottom: "20px",
 };
 const textStyle = {
   padding: "10px",
