@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
-import { TermsAndConditionOfJobSupportIndia } from "../../../constants/ProjectConsultation";
+import { TermsAndConditionOfJobSupportIndia } from "../../../constants/ProjectConsultationConstants";
 
 export default function JobSupportTermsAndConditions() {
   const renderingTnC = TermsAndConditionOfJobSupportIndia.map((tnc) => {
@@ -11,7 +11,7 @@ export default function JobSupportTermsAndConditions() {
     );
   });
   return (
-    <Box sx={{ margin: "20px 50px" }}>
+    <Box sx={{ margin: "20px 3%" }}>
       <Typography variant='h6'>Terms and Conditions</Typography>
       <Box component='ol'>{renderingTnC}</Box>
     </Box>
