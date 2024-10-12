@@ -8,6 +8,7 @@ import ShowPageDescriptionAndLinks from "../../branch-pages/ShowPageDescriptionA
 import JobSupportTermsAndConditions from "./JobSupportTermsAndConditions";
 import FastCommunicationWithWhatsApp from "./FastCommunicationWithWhatsApp";
 import JobSupportMiddleContent from "./JobSupportMiddleContent";
+import TechStackForJobSupport from "./TechStackForJobSupport";
 
 export default function ProjectConsultation() {
   return (
@@ -19,6 +20,7 @@ export default function ProjectConsultation() {
         content={AboutOurSupportService}
       />
       <FastCommunicationWithWhatsApp />
+      <TechStackForJobSupport />
       <JobSupportMiddleContent />
       <JobSupportTermsAndConditions />
       <StickyWhatAppLogo />
