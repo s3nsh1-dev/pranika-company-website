@@ -5,7 +5,7 @@ import { whyChooseJobSupportFormUs } from "../../../constants/ProjectConsultatio
 const bulletPointStyle = {
   margin: "10px 0px",
   fontSize: "15px",
-  backgroundColor: "rgba(0, 0, 0, 0.5)",
+  backgroundColor: "rgba(0, 0, 0, 0.1)",
   padding: "10px 15px",
   borderRadius: "5px",
   border: "1px solid white",
@@ -18,7 +18,7 @@ const containerStyle = {
   justifyContent: "center",
 };
 const listTitleStyle = {
-  backgroundColor: "rgba(0, 0, 0, 0.35)",
+  backgroundColor: "rgba(0, 0, 0, 0.1)",
   padding: "10px 15px",
   borderRadius: "5px",
   border: "1px solid white",
@@ -38,10 +38,6 @@ export default function AboutJobSupport() {
     <Box sx={containerStyle}>
       <Typography variant='h5' textAlign='center' sx={listTitleStyle}>
         Need Help with Your Project or Job Role?
-      </Typography>
-      <Typography>
-        Our expert job support services from India are here to help you navigate
-        these challenges and achieve your goals.
       </Typography>
       <Box component='ul'>{renderWhyPoints}</Box>
     </Box>
