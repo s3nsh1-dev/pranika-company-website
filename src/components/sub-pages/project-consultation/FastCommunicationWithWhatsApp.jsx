@@ -2,11 +2,12 @@ import React from "react";
 import WhatAppTextButton from "../../common/WhatAppTextButton";
 import { Box, Typography } from "@mui/material";
 
-const container = {
+const containerStyle = {
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
   flexWrap: "wrap",
+  marginBottom: "20px",
 };
 const textStyle = {
   padding: "10px",
@@ -17,7 +18,7 @@ const textStyle = {
 };
 export default function FastCommunicationWithWhatsApp() {
   return (
-    <Box sx={container}>
+    <Box sx={containerStyle}>
       <Typography sx={textStyle}>
         Want fast and private communication ?
       </Typography>
