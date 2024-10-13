@@ -1,12 +1,5 @@
 export const commitmentsDetails = [
   {
-    id: 0,
-    title: "Industry-Relevant Curriculum",
-    details:
-      "Our courses are developed in collaboration with industry experts to ensure they cover the most relevant and up-to-date technologies. Whether it's data analytics, data visualization, data transformation, or data operations, our programs are tailored to provide practical skills that are directly applicable in the workplace.",
-    color: "blue",
-  },
-  {
     id: 1,
     title: "Expert Instructors",
     details:
@@ -21,18 +14,18 @@ export const commitmentsDetails = [
     color: "orange",
   },
   {
-    id: 3,
-    title: "Flexible Learning Options",
-    details:
-      "Understanding the diverse needs of our learners, we offer flexible learning formats, including online and hybrid courses. This flexibility ensures that our programs are accessible to professionals and students alike, regardless of their location or schedule.",
-    color: "red",
-  },
-  {
     id: 4,
     title: "Career Support",
     details:
       "We are committed to supporting our learners beyond the classroom. Our courses include career guidance, resume building workshops, and interview preparation sessions, designed to help participants confidently step into the job market.",
     color: "green",
+  },
+  {
+    id: 3,
+    title: "Flexible Learning Options",
+    details:
+      "Understanding the diverse needs of our learners, we offer flexible learning formats including online and hybrid courses. This flexibility ensures that our programs are accessible to everyone regardless of their location or schedule.",
+    color: "red",
   },
   {
     id: 5,
@@ -41,6 +34,14 @@ export const commitmentsDetails = [
       "We provide access to the latest tools, software, and resources that are essential for mastering current industry practices. Our learners gain hands-on experience with the technology and platforms used by top companies, ensuring they are well-prepared for the challenges of the modern workplace.",
     color: "yellow",
   },
+  {
+    id: 0,
+    title: "Industry-Relevant Curriculum",
+    details:
+      "Courses are developed by IT industry experts to ensure they cover the most relevant and up-to-date technologies. Whether it's data analytics, data visualization, data transformation, or data operations, our programs are tailored to provide practical skills that are directly applicable in the workplace.",
+    color: "blue",
+  },
+
   {
     id: 6,
     title: "Continuous Learning Support",
