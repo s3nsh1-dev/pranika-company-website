@@ -8,17 +8,21 @@ export default function TrainingCommitmentDetails({ classValue, commit }) {
     flexDirection: "column",
     justifyContent: "center",
     border: `2px solid ${commit.color}`,
-    margin: "2px 10px",
-    borderRadius: "50%",
+    margin: "10px 10px",
+    borderRadius: "50px",
     padding: "60px",
-    width: 400,
-    height: 400,
+    maxWidth: 400,
+    maxHeight: 400,
   };
   return (
     <Box sx={circleBoxWithTexts}>
       <Typography
         textAlign='justify'
-        sx={{ wordBreak: "break-word", textAlign: "justify" }}
+        sx={{
+          wordBreak: "break-word",
+          textAlign: "justify",
+          fontSize: ".9rem",
+        }}
       >
         <span style={{ fontWeight: "bold" }}>{commit.title}: </span>
         {commit.details}
