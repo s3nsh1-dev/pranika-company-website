@@ -10,7 +10,7 @@ import ReactGA from "react-ga4";
 
 ReactGA.initialize("G-HZS6DQWBQN");
 const tagManagerArgs = {
-  gtmID: "GTM-XXXXXXX",
+  gtmID: "GTM-MVWRZSS6",
 };
 
 TagManager.initialize(tagManagerArgs);
