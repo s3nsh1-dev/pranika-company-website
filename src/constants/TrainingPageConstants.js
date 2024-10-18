@@ -422,6 +422,6 @@ export const courseInformation = [
   },
 ];
 
-export const pageHeadTitle = "How we help in upkskilling?";
+export const pageHeadTitle = "How do we help with upskilling?";
 export const pageHeadContent =
-  "At Pranika Technologies and Consulting Pvt. Ltd., we are dedicated to equipping individuals with the skills and knowledge needed to excel in today's rapidly evolving technological landscape. Our courses are meticulously designed to address the current demands of the industry, focusing on the latest trends and advancements in technology.";
+  "At Pranika Technologies and Consulting Pvt. Ltd., we are committed to equipping individuals with the skills and knowledge necessary to excel in today’s rapidly evolving technological landscape. Our courses are carefully designed to meet the current demands of the industry, focusing on the latest trends and advancements in technology.";
