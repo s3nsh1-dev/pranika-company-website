@@ -402,6 +402,21 @@ export default function AffixBar() {
                 Company insights
               </MenuItem>
             </Box>
+            <Box
+              component={Link}
+              to='/blogs-and-posts'
+              sx={{
+                textDecoration: "none",
+                color: "inherit",
+              }}
+            >
+              <MenuItem
+                onClick={handleMenuClose("blogAndPosts")}
+                sx={{ textTransform: "none" }}
+              >
+                Blogs and Posts
+              </MenuItem>
+            </Box>
           </StyledMenu>
           <Box
             component={Link}
@@ -510,7 +525,7 @@ export default function AffixBar() {
                   aria-controls='panel3-content'
                   id='panel3-header'
                 >
-                  Know me
+                  Know us
                 </AccordionSummary>
                 <AccordionDetails>
                   <Box
@@ -523,6 +538,20 @@ export default function AffixBar() {
                   >
                     <ListItem button>
                       <ListItemText primary='Company insights'></ListItemText>
+                    </ListItem>
+                  </Box>
+                </AccordionDetails>
+                <AccordionDetails>
+                  <Box
+                    component={Link}
+                    to='/blogs-and-posts'
+                    sx={{
+                      textDecoration: "none",
+                      color: "inherit",
+                    }}
+                  >
+                    <ListItem button>
+                      <ListItemText primary='Blogs and Posts'></ListItemText>
                     </ListItem>
                   </Box>
                 </AccordionDetails>
