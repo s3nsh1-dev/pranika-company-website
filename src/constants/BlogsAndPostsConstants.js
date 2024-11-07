@@ -1,6 +1,7 @@
 export const textBasedContent = [
   {
     id: "dataAnalyticsIntro01",
+    author: "Pranika-Technologies",
     primaryTitle: "Getting Started with Data Analytics: Key Concepts and Tools",
     introduction:
       "Data analytics is transforming the way businesses make decisions by providing insights from raw data. In this article, we’ll explore the basics of data analytics, popular tools, and how you can start building data-driven skills.",
@@ -74,15 +75,15 @@ export const textBasedContent = [
       { id: 2, pointsTitle: "", points: [] },
     ],
   },
-  {
-    id: 4,
-    primaryTitle: "",
-    introduction: "",
-    why: { title: "", describe: "" },
-    contentPoints: [
-      { id: 0, pointsTitle: "", points: [] },
-      { id: 1, pointsTitle: "", points: [] },
-      { id: 2, pointsTitle: "", points: [] },
-    ],
-  },
+  //   {
+  //     id: 4,
+  //     primaryTitle: "",
+  //     introduction: "",
+  //     why: { title: "", describe: "" },
+  //     contentPoints: [
+  //       { id: 0, pointsTitle: "", points: [] },
+  //       { id: 1, pointsTitle: "", points: [] },
+  //       { id: 2, pointsTitle: "", points: [] },
+  //     ],
+  //   },
 ];
