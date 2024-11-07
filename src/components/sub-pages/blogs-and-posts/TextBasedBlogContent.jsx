@@ -25,7 +25,15 @@ export default function TextBasedBlogContent({
     );
   });
   return (
-    <Paper sx={{ margin: "20px", padding: "20px" }} elevation={6}>
+    <Paper
+      sx={{
+        margin: "10px",
+        padding: "20px",
+        maxWidth: 600,
+        // minWidth: "30vw",
+      }}
+      elevation={6}
+    >
       <Typography
         variant='h5'
         sx={{
