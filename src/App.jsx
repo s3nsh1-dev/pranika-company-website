@@ -22,6 +22,7 @@ import Test from "./Test";
 import GenericKeywords from "./components/derived-pages/GenericKeywords";
 import ProjectConsultation from "./components/sub-pages/project-consultation/ProjectConsultation";
 import { usePageTracking } from "./custom-hooks/trackInitialPageLoad";
+import BlogsAndPosts from "./components/sub-pages/blogs-and-posts/BlogsAndPosts";
 
 const App = () => {
   // Ensure this is called within the context of BrowserRouter
@@ -49,6 +50,7 @@ const App = () => {
         <Route path='/data-operations' element={<ShowDataOperations />} />
         <Route path='/digital-marketing' element={<DigitalMarketing />} />
         <Route path='/job-support-india' element={<ProjectConsultation />} />
+        <Route path='/blogs-and-posts' element={<BlogsAndPosts />} />
         <Route
           path='/data-transformation'
           element={<ShowDataTransformation />}
