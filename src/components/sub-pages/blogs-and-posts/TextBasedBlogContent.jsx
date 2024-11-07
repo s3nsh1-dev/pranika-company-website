@@ -6,6 +6,7 @@ export default function TextBasedBlogContent({
   intro,
   whyLearn,
   bulletPoints,
+  author,
 }) {
   const renderBulletPoints = bulletPoints.map((bullet) => {
     return (
@@ -44,6 +45,9 @@ export default function TextBasedBlogContent({
         <Typography textAlign='justify'>{whyLearn.describes}</Typography>
       </Box>
       <Box component='ul'>{renderBulletPoints}</Box>
+      <Typography textAlign='end' fontSize='small'>
+        author: <i>{author}</i>
+      </Typography>
     </Paper>
   );
 }

@@ -11,6 +11,7 @@ export default function TextBlogs() {
         intro={blogs.introduction}
         whyLearn={blogs.why}
         bulletPoints={blogs.contentPoints}
+        author={blogs.author}
       />
     );
   });
