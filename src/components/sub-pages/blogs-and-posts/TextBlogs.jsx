@@ -3,6 +3,13 @@ import { textBasedContent } from "../../../constants/BlogsAndPostsConstants";
 import TextBasedBlogContent from "./TextBasedBlogContent";
 import { Box } from "@mui/material";
 
+const boxContainer = {
+  display: "flex",
+  flexDirection: "row",
+  flexWrap: "wrap",
+  justifyContent: "center",
+};
+
 export default function TextBlogs() {
   const rendingSetOfBlogs = textBasedContent.map((blogs) => {
     return (
@@ -16,16 +23,5 @@ export default function TextBlogs() {
       />
     );
   });
-  return (
-    <Box
-      sx={{
-        display: "flex",
-        flexDirection: "row",
-        flexWrap: "wrap",
-        justifyContent: "center",
-      }}
-    >
-      {rendingSetOfBlogs}
-    </Box>
-  );
+  return <Box sx={boxContainer}>{rendingSetOfBlogs}</Box>;
 }
