@@ -41,4 +41,48 @@ export const textBasedContent = [
       },
     ],
   },
+  {
+    id: 1,
+    primaryTitle: "",
+    introduction: "",
+    why: { title: "", describe: "" },
+    contentPoints: [
+      { id: 0, pointsTitle: "", points: [] },
+      { id: 1, pointsTitle: "", points: [] },
+      { id: 2, pointsTitle: "", points: [] },
+    ],
+  },
+  {
+    id: 2,
+    primaryTitle: "",
+    introduction: "",
+    why: { title: "", describe: "" },
+    contentPoints: [
+      { id: 0, pointsTitle: "", points: [] },
+      { id: 1, pointsTitle: "", points: [] },
+      { id: 2, pointsTitle: "", points: [] },
+    ],
+  },
+  {
+    id: 3,
+    primaryTitle: "",
+    introduction: "",
+    why: { title: "", describe: "" },
+    contentPoints: [
+      { id: 0, pointsTitle: "", points: [] },
+      { id: 1, pointsTitle: "", points: [] },
+      { id: 2, pointsTitle: "", points: [] },
+    ],
+  },
+  {
+    id: 4,
+    primaryTitle: "",
+    introduction: "",
+    why: { title: "", describe: "" },
+    contentPoints: [
+      { id: 0, pointsTitle: "", points: [] },
+      { id: 1, pointsTitle: "", points: [] },
+      { id: 2, pointsTitle: "", points: [] },
+    ],
+  },
 ];
