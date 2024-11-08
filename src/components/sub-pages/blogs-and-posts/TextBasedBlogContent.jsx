@@ -1,6 +1,14 @@
 import { Box, Paper, Typography } from "@mui/material";
 import React from "react";
 
+const paperContainer = { margin: "10px", padding: "20px", maxWidth: 600 };
+const headingStyle = {
+  fontWeight: "bold",
+  textAlign: "center",
+  padding: "10px",
+  marginBottom: "10px",
+};
+
 export default function TextBasedBlogContent({
   title,
   intro,
@@ -25,16 +33,8 @@ export default function TextBasedBlogContent({
     );
   });
   return (
-    <Paper sx={{ margin: "20px", padding: "20px" }} elevation={6}>
-      <Typography
-        variant='h5'
-        sx={{
-          fontWeight: "bold",
-          textAlign: "center",
-          padding: "10px",
-          marginBottom: "10px",
-        }}
-      >
+    <Paper sx={paperContainer} elevation={6}>
+      <Typography variant='h5' sx={headingStyle}>
         {title}
       </Typography>
       <Typography textAlign='justify'>{intro}</Typography>
@@ -51,3 +51,7 @@ export default function TextBasedBlogContent({
     </Paper>
   );
 }
+
+/*
+if its possible try ot make a data label to show the date this post where written
+*/
