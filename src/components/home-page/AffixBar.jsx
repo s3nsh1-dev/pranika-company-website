@@ -435,6 +435,23 @@ export default function AffixBar() {
               Contact us
             </Button>
           </Box>
+          <Box
+            component={Link}
+            to='/portfolio'
+            sx={{
+              textDecoration: "none",
+              color: "inherit",
+            }}
+          >
+            <Button
+              variant='text'
+              size='large'
+              color='inherit'
+              sx={{ textTransform: "none" }}
+            >
+              Portfolio
+            </Button>
+          </Box>
         </Box>
         <Search>
           <SearchIconWrapper>
