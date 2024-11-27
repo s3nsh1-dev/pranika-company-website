@@ -237,3 +237,17 @@ export const ourTechStack = [
     stack: ["ReactJS", "Java", "Python", "JavaScript", "TypeScript"],
   },
 ];
+
+export const colors = [
+  "red",
+  "green",
+  "blue",
+  "purple",
+  "brown",
+  "black",
+  "indigo",
+  "maroon",
+  "navy",
+  "olive",
+  "crimson",
+];
