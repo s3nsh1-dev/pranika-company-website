@@ -1,10 +1,11 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
+import { PageTitleText } from "../../common/TitleTexts";
 
 const PortfolioAbout = () => {
   return (
     <Box>
-      <Typography variant='h5'>What we offer</Typography>
+      <PageTitleText>What we offer</PageTitleText>
       <Box component='ul'>
         <Typography component='li'>
           We specialize in delivering comprehensive IT solutions that drive
