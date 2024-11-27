@@ -19,6 +19,7 @@ import ConsultancyAndRecruitment from "./components/derived-pages/ConsultancyAnd
 import DigitalMarketing from "./components/home-page/DigitalMarketing";
 import Careers from "./components/home-page/Careers";
 import Test from "./Test";
+import Portfolio from "./components/home-page/portfolio-page/Portfolio";
 import GenericKeywords from "./components/derived-pages/GenericKeywords";
 import ProjectConsultation from "./components/sub-pages/project-consultation/ProjectConsultation";
 import { usePageTracking } from "./custom-hooks/trackInitialPageLoad";
@@ -51,6 +52,7 @@ const App = () => {
         <Route path='/digital-marketing' element={<DigitalMarketing />} />
         <Route path='/job-support-india' element={<ProjectConsultation />} />
         <Route path='/blogs-and-posts' element={<BlogsAndPosts />} />
+        <Route path='/portfolio' element={<Portfolio />} />
         <Route
           path='/data-transformation'
           element={<ShowDataTransformation />}
