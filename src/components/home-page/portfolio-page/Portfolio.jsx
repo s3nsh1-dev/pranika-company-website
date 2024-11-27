@@ -5,6 +5,8 @@ import PortfolioCaseStudy from "./PortfolioCaseStudy";
 import PortfolioWhyChooseUs from "./PortfolioWhyChooseUs";
 import PortfolioTechStack from "./PortfolioTechStack";
 import PortfolioServices from "./PortfolioServices";
+import PrimaryFooter from "../PrimaryFooter";
+import SecondryNavbar from "../SecondryNavbar";
 
 const Portfolio = () => {
   const [activeTab, setActiveTab] = useState("about");
@@ -33,6 +35,7 @@ const Portfolio = () => {
   };
   return (
     <>
+      <SecondryNavbar />
       <Box>
         <Button
           variant={activeButton.about ? "outlined" : "text"}
@@ -62,6 +65,7 @@ const Portfolio = () => {
       )}
       {activeTab === "services" && <PortfolioServices />}
       {activeTab === "case" && <PortfolioCaseStudy />}
+      <PrimaryFooter />
     </>
   );
 };
