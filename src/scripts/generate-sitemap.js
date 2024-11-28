@@ -20,6 +20,7 @@ const links = [
   { url: "/data-transformation", changefreq: "monthly", priority: 0.7 },
   { url: "/blogs-and-posts", changefreq: "monthly", priority: 0.8 },
   { url: "/consult-recruit", changefreq: "monthly", priority: 0.8 },
+  { url: "/portfolio", changefreq: "monthly", priority: 0.9 },
 ];
 
 // Create a stream to write the sitemap

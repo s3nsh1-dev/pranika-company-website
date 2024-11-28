@@ -79,6 +79,7 @@ const PortfolioCaseStudy = () => {
         color='error'
         shape='rounded'
         onChange={handlePageIndex}
+        sx={{ display: "flex", justifyContent: "center", margin: "10px" }}
       />
     </Box>
   );
