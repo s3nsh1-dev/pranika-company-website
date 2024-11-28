@@ -6,7 +6,7 @@ const PortfolioAbout = () => {
   return (
     <Box>
       <PageTitleText>What we offer</PageTitleText>
-      <Box component='ul'>
+      <Box component='ul' sx={{ textAlign: "justify", padding: "20px" }}>
         <Typography component='li'>
           We specialize in delivering comprehensive IT solutions that drive
           efficiency, innovation, and growth for businesses of all sizes.
