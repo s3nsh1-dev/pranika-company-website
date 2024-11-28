@@ -34,3 +34,14 @@ export const SecondaryHeadingText = styled(Typography)(({ theme }) => ({
 export const BoldSpan = styled("span")({
   fontWeight: "bold",
 });
+
+export const SecondaryHeadingSpanText = styled("span")(({ theme }) => ({
+  fontSize: "1.2rem",
+  fontWeight: "bold",
+  [theme.breakpoints.up("xs")]: {
+    fontSize: "1em",
+  },
+  [theme.breakpoints.up("md")]: {
+    fontSize: "1.2rem",
+  },
+}));
