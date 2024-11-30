@@ -1,4 +1,38 @@
-export const textBasedContent = [
+export const textBasedContent = [];
+
+export const blogButtonLabels = [
+  {
+    id: 0,
+    buttonLabel: "Data Science & Business Analytics",
+    buttonKey: "DSBA",
+  },
+  { id: 1, buttonLabel: "AI & Machine Learning & Gen AI", buttonKey: "GenAI" },
+  { id: 2, buttonLabel: "Cloud Computing", buttonKey: "CC" },
+  {
+    id: 3,
+    buttonLabel: "DevOps & SRE (Site Reliability Engineering)",
+    buttonKey: "DevOps",
+  },
+  { id: 4, buttonLabel: "Software Development", buttonKey: "SDE" },
+  {
+    id: 5,
+    buttonLabel: "IT Service Management & Enterprise Architecture",
+    buttonKey: "ITSM",
+  },
+  {
+    id: 6,
+    buttonLabel: "Digital Marketing & Growth Hacking",
+    buttonKey: "DMGH",
+  },
+  { id: 7, buttonLabel: "Big Data and advance analytics", buttonKey: "BGAA" },
+  {
+    id: 8,
+    buttonLabel: "Career Fast-track & Professional Upskilling",
+    buttonKey: "Upskilling",
+  },
+];
+
+const DSBAarray = [
   {
     id: "dataAnalyticsIntro01",
     author: "Pranika-Technologies",
@@ -42,6 +76,47 @@ export const textBasedContent = [
       },
     ],
   },
+  {
+    id: 4,
+    author: "Pranika-Technologies",
+    primaryTitle:
+      "Mastering SQL for Data Analysis: Essential Queries and Techniques",
+    introduction:
+      "SQL is the backbone of data analysis, allowing analysts to query, manipulate, and manage data stored in relational databases. Here, we’ll cover essential SQL queries and techniques for data analysis.",
+    why: { title: "", describes: "" },
+    contentPoints: [
+      {
+        id: 0,
+        pointsTitle: "Essential SQL Queries",
+        points: [
+          "SELECT: Used to retrieve data from tables. Example: SELECT * FROM customers;",
+          "WHERE: Filters records based on specified conditions. Example: SELECT * FROM sales WHERE amount > 5000;",
+          "GROUP BY: Groups records to perform aggregate calculations. Example: SELECT product, SUM(quantity) FROM orders GROUP BY product;",
+          "JOINs: Combine data from multiple tables, such as INNER JOIN, LEFT JOIN, and RIGHT JOIN.",
+        ],
+      },
+      {
+        id: 1,
+        pointsTitle: "Advanced SQL Techniques",
+        points: [
+          "Window Functions: Perform calculations across a set of table rows related to the current row. Example: SELECT product, RANK() OVER (ORDER BY sales DESC) FROM products;",
+          "Subqueries: Nested queries used within another query to achieve complex results.",
+          "Common Table Expressions (CTEs): Temporary result sets for readable, organized queries.",
+        ],
+      },
+      {
+        id: 2,
+        pointsTitle: "Best Practices for Writing SQL Queries",
+        points: [
+          "Use clear, consistent naming conventions.",
+          "Indent and format queries for readability.",
+          "Always test queries on a smaller dataset before running them on production data.",
+        ],
+      },
+    ],
+  },
+];
+const BGAAarray = [
   {
     id: 1,
     author: "Pranika-Technologies",
@@ -111,6 +186,8 @@ export const textBasedContent = [
       },
     ],
   },
+];
+const DMGHarray = [
   {
     id: 3,
     author: "Pranika-Technologies",
@@ -151,43 +228,15 @@ export const textBasedContent = [
       },
     ],
   },
-  {
-    id: 4,
-    author: "Pranika-Technologies",
-    primaryTitle:
-      "Mastering SQL for Data Analysis: Essential Queries and Techniques",
-    introduction:
-      "SQL is the backbone of data analysis, allowing analysts to query, manipulate, and manage data stored in relational databases. Here, we’ll cover essential SQL queries and techniques for data analysis.",
-    why: { title: "", describes: "" },
-    contentPoints: [
-      {
-        id: 0,
-        pointsTitle: "Essential SQL Queries",
-        points: [
-          "SELECT: Used to retrieve data from tables. Example: SELECT * FROM customers;",
-          "WHERE: Filters records based on specified conditions. Example: SELECT * FROM sales WHERE amount > 5000;",
-          "GROUP BY: Groups records to perform aggregate calculations. Example: SELECT product, SUM(quantity) FROM orders GROUP BY product;",
-          "JOINs: Combine data from multiple tables, such as INNER JOIN, LEFT JOIN, and RIGHT JOIN.",
-        ],
-      },
-      {
-        id: 1,
-        pointsTitle: "Advanced SQL Techniques",
-        points: [
-          "Window Functions: Perform calculations across a set of table rows related to the current row. Example: SELECT product, RANK() OVER (ORDER BY sales DESC) FROM products;",
-          "Subqueries: Nested queries used within another query to achieve complex results.",
-          "Common Table Expressions (CTEs): Temporary result sets for readable, organized queries.",
-        ],
-      },
-      {
-        id: 2,
-        pointsTitle: "Best Practices for Writing SQL Queries",
-        points: [
-          "Use clear, consistent naming conventions.",
-          "Indent and format queries for readability.",
-          "Always test queries on a smaller dataset before running them on production data.",
-        ],
-      },
-    ],
-  },
+];
+export const blogDatabase = [
+  { id: "blog0", blogKey: "DSBA", database: [DSBAarray] },
+  { id: "blog1", blogKey: "GenAI", database: [] },
+  { id: "blog2", blogKey: "CC", database: [] },
+  { id: "blog3", blogKey: "DevOps", database: [] },
+  { id: "blog4", blogKey: "SDE", database: [] },
+  { id: "blog5", blogKey: "ITSM", database: [] },
+  { id: "blog6", blogKey: "DMGH", database: [] },
+  { id: "blog7", blogKey: "BGAA", database: [BGAAarray] },
+  { id: "blog8", blogKey: "Upskilling", database: [] },
 ];
