@@ -25,3 +25,9 @@ export default function TextBlogs() {
   });
   return <Box sx={boxContainer}>{rendingSetOfBlogs}</Box>;
 }
+
+/*
+Text Blog will receive the blog data an props
+and show the props
+remove text based content with database of blog
+*/
