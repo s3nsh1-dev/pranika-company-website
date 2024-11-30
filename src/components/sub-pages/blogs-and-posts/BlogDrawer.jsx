@@ -1,6 +1,9 @@
 import React, { useState, Fragment } from "react";
 import { Box, Button, Divider } from "@mui/material";
-import { blogButtonLabels } from "../../../constants/BlogsAndPostsConstants";
+import {
+  blogButtonLabels,
+  blogDatabase,
+} from "../../../constants/BlogsAndPostsConstants";
 
 export const styledContainer = {
   display: "flex",
@@ -8,9 +11,14 @@ export const styledContainer = {
   border: "2px solid black",
   width: "20%",
 };
+
 const BlogDrawer = () => {
   // this will kep the track of key based on the buttons events
-  const [activeKey, setActiveKey] = useState(null);
+  const [activeKey, setActiveKey] = useState("DSBA");
+  const handleActiveKeyChange = (currentKey) => {
+    setActiveKey(currentKey);
+  };
+  console.log(activeKey);
   return (
     <Box sx={styledContainer}>
       {blogButtonLabels.map((button) => {
@@ -18,9 +26,7 @@ const BlogDrawer = () => {
           <Fragment key={button.id}>
             <Button
               sx={{ textTransform: "none" }}
-              onClick={() => {
-                console.log(button.buttonKey);
-              }}
+              onClick={() => handleActiveKeyChange(button.buttonKey)}
             >
               {button.buttonLabel}
             </Button>
@@ -36,4 +42,9 @@ export default BlogDrawer;
 /*
 see what this is ?: const activeBlog = blogs.find(blog => blog.key === activeKey);
 with the help of find we will find the first activeKey blog and show it content
+
+Next Step: 
+create and fill blogdataBase with blog data
+format it
+Then use this data to render blog post in BlogPost component
 */

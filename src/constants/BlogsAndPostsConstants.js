@@ -223,3 +223,15 @@ export const blogButtonLabels = [
     buttonKey: "Upskilling",
   },
 ];
+
+export const blogDatabase = [
+  { id: "blog0", blogKey: "DSBA", data: [] },
+  { id: "blog1", blogKey: "GenAI", data: [] },
+  { id: "blog2", blogKey: "CC", data: [] },
+  { id: "blog3", blogKey: "DevOps", data: [] },
+  { id: "blog4", blogKey: "SDE", data: [] },
+  { id: "blog5", blogKey: "ITSM", data: [] },
+  { id: "blog6", blogKey: "DMGH", data: [] },
+  { id: "blog7", blogKey: "BGAA", data: [] },
+  { id: "blog8", blogKey: "Upskilling", data: [] },
+];
