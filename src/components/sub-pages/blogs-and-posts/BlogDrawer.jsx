@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Box, Button, Divider } from "@mui/material";
 
 const styledContainer = {
@@ -7,7 +7,23 @@ const styledContainer = {
   border: "2px solid black",
   width: "20%",
 };
+const buttonsValue = [
+  { id: 0, buttonName: "" },
+  { id: 0, buttonName: "" },
+  { id: 0, buttonName: "" },
+  { id: 0, buttonName: "" },
+  { id: 0, buttonName: "" },
+  { id: 0, buttonName: "" },
+  { id: 0, buttonName: "" },
+  { id: 0, buttonName: "" },
+  { id: 0, buttonName: "" },
+  { id: 0, buttonName: "" },
+  { id: 0, buttonName: "" },
+  { id: 0, buttonName: "" },
+];
 const BlogDrawer = () => {
+  // this will kep the track of key based on the buttons events
+  const [activeKey, setActiveKey] = useState(null);
   return (
     <Box sx={styledContainer}>
       <Button>Data Science & Business Analytics</Button>
