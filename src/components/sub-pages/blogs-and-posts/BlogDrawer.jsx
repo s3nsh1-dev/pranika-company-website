@@ -1,5 +1,5 @@
-import React, { useState, Fragment } from "react";
-import { Box, Button, Divider, Grid } from "@mui/material";
+import React, { useState, Fragment, useEffect } from "react";
+import { Button, Divider, Grid } from "@mui/material";
 import {
   blogButtonLabels,
   blogDatabase,
@@ -11,19 +11,32 @@ export const styledContainer = {
   flexDirection: "column",
   border: "2px solid black",
   width: "20%",
+  height: "100%",
 };
 
 const BlogDrawer = () => {
   // this will kep the track of key based on the buttons events
   const [activeKey, setActiveKey] = useState("DSBA");
+  const [textBlogProp, setTextBlogProp] = useState(null);
+
   const handleActiveKeyChange = (currentKey) => {
     setActiveKey(currentKey);
   };
-  console.log(activeKey);
+
+  useEffect(() => {
+    let tempBlog = blogDatabase.find((req) => {
+      return req.blogKey === activeKey;
+    });
+    setTextBlogProp(tempBlog.database);
+    return () => {
+      tempBlog = null;
+    };
+  }, [activeKey]);
+
   return (
     <Grid container columns={12}>
       {/* decide sx and md based on drawer proportion */}
-      <Grid item sx={styledContainer}>
+      <Grid item sx={styledContainer} xs={3}>
         {blogButtonLabels.map((button) => {
           return (
             <Fragment key={button.id}>
@@ -38,9 +51,9 @@ const BlogDrawer = () => {
           );
         })}
       </Grid>
-      <Grid item>
+      <Grid item xs={9}>
         {/* decide sx and md based on drawer proportion */}
-        <TextBlogs />
+        {textBlogProp && <TextBlogs blog={textBlogProp} />}
       </Grid>
     </Grid>
   );
