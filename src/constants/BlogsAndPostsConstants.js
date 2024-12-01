@@ -1,4 +1,4 @@
-export const textBasedContent = [];
+import { CardFillerData } from "./TrashData";
 
 export const blogButtonLabels = [
   {
@@ -116,6 +116,7 @@ const DSBAarray = [
     ],
   },
 ];
+
 const BGAAarray = [
   {
     id: 1,
@@ -230,7 +231,7 @@ const DMGHarray = [
   },
 ];
 export const blogDatabase = [
-  { id: "blog0", blogKey: "DSBA", database: DSBAarray },
+  { id: "blog0", blogKey: "DSBA", database: CardFillerData },
   { id: "blog1", blogKey: "GenAI", database: [] },
   { id: "blog2", blogKey: "CC", database: [] },
   { id: "blog3", blogKey: "DevOps", database: [] },

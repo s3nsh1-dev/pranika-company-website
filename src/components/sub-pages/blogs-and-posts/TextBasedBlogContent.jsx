@@ -7,8 +7,15 @@ import {
 } from "@mui/material";
 import React from "react";
 import { BlueBorderButton } from "../../common/Buttons";
+import { ClampText } from "../../common/TitleTexts";
 
-const cardContainer = { margin: "10px", maxWidth: 450, padding: "5px" };
+const cardContainer = {
+  margin: "10px",
+  maxWidth: 400,
+  maxHeight: 400,
+  minHeight: 320,
+  padding: "5px",
+};
 const headingStyle = {
   fontWeight: "bold",
   textAlign: "center",
@@ -20,10 +27,8 @@ export default function TextBasedBlogContent({ title, intro, author }) {
     <Card sx={cardContainer} elevation={6}>
       <CardActionArea sx={{ padding: "5px" }}>
         <CardContent>
-          <Typography variant='h6' sx={headingStyle}>
-            {title}
-          </Typography>
-          <Typography textAlign='justify'>{intro}</Typography>
+          <Typography sx={headingStyle}>{title}</Typography>
+          <ClampText>{intro}</ClampText>
         </CardContent>
       </CardActionArea>
       <CardActions
