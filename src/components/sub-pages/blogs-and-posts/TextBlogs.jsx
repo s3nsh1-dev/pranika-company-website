@@ -1,5 +1,5 @@
 import React from "react";
-import { textBasedContent } from "../../../constants/BlogsAndPostsConstants";
+
 import TextBasedBlogContent from "./TextBasedBlogContent";
 import { Box } from "@mui/material";
 
@@ -10,16 +10,16 @@ const boxContainer = {
   justifyContent: "center",
 };
 
-export default function TextBlogs() {
-  const rendingSetOfBlogs = textBasedContent.map((blogs) => {
+export default function TextBlogs({ blog }) {
+  const rendingSetOfBlogs = blog.map((post) => {
     return (
       <TextBasedBlogContent
-        key={blogs.id}
-        title={blogs.primaryTitle}
-        intro={blogs.introduction}
-        whyLearn={blogs.why}
-        bulletPoints={blogs.contentPoints}
-        author={blogs.author}
+        key={post.id}
+        title={post.primaryTitle}
+        intro={post.introduction}
+        whyLearn={post.why}
+        bulletPoints={post.contentPoints}
+        author={post.author}
       />
     );
   });
