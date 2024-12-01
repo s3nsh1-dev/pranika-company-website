@@ -1,54 +1,46 @@
-import { Box, Paper, Typography } from "@mui/material";
+import {
+  Typography,
+  Card,
+  CardActions,
+  CardContent,
+  CardActionArea,
+} from "@mui/material";
 import React from "react";
+import { BlueBorderButton } from "../../common/Buttons";
+import { ClampText } from "../../common/TitleTexts";
 
-const paperContainer = { margin: "10px", padding: "20px", maxWidth: 600 };
+const cardContainer = {
+  margin: "10px",
+  maxWidth: 400,
+  maxHeight: 400,
+  minHeight: 320,
+  padding: "5px",
+};
 const headingStyle = {
   fontWeight: "bold",
   textAlign: "center",
-  padding: "10px",
-  marginBottom: "10px",
+  marginBottom: "20px",
 };
 
-export default function TextBasedBlogContent({
-  title,
-  intro,
-  whyLearn,
-  bulletPoints,
-  author,
-}) {
-  const renderBulletPoints = bulletPoints.map((bullet) => {
-    return (
-      <Box key={bullet.id} margin={2}>
-        <Typography variant='h6' fontWeight='bold'>
-          {bullet.pointsTitle}
-        </Typography>
-        {bullet.points.map((point, index) => {
-          return (
-            <Box component='li' key={index}>
-              {point}
-            </Box>
-          );
-        })}
-      </Box>
-    );
-  });
+export default function TextBasedBlogContent({ title, intro, author }) {
   return (
-    <Paper sx={paperContainer} elevation={6}>
-      <Typography variant='h5' sx={headingStyle}>
-        {title}
-      </Typography>
-      <Typography textAlign='justify'>{intro}</Typography>
-      <Box margin={2}>
-        <Typography variant='h6' fontWeight='bold'>
-          {whyLearn.title}
+    <Card sx={cardContainer} elevation={6}>
+      <CardActionArea sx={{ padding: "5px" }}>
+        <CardContent>
+          <Typography sx={headingStyle}>{title}</Typography>
+          <ClampText>{intro}</ClampText>
+        </CardContent>
+      </CardActionArea>
+      <CardActions
+        disableSpacing
+        sx={{ display: "flex", justifyContent: "space-between" }}
+      >
+        <BlueBorderButton>Read Full Post</BlueBorderButton>
+        <Typography textAlign='end' fontSize='small' sx={{ color: "gray" }}>
+          author: <i>{author}</i>
         </Typography>
-        <Typography textAlign='justify'>{whyLearn.describes}</Typography>
-      </Box>
-      <Box component='ul'>{renderBulletPoints}</Box>
-      <Typography textAlign='end' fontSize='small'>
-        author: <i>{author}</i>
-      </Typography>
-    </Paper>
+      </CardActions>
+    </Card>
   );
 }
 

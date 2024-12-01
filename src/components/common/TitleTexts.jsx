@@ -47,3 +47,9 @@ export const SecondaryHeadingSpanText = styled("span")(({ theme }) => ({
     fontSize: "1.2rem",
   },
 }));
+
+export const ClampText = styled(Typography)(({ theme }) => ({
+  // text changes are based on view port
+  fontSize: "clamp(12px, 2vw, 16px)",
+  textAlign: "justify",
+}));
