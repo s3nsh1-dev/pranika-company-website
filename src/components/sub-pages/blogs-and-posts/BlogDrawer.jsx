@@ -14,11 +14,24 @@ const styledContainer = {
 };
 
 const scrollableContainer = {
+  paddingTop: "1rem",
   overflowY: "auto",
   height: "100vh",
   display: "flex",
   flexWrap: "wrap",
   justifyContent: "center",
+};
+
+const highLight = {
+  color: "#070066",
+  margin: "5px",
+  fontSize: "18px",
+  // fontWeight: "bold",
+  textShadow: "2px 2px white",
+};
+const noHighLight = {
+  color: "#070066",
+  margin: "5px",
 };
 
 const BlogDrawer = () => {
@@ -42,11 +55,11 @@ const BlogDrawer = () => {
   return (
     <Grid container columns={12}>
       {/* Static Drawer Section */}
-      <Grid item xs={3} sx={styledContainer}>
+      <Grid item md={3} sx={styledContainer} xs={12}>
         {blogButtonLabels.map((button) => (
           <Fragment key={button.id}>
             <NormButton
-              sx={{ color: "#070066", margin: "5px" }}
+              sx={activeKey === button.buttonKey ? highLight : noHighLight}
               onClick={() => handleActiveKeyChange(button.buttonKey)}
             >
               {button.buttonLabel}
@@ -57,7 +70,7 @@ const BlogDrawer = () => {
       </Grid>
 
       {/* Scrollable Content Section */}
-      <Grid item xs={9}>
+      <Grid item md={9} xs={12}>
         <Box sx={scrollableContainer}>
           {textBlogProp ? (
             <TextBlogs blog={textBlogProp} />
