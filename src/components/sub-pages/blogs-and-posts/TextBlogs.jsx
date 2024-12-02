@@ -14,5 +14,5 @@ export default function TextBlogs({ blog }) {
       />
     );
   });
-  return <>{rendingSetOfBlogs};</>;
+  return <>{rendingSetOfBlogs}</>;
 }

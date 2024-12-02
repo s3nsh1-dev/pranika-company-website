@@ -10,7 +10,7 @@ import { NormButton } from "../../common/Buttons";
 const styledContainer = {
   display: "flex",
   flexDirection: "column", // this gives button the whole size of xs{3} grid
-  backgroundColor: "#7dcfff",
+  backgroundColor: "#b0d6ff",
 };
 
 const scrollableContainer = {
