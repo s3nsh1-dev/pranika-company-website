@@ -16,7 +16,7 @@ const styledContainer = {
 const scrollableContainer = {
   paddingTop: "1rem",
   overflowY: "auto",
-  height: "100vh",
+  height: "80vh",
   display: "flex",
   flexWrap: "wrap",
   justifyContent: "center",
