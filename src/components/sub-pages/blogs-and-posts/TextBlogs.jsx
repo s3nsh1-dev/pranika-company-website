@@ -1,14 +1,5 @@
 import React from "react";
-
 import TextBasedBlogContent from "./TextBasedBlogContent";
-import { Box } from "@mui/material";
-
-const boxContainer = {
-  display: "flex",
-  flexDirection: "row",
-  flexWrap: "wrap",
-  justifyContent: "center",
-};
 
 export default function TextBlogs({ blog }) {
   const rendingSetOfBlogs = blog.map((post) => {
@@ -23,11 +14,5 @@ export default function TextBlogs({ blog }) {
       />
     );
   });
-  return <Box sx={boxContainer}>{rendingSetOfBlogs}</Box>;
+  return <>{rendingSetOfBlogs};</>;
 }
-
-/*
-Text Blog will receive the blog data an props
-and show the props
-remove text based content with database of blog
-*/

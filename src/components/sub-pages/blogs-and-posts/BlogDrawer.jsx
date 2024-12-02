@@ -4,24 +4,21 @@ import {
   blogButtonLabels,
   blogDatabase,
 } from "../../../constants/BlogsAndPostsConstants";
-import TextBlogs from "./TextBlogs"; // send the active blog data to TextBlogs as props
+import TextBlogs from "./TextBlogs";
 import { NormButton } from "../../common/Buttons";
 
-// Styles
 const styledContainer = {
   display: "flex",
-  flexDirection: "column",
-  width: "100%", // Full width for the grid item
-  height: "100%", // Full viewport height
-  position: "absolute", // Makes it static relative to the page
+  flexDirection: "column", // this gives button the whole size of xs{3} grid
   backgroundColor: "#7dcfff",
 };
 
 const scrollableContainer = {
-  overflowY: "auto", // Enables vertical scrolling
-  height: "100vh", // Matches the height of the drawer
-  padding: "1rem", // Adds some padding for better spacing
-  boxSizing: "border-box", // Ensures padding doesn't affect width
+  overflowY: "auto",
+  height: "100vh",
+  display: "flex",
+  flexWrap: "wrap",
+  justifyContent: "center",
 };
 
 const BlogDrawer = () => {
@@ -43,13 +40,13 @@ const BlogDrawer = () => {
   }, [activeKey]);
 
   return (
-    <Grid container columns={12} sx={{ height: "100vh" }}>
+    <Grid container columns={12}>
       {/* Static Drawer Section */}
       <Grid item xs={3} sx={styledContainer}>
         {blogButtonLabels.map((button) => (
           <Fragment key={button.id}>
             <NormButton
-              sx={{ color: "#070066" }}
+              sx={{ color: "#070066", margin: "5px" }}
               onClick={() => handleActiveKeyChange(button.buttonKey)}
             >
               {button.buttonLabel}
@@ -60,11 +57,7 @@ const BlogDrawer = () => {
       </Grid>
 
       {/* Scrollable Content Section */}
-      <Grid
-        item
-        xs={9}
-        sx={{ marginLeft: "25%" /* Align to the right of drawer */ }}
-      >
+      <Grid item xs={9}>
         <Box sx={scrollableContainer}>
           {textBlogProp ? (
             <TextBlogs blog={textBlogProp} />
@@ -78,15 +71,3 @@ const BlogDrawer = () => {
 };
 
 export default BlogDrawer;
-
-// see what this is ?: const activeBlog = blogs.find(blog => blog.key === activeKey);
-// with the help of find we will find the first activeKey blog and show it content
-
-// Next Step:
-// create and fill blogDataBase with blog data
-// format it
-// Then use this data to render blog post in BlogPost component
-
-// const activeBlog = blogs.find(blog => blog.key === activeKey);
-// will probably decide the blogDatabase data
-// */
