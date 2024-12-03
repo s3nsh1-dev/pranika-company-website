@@ -2,6 +2,7 @@ import { Box, Paper, Typography } from "@mui/material";
 import React from "react";
 
 const paperContainer = { margin: "10px", padding: "20px", maxWidth: 600 };
+
 const headingStyle = {
   fontWeight: "bold",
   textAlign: "center",

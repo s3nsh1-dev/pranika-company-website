@@ -1,5 +1,5 @@
 export const AboutOurSupportService =
-  "We provide Job Support for IT Technologies and Project Management, Our Job Support & training includes Digital Marketing, Business Analyst, Power bi, SQL, Azure, React, Cloud, Programming, Database etc. We have a proven record for successful Job Support and Project Assistance and our goal is to keep evolving with upcoming technologies";
+  "At Pranika Technologies, we specialize in IT outsourcing and professional job support with a strong focus on data analytics. Our expertise spans Business Analysis, Power BI, SQL and Database Management, Azure Cloud Services, Cloud Computing, Advanced Programming, Project Management, and Data Analytics. We provide practical, hands-on solutions that bridge the gap between theoretical knowledge and real-world application, helping professionals and organizations harness the full potential of their data. Whether you’re looking to upskill, transition careers, or enhance your team’s data analytics capabilities, we offer the targeted support and expertise you need to succeed, including specialized guidance in Digital Marketing.";
 
 export const whyChooseJobSupportFormUs = [
   {
