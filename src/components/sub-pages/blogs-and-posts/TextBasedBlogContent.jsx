@@ -17,13 +17,11 @@ const style = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: { xs: "90%", sm: "80%", md: "60%" }, // Responsive width
-  maxHeight: "90vh", // Limit height
-  overflowY: "auto", // Enable scrolling for overflow content
-  bgcolor: "background.paper", // Background color
+  minWidth: { xs: "90vw", md: "60vw" }, // Responsive width
+  maxHeight: "95vh", // Limit height
+  overflowX: "auto", // Enable scrolling for overflow content
   borderRadius: "8px", // Add some border radius for better UI
-  boxShadow: 24, // Shadow for elevation
-  p: 3, // Padding
+  bgcolor: "white",
 };
 
 const cardContainer = {

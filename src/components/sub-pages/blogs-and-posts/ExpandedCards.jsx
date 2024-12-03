@@ -1,7 +1,8 @@
-import { Box, Paper, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import React from "react";
+import { ClampText } from "../../common/TitleTexts";
 
-const paperContainer = { margin: "10px", padding: "20px", maxWidth: 600 };
+const paperContainer = { margin: "10px", padding: "10px" };
 
 const headingStyle = {
   fontWeight: "bold",
@@ -20,9 +21,9 @@ export default function ExpandedCards({
   const renderBulletPoints = bulletPoints.map((bullet) => {
     return (
       <Box key={bullet.id} margin={2}>
-        <Typography variant='h6' fontWeight='bold'>
+        <ClampText variant='h6' fontWeight='bold'>
           {bullet.pointsTitle}
-        </Typography>
+        </ClampText>
         {bullet.points.map((point, index) => {
           return (
             <Box component='li' key={index}>
@@ -34,7 +35,7 @@ export default function ExpandedCards({
     );
   });
   return (
-    <Paper sx={paperContainer} elevation={6}>
+    <Box sx={paperContainer}>
       <Typography variant='h5' sx={headingStyle}>
         {title}
       </Typography>
@@ -46,10 +47,10 @@ export default function ExpandedCards({
         <Typography textAlign='justify'>{whyLearn.describes}</Typography>
       </Box>
       <Box component='ul'>{renderBulletPoints}</Box>
-      <Typography textAlign='end' fontSize='small'>
+      <Typography textAlign='end' fontSize='x-small'>
         author: <i>{author}</i>
       </Typography>
-    </Paper>
+    </Box>
   );
 }
 
