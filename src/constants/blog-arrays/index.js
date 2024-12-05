@@ -7,3 +7,4 @@ export * from "./itService";
 export * from "./digitalMarketingPosts";
 export * from "./bigDataPosts";
 export * from "./upskillingCareerPost";
+export * from "./ultimateDAquestionBank";
