@@ -6,6 +6,7 @@ import {
 } from "../../../constants/BlogsAndPostsConstants";
 import TextBlogs from "./TextBlogs";
 import { NormButton } from "../../common/Buttons";
+import QuestionBankSets from "./QuestionBankSets";
 
 const styledContainer = {
   display: "flex",
@@ -37,6 +38,10 @@ const noHighLight = {
 const BlogDrawer = () => {
   const [activeKey, setActiveKey] = useState("DSBA");
   const [textBlogProp, setTextBlogProp] = useState(null);
+
+  const questionBankCollections = blogDatabase.find((dataKey) => {
+    return dataKey.blogKey === "questionBank001";
+  });
 
   const handleActiveKeyChange = (currentKey) => {
     setActiveKey(currentKey);
@@ -74,6 +79,10 @@ const BlogDrawer = () => {
         <Box sx={scrollableContainer}>
           {textBlogProp ? (
             <TextBlogs blog={textBlogProp} />
+          ) : activeKey === "questionBank" ? (
+            <QuestionBankSets
+              questionBankSets={questionBankCollections.database}
+            />
           ) : (
             <div>Select a blog to see the content</div>
           )}
