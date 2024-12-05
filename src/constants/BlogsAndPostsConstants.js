@@ -9,6 +9,7 @@ import {
   bigDataBlogs,
   upskillingCareerBlogs,
 } from "./blog-arrays/";
+import dataScienceQuestionBank from "./blog-arrays/ultimateDAquestionBank";
 
 export const blogButtonLabels = [
   {
@@ -40,6 +41,25 @@ export const blogButtonLabels = [
     buttonLabel: "Career Fast-track & Professional Upskilling",
     buttonKey: "Upskilling",
   },
+  {
+    id: "questionBank001",
+    buttonLabel: "Question Banks",
+    buttonKey: "questionBank",
+  },
+];
+
+const questionBankTopics = [
+  {
+    topicId: "questionBank001",
+    topicTitle:
+      "The Ultimate SQL Question Bank for Data Analysts and Data Scientists",
+    topicQuestionnaire: dataScienceQuestionBank,
+  },
+  // {
+  //   topicId: "",
+  //   topicTitle: "",
+  //   topicQuestionnaire: [],
+  // },
 ];
 
 export const blogDatabase = [
@@ -52,4 +72,5 @@ export const blogDatabase = [
   { id: "blog6", blogKey: "DMGH", database: digitalMarketingBlogs },
   { id: "blog7", blogKey: "BGAA", database: bigDataBlogs },
   { id: "blog8", blogKey: "Upskilling", database: upskillingCareerBlogs },
+  { id: "q&a", blogKey: "questionBank001", database: questionBankTopics },
 ];
