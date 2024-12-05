@@ -24,12 +24,23 @@ export const PrimaryHeadingText = styled(Typography)(({ theme }) => ({
 }));
 
 export const SecondaryHeadingText = styled(Typography)(({ theme }) => ({
-  fontSize: "1.3rem",
+  fontSize: "1.2rem",
   [theme.breakpoints.up("xs")]: {
     fontSize: "1em",
   },
   [theme.breakpoints.up("md")]: {
-    fontSize: "1.3rem",
+    fontSize: "1.2rem",
+  },
+}));
+
+export const OneRemBoldSpan = styled("span")(({ theme }) => ({
+  fontSize: "1rem",
+  fontWeight: "bold",
+  [theme.breakpoints.up("xs")]: {
+    fontSize: "0.9em",
+  },
+  [theme.breakpoints.up("md")]: {
+    fontSize: "1rem",
   },
 }));
 
@@ -38,13 +49,13 @@ export const BoldSpan = styled("span")({
 });
 
 export const SecondaryHeadingSpanText = styled("span")(({ theme }) => ({
-  fontSize: "1.2rem",
+  fontSize: "1.3rem",
   fontWeight: "bold",
   [theme.breakpoints.up("xs")]: {
-    fontSize: "1em",
+    fontSize: "1.1em",
   },
   [theme.breakpoints.up("md")]: {
-    fontSize: "1.2rem",
+    fontSize: "1.3rem",
   },
 }));
 
