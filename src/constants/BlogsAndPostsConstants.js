@@ -55,6 +55,16 @@ const questionBankTopics = [
       "The Ultimate SQL Question Bank for Data Analysts and Data Scientists",
     topicQuestionnaire: dataScienceQuestionBank,
   },
+  {
+    topicId: "questionBank002",
+    topicTitle: "Question Bank for Gen AI And MAchine Learning Research",
+    topicQuestionnaire: [],
+  },
+  {
+    topicId: "questionBank003",
+    topicTitle: "Question Bank for ReactJS and new Features",
+    topicQuestionnaire: [],
+  },
   // {
   //   topicId: "",
   //   topicTitle: "",
