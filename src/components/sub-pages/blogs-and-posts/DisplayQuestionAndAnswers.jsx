@@ -39,7 +39,7 @@ const DisplayQuestionAndAnswers = ({ questionBank }) => {
     );
   });
 
-  return <Box>{renderQuestionAndAnswers}</Box>;
+  return <>{renderQuestionAndAnswers}</>;
 };
 
 export default DisplayQuestionAndAnswers;
