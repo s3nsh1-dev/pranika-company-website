@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { Box } from "@mui/material";
+import { Box, Button } from "@mui/material";
 import DisplayQuestionAndAnswers from "./DisplayQuestionAndAnswers";
-import { BlueBorderButton } from "../../common/Buttons";
+import { NormButton } from "../../common/Buttons";
 
 const QuestionBankSets = ({ questionBankSets }) => {
   const [quesState, setQuesState] = useState({
@@ -38,23 +38,36 @@ const QuestionBankSets = ({ questionBankSets }) => {
   };
   const renderQuestionSets = questionBankSets.map((qSet) => {
     return (
-      <Box key={qSet.topicId}>
-        <BlueBorderButton
-          onClick={() => {
-            handleQuestionBankChange({
-              bankData: qSet.topicQuestionnaire,
-              buttonId: qSet.topicId,
-            });
-          }}
-        >
-          {qSet.topicTitle}
-        </BlueBorderButton>
-      </Box>
+      <NormButton
+        variant={
+          quesState.prevButton === qSet.topicId ? "contained" : "outlined"
+        }
+        color='info'
+        key={qSet.topicId}
+        onClick={() => {
+          handleQuestionBankChange({
+            bankData: qSet.topicQuestionnaire,
+            buttonId: qSet.topicId,
+          });
+        }}
+        sx={{ margin: "5px" }}
+      >
+        {qSet.topicTitle}
+      </NormButton>
     );
   });
   return (
     <Box sx={{ display: "flex", flexDirection: "column", padding: "1%" }}>
-      <Box sx={{}}>{renderQuestionSets}</Box>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "row",
+          flexWrap: "wrap",
+          justifyContent: "start",
+        }}
+      >
+        {renderQuestionSets}
+      </Box>
       <Box sx={{ marginTop: "20px" }}>
         {quesState.selected &&
         quesState.prevButton !== "" &&

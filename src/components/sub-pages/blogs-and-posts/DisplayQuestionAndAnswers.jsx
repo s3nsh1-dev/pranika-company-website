@@ -27,7 +27,7 @@ const DisplayQuestionAndAnswers = ({ questionBank }) => {
             Question {quesAns.id}: {quesAns.question}
           </SecondaryHeadingText>
         </Box>
-        <Box component='details'>
+        <Box component='details' sx={{ color: "green" }}>
           <Box component='summary'>Answer</Box>
           {typeof quesAns.answer === "string" ? (
             <Typography>{quesAns.answer}</Typography>
