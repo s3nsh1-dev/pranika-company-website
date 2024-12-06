@@ -18,9 +18,9 @@ const scrollableContainer = {
   paddingTop: "1rem",
   overflowY: "auto",
   height: "80vh",
-  display: "flex",
-  flexWrap: "wrap",
-  justifyContent: "center",
+  // display: "flex",
+  // flexWrap: "wrap",
+  // justifyContent: "center",
 };
 
 const highLight = {
@@ -84,7 +84,7 @@ const BlogDrawer = () => {
               questionBankSets={questionBankCollections.database}
             />
           ) : (
-            <div>Select a blog to see the content</div>
+            <Box>Select a blog to see the content</Box>
           )}
         </Box>
       </Grid>
