@@ -1,5 +1,6 @@
 import React from "react";
 import TextBasedBlogContent from "./TextBasedBlogContent";
+import { Box } from "@mui/material";
 
 export default function TextBlogs({ blog }) {
   const rendingSetOfBlogs = blog.map((post) => {
@@ -14,5 +15,16 @@ export default function TextBlogs({ blog }) {
       />
     );
   });
-  return <>{rendingSetOfBlogs}</>;
+  return (
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "row",
+        flexWrap: "wrap",
+        justifyContent: "center",
+      }}
+    >
+      {rendingSetOfBlogs}
+    </Box>
+  );
 }
