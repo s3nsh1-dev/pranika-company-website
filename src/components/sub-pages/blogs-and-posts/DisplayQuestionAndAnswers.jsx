@@ -1,5 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import { SecondaryHeadingText } from "../../common/TitleTexts";
+import QnAMultiBulletPoints from "./QnAMultiBulletPoints";
 
 const DisplayQuestionAndAnswers = ({ questionBank }) => {
   const answerAsObject = (object) => {
@@ -7,18 +8,9 @@ const DisplayQuestionAndAnswers = ({ questionBank }) => {
     for (const [key, value] of Object.entries(object)) {
       content.push(`${key}: ${value}`);
     }
-    return (
-      <Box component='ol' type='a'>
-        {content.map((contentItem, index) => {
-          return (
-            <Typography key={contentItem} component='li'>
-              {contentItem}
-            </Typography>
-          );
-        })}
-      </Box>
-    );
+    return <QnAMultiBulletPoints content={content} />;
   };
+
   const renderQuestionAndAnswers = questionBank.map((quesAns) => {
     return (
       <Box key={quesAns.id}>
