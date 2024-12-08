@@ -1,6 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import React from "react";
-import { ClampText } from "../../common/TitleTexts";
+import BnPExpandedCardBulletPoints from "./BnPExpandedCardBulletPoints";
+import AuthorName from "./AuthorName";
 
 const paperContainer = { margin: "10px", padding: "10px" };
 
@@ -19,20 +20,7 @@ export default function ExpandedCards({
   author,
 }) {
   const renderBulletPoints = bulletPoints.map((bullet) => {
-    return (
-      <Box key={bullet.id} margin={2}>
-        <ClampText variant='h6' fontWeight='bold'>
-          {bullet.pointsTitle}
-        </ClampText>
-        {bullet.points.map((point, index) => {
-          return (
-            <Box component='li' key={index}>
-              {point}
-            </Box>
-          );
-        })}
-      </Box>
-    );
+    return <BnPExpandedCardBulletPoints key={bullet.id} bullet={bullet} />;
   });
   return (
     <Box sx={paperContainer}>
@@ -47,13 +35,7 @@ export default function ExpandedCards({
         <Typography textAlign='justify'>{whyLearn.describes}</Typography>
       </Box>
       <Box component='ul'>{renderBulletPoints}</Box>
-      <Typography textAlign='end' fontSize='x-small'>
-        author: <i>{author}</i>
-      </Typography>
+      <AuthorName author={author} />
     </Box>
   );
 }
-
-/*
-if its possible try ot make a data label to show the date this post where written
-*/
