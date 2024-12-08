@@ -11,6 +11,7 @@ import { BlueBorderButton } from "../../common/Buttons";
 import { ClampText } from "../../common/TitleTexts";
 import Modal from "@mui/material/Modal";
 import ExpandedCards from "./ExpandedCards";
+import AuthorName from "./AuthorName";
 
 const style = {
   position: "absolute",
@@ -83,16 +84,10 @@ export default function TextBasedBlogContent({
           <BlueBorderButton sx={{ width: 100 }} onClick={handleOpen}>
             View Post
           </BlueBorderButton>
-          <Typography textAlign='end' fontSize='x-small' sx={{ color: "gray" }}>
-            author: <i>{author}</i>
-          </Typography>
+          <AuthorName author={author} />
         </CardActions>
       </Card>
       {content}
     </>
   );
 }
-
-/*
-if its possible try ot make a data label to show the date this post where written
-*/
