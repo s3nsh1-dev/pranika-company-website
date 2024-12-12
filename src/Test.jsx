@@ -1,5 +1,10 @@
 import React from "react";
+import NavbarFullscreen from "./components/navbar-components/NavbarFullscreen";
 
 export default function Test() {
-  return <>This is a Test Site</>;
+  return (
+    <div>
+      <NavbarFullscreen />
+    </div>
+  );
 }
