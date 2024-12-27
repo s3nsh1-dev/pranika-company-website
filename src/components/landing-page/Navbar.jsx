@@ -11,11 +11,12 @@ export default function Navbar() {
     <>
       <Box>
         <AppBar
-          position='static'
+          position="relative"
           sx={{
             backgroundColor: "#070066",
             margin: "0px",
             padding: "0px",
+            zIndex: 1000,
           }}
         >
           <Toolbar disableGutters>
